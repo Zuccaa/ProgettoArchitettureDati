@@ -49,4 +49,36 @@ public class Book {
 		this.author = author;
 	}
 	
+	public void convertFromIsbn10ToIsbn13() {
+		
+		int controlDigit = 0;
+		int sumResult = 0;
+		int n = 0;
+		
+		if (isbn.length() == 10) {
+			
+			this.isbn = "978" + isbn.substring(0, 9);
+			
+			for (int i = 0; i < this.isbn.length(); i++) {
+				
+				n = Character.getNumericValue(this.isbn.charAt(i));
+			
+				if (i % 2 == 0)
+					sumResult += n;
+				else
+					sumResult += n * 3;
+			
+			}
+			
+			controlDigit = 10 - (sumResult % 10);
+			
+			if (controlDigit != 10)
+				this.isbn += String.valueOf(controlDigit);
+			else
+				this.isbn += "0";
+				
+		}
+		
+	}
+	
 }

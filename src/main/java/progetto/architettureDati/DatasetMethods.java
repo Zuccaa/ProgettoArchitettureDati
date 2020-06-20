@@ -4,30 +4,33 @@ import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner; // Import the Scanner class to read text files
 import java.util.TreeMap;
 import java.util.Map.Entry;
 
 
 public class DatasetMethods {
-
-	String record = "";
-	String[] infoBook = {"", "", "", ""};
-	ArrayList<Book> books = new ArrayList<Book>();
-	int counter = 0;
 	
-	public ArrayList<Book> readFile() {
+	public ArrayList<Book> readDataset(String filePath) {
+		
+		String tuple = "";
+		String[] infoBook = {"", "", "", ""};
+		ArrayList<Book> books = new ArrayList<Book>();
+		
+		int counter = 0;
+		
 		try {
-			File myObj = new File(System.getProperty("user.dir") + "\\book.txt");
+			File myObj = new File(filePath);
 			Scanner myReader = new Scanner(myObj);
 			while (myReader.hasNextLine()) {
-				record = myReader.nextLine();
-				while(record.contains("\t")) {
-					infoBook[counter] = record.substring(0, record.indexOf("\t")).toLowerCase();
-					record = record.substring(record.indexOf("\t") + 1);
+				tuple = myReader.nextLine();
+				while(tuple.contains("\t")) {
+					infoBook[counter] = tuple.substring(0, tuple.indexOf("\t")).toLowerCase();
+					tuple = tuple.substring(tuple.indexOf("\t") + 1);
 					counter++;
 				}
-				infoBook[counter] = record.toLowerCase();
+				infoBook[counter] = tuple.toLowerCase();
 				counter = 0;				
 				books.add(new Book(infoBook));
 			}
@@ -41,10 +44,45 @@ public class DatasetMethods {
 		
 	}
 	
+	public HashMap<String, ArrayList<String>> readAuthorsList(String filePath) {
+		
+		HashMap<String, ArrayList<String>> authorsListWithISBN = new HashMap<String, ArrayList<String>>();
+		ArrayList<String> authorsList = new ArrayList<String>();
+		
+		String tuple = "";
+		String isbn = "";
+		String authors = "";
+		
+		try {
+			File myObj = new File(filePath);
+			Scanner myReader = new Scanner(myObj);
+			while (myReader.hasNextLine()) {
+				tuple = myReader.nextLine();
+				isbn = tuple.substring(0, tuple.indexOf("\t"));
+				authors = tuple.substring(tuple.indexOf("\t") + 1);
+				while (authors.contains(";")) {
+					authorsList.add(authors.substring(0, authors.indexOf(";")).toLowerCase());
+					authors = authors.substring(authors.indexOf(";") + 1);
+				}
+				authorsList.add(authors);
+				authorsListWithISBN.put(isbn, authorsList);
+				System.out.println(authorsListWithISBN.get(isbn));
+				authorsList.clear();
+			}
+			myReader.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
+		
+		return authorsListWithISBN;
+		
+	}
 	
 	public void writeOccurrences(TreeMap<String, Integer> sortedOccurrences) {
+		
 		try {
-			File myObj = new File("filename.txt");
+			File myObj = new File("occurrences.txt");
 			if (myObj.createNewFile()) {
 				System.out.println("File created: " + myObj.getName());
 			} else {

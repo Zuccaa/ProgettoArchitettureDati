@@ -2,6 +2,7 @@ package progetto.architettureDati;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.TreeMap;
 
 
@@ -9,9 +10,13 @@ public class App {
     
 	public static void main(String[] args) {
 		
+		String DATASETPATH = System.getProperty("user.dir") + "\\book.txt";
+		String AUTHORSLISTPATH = System.getProperty("user.dir") + "\\authors.txt";
+		
         DatasetMethods dm = new DatasetMethods();
         ComputeMetrics c = new ComputeMetrics();
-		ArrayList<Book> books = dm.readFile();
+		ArrayList<Book> books = dm.readDataset(DATASETPATH);
+		HashMap<String, ArrayList<String>> exactAuthorsList = dm.readAuthorsList(AUTHORSLISTPATH);
 		ArrayList<String> authors = new ArrayList<String>();
 		ArrayList<String> isbn = new ArrayList<String>();
 		ArrayList<String> sources = new ArrayList<String>();
@@ -19,6 +24,7 @@ public class App {
 		TreeMap<String, Integer> sortedOccurrences = new TreeMap<String, Integer>();
 		
 		for (Book b: books) {
+			b.convertFromIsbn10ToIsbn13();
 			float tupleCompleteness = c.computeTupleCompleteness(b);
 			authors.add(b.getAuthor());
 			isbn.add(b.getIsbn());
@@ -37,6 +43,14 @@ public class App {
 		float tableCompleteness = c.computeTableCompleteness(books);
 		System.out.println("Table completeness: " + tableCompleteness);
 
+		for (String _isbn: exactAuthorsList.keySet()){
+            /*System.out.print(key);
+            for (String s: exactAuthorsList.get(_isbn)) {
+            	System.out.print(" " + s);
+            }
+            System.out.print("\n");*/
+		} 
+		
 		/*while (!title.isEmpty()) {
 			int occurrences = Collections.frequency(title, title.get(0));
 			sortedOccurrences.put(title.get(0), occurrences);
@@ -53,13 +67,14 @@ public class App {
 		
 		dm.writeOccurrences(sortedOccurrences);*/
 		
-		while (!isbn.isEmpty()) {
+		/*while (!isbn.isEmpty()) {
 			int occurrences = Collections.frequency(isbn, isbn.get(0));
 			sortedOccurrences.put(isbn.get(0), occurrences);
 			isbn.removeAll(Collections.singleton(isbn.get(0)));
 		}
 		
-		dm.writeOccurrences(sortedOccurrences);
+		dm.writeOccurrences(sortedOccurrences);*/
+		
 		
 		/*while (!authors.isEmpty()) {
 			int occurrences = Collections.frequency(authors, authors.get(0));
