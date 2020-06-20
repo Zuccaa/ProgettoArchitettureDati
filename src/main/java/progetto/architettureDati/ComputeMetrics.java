@@ -1,58 +1,72 @@
 package progetto.architettureDati;
 
-import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ComputeMetrics {
 	
-	float tupleCompleteness;
-	float attributeCompleteness;
-	float tableCompleteness;
-	
-	public float getTupleCompleteness() {
-		return tupleCompleteness;
-	}
-
-	public void setTupleCompleteness(float tupleCompleteness) {
-		this.tupleCompleteness = tupleCompleteness;
-	}
-
-	public float getAttributeCompleteness() {
-		return attributeCompleteness;
-	}
-
-	public void setAttributeCompleteness(float attributeCompleteness) {
-		this.attributeCompleteness = attributeCompleteness;
-	}
-
-	public float getTableCompleteness() {
-		return tableCompleteness;
-	}
-
-	public void setTableCompleteness(float tableCompleteness) {
-		this.tableCompleteness = tableCompleteness;
-	}
-	
-	String[] nullValues = {"", "0", "n/a", "not available (na)", "not available (na).", "not available"};
+	String[] NULLVALUES = {"", "0", "n/a", "not available (na)", "not available (na).", "not available"};
 	
 	public float computeTupleCompleteness(Book book) {
 		
+		float tupleCompleteness = 0;
+		int NumberOfAttributes = book.getClass().getDeclaredFields().length;
+		int counterNull = getNumberOfNullValuesInTuple(book);
+		
+		tupleCompleteness = (float) counterNull / NumberOfAttributes;
+		
+		return tupleCompleteness;
+	}
+	
+	public float computeAttributeCompleteness(ArrayList<String> attribute) {
+		
+		float attributeCompleteness = 0;
 		int counterNull = 0;
-		int N = 4;
+		int NumberOfTuples = attribute.size();
 		
-		//String[] bookAttributes = {book.getIsbn().toLowerCase(), book.getAuthor().toLowerCase(), 
-		//		book.getSource().toLowerCase(), book.getTitle().toLowerCase()};
-		
-		String[] bookAttributes = {book.getAuthor().toLowerCase()};
-		for (String attribute: bookAttributes) {
-			if (Arrays.asList(nullValues).contains(attribute)) {
+		for (String element: attribute) {
+			if (Arrays.asList(NULLVALUES).contains(element)) {
 				counterNull++;
 			}
 		}
 		
-		setTupleCompleteness(counterNull/N);
+		System.out.println(counterNull);
 		
-		return tupleCompleteness;
+		attributeCompleteness = (float) counterNull / NumberOfTuples;
+		
+		return attributeCompleteness;
 	}
+	
+	public float computeTableCompleteness(ArrayList<Book> books) {
+		
+		float tableCompleteness = 0;
+		int counterNull = 0;
+		int NumberOfElements = books.size() * books.get(0).getClass().getDeclaredFields().length;
+		
+		for (Book book: books) {
+			counterNull += getNumberOfNullValuesInTuple(book);
+		}
+		
+		tableCompleteness = (float) counterNull / NumberOfElements;
+		
+		return tableCompleteness;
+		
+	}
+	
+	public int getNumberOfNullValuesInTuple(Book book) {
+		
+		int counterNull = 0;
+
+		String[] bookAttributes = {book.getIsbn(), book.getAuthor(), book.getSource(), book.getTitle()};
+		
+		for (String attribute: bookAttributes) {
+			if (Arrays.asList(NULLVALUES).contains(attribute)) {
+				counterNull++;
+			}
+		}
+		
+		return counterNull;
+	}
+	
 	
 }

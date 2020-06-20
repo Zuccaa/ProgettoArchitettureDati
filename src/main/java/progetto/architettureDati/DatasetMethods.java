@@ -23,11 +23,11 @@ public class DatasetMethods {
 			while (myReader.hasNextLine()) {
 				record = myReader.nextLine();
 				while(record.contains("\t")) {
-					infoBook[counter] = record.substring(0, record.indexOf("\t"));
+					infoBook[counter] = record.substring(0, record.indexOf("\t")).toLowerCase();
 					record = record.substring(record.indexOf("\t") + 1);
 					counter++;
 				}
-				infoBook[counter] = record;
+				infoBook[counter] = record.toLowerCase();
 				counter = 0;				
 				books.add(new Book(infoBook));
 			}
