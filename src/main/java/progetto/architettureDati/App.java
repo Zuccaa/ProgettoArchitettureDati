@@ -15,16 +15,27 @@ public class App {
 		
         DatasetMethods dm = new DatasetMethods();
         ComputeMetrics c = new ComputeMetrics();
+        
 		ArrayList<Book> books = dm.readDataset(DATASETPATH);
 		HashMap<String, ArrayList<String>> exactAuthorsList = dm.readAuthorsList(AUTHORSLISTPATH);
+		
+		boolean checkControlDigit = true;
+		
 		ArrayList<String> authors = new ArrayList<String>();
 		ArrayList<String> isbn = new ArrayList<String>();
 		ArrayList<String> sources = new ArrayList<String>();
 		ArrayList<String> titles = new ArrayList<String>();
+		
 		TreeMap<String, Integer> sortedOccurrences = new TreeMap<String, Integer>();
 		
 		for (Book b: books) {
-			b.convertFromIsbn10ToIsbn13();
+			if (b.getIsbn().length() == 10)
+				b.convertFromIsbn10ToIsbn13();
+			else {
+				checkControlDigit = b.checkControlDigit();
+				if (!checkControlDigit)
+					System.out.println(b.getIsbn());
+			}
 			float tupleCompleteness = c.computeTupleCompleteness(b);
 			authors.add(b.getAuthor());
 			isbn.add(b.getIsbn());
@@ -43,13 +54,13 @@ public class App {
 		float tableCompleteness = c.computeTableCompleteness(books);
 		System.out.println("Table completeness: " + tableCompleteness);
 
-		for (String _isbn: exactAuthorsList.keySet()){
-            /*System.out.print(key);
+		/*for (String _isbn: exactAuthorsList.keySet()){
+            System.out.print(key);
             for (String s: exactAuthorsList.get(_isbn)) {
             	System.out.print(" " + s);
             }
-            System.out.print("\n");*/
-		} 
+            System.out.print("\n");
+		} */
 		
 		/*while (!title.isEmpty()) {
 			int occurrences = Collections.frequency(title, title.get(0));

@@ -66,7 +66,6 @@ public class DatasetMethods {
 				}
 				authorsList.add(authors);
 				authorsListWithISBN.put(isbn, authorsList);
-				System.out.println(authorsListWithISBN.get(isbn));
 				authorsList.clear();
 			}
 			myReader.close();

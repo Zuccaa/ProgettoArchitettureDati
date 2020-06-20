@@ -1,7 +1,5 @@
 package progetto.architettureDati;
 
-import java.util.Arrays;
-
 public class Book {
 
 	String source;
@@ -51,26 +49,11 @@ public class Book {
 	
 	public void convertFromIsbn10ToIsbn13() {
 		
-		int controlDigit = 0;
-		int sumResult = 0;
-		int n = 0;
-		
 		if (isbn.length() == 10) {
 			
 			this.isbn = "978" + isbn.substring(0, 9);
 			
-			for (int i = 0; i < this.isbn.length(); i++) {
-				
-				n = Character.getNumericValue(this.isbn.charAt(i));
-			
-				if (i % 2 == 0)
-					sumResult += n;
-				else
-					sumResult += n * 3;
-			
-			}
-			
-			controlDigit = 10 - (sumResult % 10);
+			int controlDigit = computeControlDigit(this.isbn);
 			
 			if (controlDigit != 10)
 				this.isbn += String.valueOf(controlDigit);
@@ -79,6 +62,40 @@ public class Book {
 				
 		}
 		
+	}
+	
+	public boolean checkControlDigit() {
+		
+		if (this.isbn.length() == 13) {
+			
+			int controlDigit = Integer.parseInt(this.isbn.substring(12));
+			int newControlDigit = computeControlDigit(this.isbn.substring(0, 12));
+			
+			return controlDigit == newControlDigit || (controlDigit == 0 && newControlDigit == 10);
+			
+		}
+
+		return false;
+	}
+	
+	public int computeControlDigit(String isbn12) {
+		
+		int sumResult = 0;
+		int n = 0;
+		
+		for (int i = 0; i < isbn12.length(); i++) {
+			
+			n = Character.getNumericValue(isbn12.charAt(i));
+		
+			if (i % 2 == 0)
+				sumResult += n;
+			else
+				sumResult += n * 3;
+		
+		}
+		
+		return 10 - (sumResult % 10);
+
 	}
 	
 }
