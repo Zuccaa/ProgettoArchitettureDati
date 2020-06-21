@@ -757,7 +757,6 @@
 9780201731149	gene korienek; tom wrensch; doug dechow
 9780072390841	ralph s polimeni; frank j fabozzi; arthur h adelberg; jacqueline a burke
 9780201726848	robert sedgewick
-F	john hirschbuhl
 9780201183993	al kelley; ira pohl
 9780321399427	c j date; hugh darwen
 9780340613986	jim haigh
@@ -1096,7 +1095,6 @@ F	john hirschbuhl
 9781555583125	michael erbschloe
 9780750681858	stephen morris
 9780321193674	steve mcconnell
-F	ron goldman
 9780072565850	harry knight
 9780072872156	triad interactive
 9781558607361	gregory d speegle

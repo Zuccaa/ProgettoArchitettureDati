@@ -2,6 +2,9 @@ package progetto.architettureDati;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import org.apache.commons.text.similarity.LevenshteinDistance;
 
 public class ComputeMetrics {
 	
@@ -68,5 +71,69 @@ public class ComputeMetrics {
 		return counterNull;
 	}
 	
+	public ArrayList<Float> computeSemanticAccuracy(HashMap<String, ArrayList<String>> authorsGroupedByIsbn, 
+			HashMap<String, ArrayList<String>> exactAuthorsList) {
+		
+		ArrayList<Float> semanticAccuracy = new ArrayList<Float>();
+		ArrayList<String> tokens = new ArrayList<String>();
+		ArrayList<String> surnames = new ArrayList<String>();
+		
+		for(String isbn: authorsGroupedByIsbn.keySet()) {
+			if (exactAuthorsList.get(isbn) != null) {
+				surnames = getSurnamesFromAuthors(exactAuthorsList.get(isbn));
+				
+				while(!authorsGroupedByIsbn.get(isbn).isEmpty()) {
+					tokens = getTokensFromAuthors(authorsGroupedByIsbn.get(isbn).get(0));
+					authorsGroupedByIsbn.get(isbn).remove(0);
+					 
+					semanticAccuracy.add(computeNormalizedEditDistance(tokens, surnames));
+				}
+			}
+		}
+		
+		return semanticAccuracy;
+	}
+	
+	public ArrayList<String> getTokensFromAuthors(String authors) {
+		
+		return new ArrayList<String>(Arrays.asList(authors.split("\\W+")));
+		
+	}
+	
+	public ArrayList<String> getSurnamesFromAuthors(ArrayList<String> authors) {
+		
+		ArrayList<String> surnames = new ArrayList<String>();
+		String[] tmp;
+		for (String author: authors) {
+			tmp = author.split(" ");
+			surnames.add(tmp[tmp.length - 1]);
+		}
+		
+		return surnames;
+	}
+	
+	public float computeNormalizedEditDistance(ArrayList<String> tokens, ArrayList<String> surnames) {
+		
+		ArrayList<Integer> editDistance = new ArrayList<Integer>();
+		int minEditDistance = 0;
+		int THRESHOLD = 1;
+		int sumOfSemanticAccuracy = 0;
+		
+		System.out.println("CIAO");
+		System.out.println(tokens.toString());
+		System.out.println(surnames.toString());
+		
+		for (String s: surnames) {
+			for (String t: tokens)
+				editDistance.add(LevenshteinDistance.getDefaultInstance().apply(t,s));
+			minEditDistance = Collections.min(editDistance);
+			if (minEditDistance <= THRESHOLD)
+				sumOfSemanticAccuracy += 1;
+			editDistance.clear();
+		}
+		
+		return (float) sumOfSemanticAccuracy / surnames.size();
+		
+	}
 	
 }

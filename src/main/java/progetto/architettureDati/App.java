@@ -1,7 +1,6 @@
 package progetto.architettureDati;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.TreeMap;
 
@@ -43,6 +42,8 @@ public class App {
 			titles.add(b.getTitle());
 		}
 		
+		HashMap<String, ArrayList<String>> authorsGroupedByIsbn = dm.groupBooksByIsbn(books);
+
 		float authorCompleteness = c.computeAttributeCompleteness(authors);
 		System.out.println("Author completeness: " + authorCompleteness);
 		float isbnCompleteness = c.computeAttributeCompleteness(isbn);
@@ -52,15 +53,20 @@ public class App {
 		float titleCompleteness = c.computeAttributeCompleteness(titles);
 		System.out.println("Title completeness: " + titleCompleteness);
 		float tableCompleteness = c.computeTableCompleteness(books);
-		System.out.println("Table completeness: " + tableCompleteness);
-
+		System.out.println("Table completeness: " + tableCompleteness);		
+		
+		ArrayList<Float> semanticAccuracy = c.computeSemanticAccuracy(authorsGroupedByIsbn, exactAuthorsList);
+		System.out.println(semanticAccuracy.toString());
+		
+		System.out.println(semanticAccuracy.size());
+		
 		/*for (String _isbn: exactAuthorsList.keySet()){
-            System.out.print(key);
+            System.out.print(_isbn + exactAuthorsList.get(_isbn).toString());
             for (String s: exactAuthorsList.get(_isbn)) {
             	System.out.print(" " + s);
             }
             System.out.print("\n");
-		} */
+		}*/
 		
 		/*while (!title.isEmpty()) {
 			int occurrences = Collections.frequency(title, title.get(0));

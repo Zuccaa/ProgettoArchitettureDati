@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner; // Import the Scanner class to read text files
 import java.util.TreeMap;
+
+import edu.emory.mathcs.backport.java.util.Arrays;
+
 import java.util.Map.Entry;
 
 
@@ -47,33 +50,25 @@ public class DatasetMethods {
 	public HashMap<String, ArrayList<String>> readAuthorsList(String filePath) {
 		
 		HashMap<String, ArrayList<String>> authorsListWithISBN = new HashMap<String, ArrayList<String>>();
-		ArrayList<String> authorsList = new ArrayList<String>();
 		
 		String tuple = "";
-		String isbn = "";
-		String authors = "";
+
+		String[] info;
 		
 		try {
 			File myObj = new File(filePath);
 			Scanner myReader = new Scanner(myObj);
 			while (myReader.hasNextLine()) {
 				tuple = myReader.nextLine();
-				isbn = tuple.substring(0, tuple.indexOf("\t"));
-				authors = tuple.substring(tuple.indexOf("\t") + 1);
-				while (authors.contains(";")) {
-					authorsList.add(authors.substring(0, authors.indexOf(";")).toLowerCase());
-					authors = authors.substring(authors.indexOf(";") + 1);
-				}
-				authorsList.add(authors);
-				authorsListWithISBN.put(isbn, authorsList);
-				authorsList.clear();
+				info = tuple.split("\t");
+				authorsListWithISBN.put(info[0], new ArrayList<String>(Arrays.asList(info[1].split(";"))));
 			}
 			myReader.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
-		
+				
 		return authorsListWithISBN;
 		
 	}
@@ -96,5 +91,24 @@ public class DatasetMethods {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
+	}
+	
+	public HashMap<String, ArrayList<String>> groupBooksByIsbn(ArrayList<Book> books) {
+		
+		HashMap<String, ArrayList<String>> booksGroupedByIsbn = new HashMap<String, ArrayList<String>>();
+		
+		for (Book b: books) {
+			if (!booksGroupedByIsbn.containsKey(b.getIsbn())) {
+			    ArrayList<String> authors = new ArrayList<String>();
+			    authors.add(b.getAuthor());
+	
+			    booksGroupedByIsbn.put(b.getIsbn(), authors);
+			} else {
+				booksGroupedByIsbn.get(b.getIsbn()).add(b.getAuthor());
+			}
+		}
+		
+		return booksGroupedByIsbn;
+		
 	}
 }
