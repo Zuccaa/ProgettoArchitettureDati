@@ -82,7 +82,7 @@ public class DatasetMethods {
 			} else {
 				System.out.println("File already exists.");
 			}
-			FileWriter myWriter = new FileWriter("filename.txt");
+			FileWriter myWriter = new FileWriter("occurrences.txt");
 			for (Entry<String, Integer> entry : sortedOccurrences.entrySet()) {
 			     myWriter.write("Key: " + entry.getKey() + " Value: " + entry.getValue() + "\n");
 			}

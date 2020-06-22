@@ -38,6 +38,10 @@ public class AppTest extends TestCase {
 
 		System.out.println(semanticAccuracy.toString());
 		
+		float overallSemanticAccuracy = c.computeOverallSemanticAccuracy(semanticAccuracy);
+		System.out.println("Overall semantic accuracy: " + overallSemanticAccuracy);
+		
 		assert true;
     }
+    
 }

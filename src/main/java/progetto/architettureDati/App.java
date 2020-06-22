@@ -1,6 +1,7 @@
 package progetto.architettureDati;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.TreeMap;
 
@@ -57,8 +58,9 @@ public class App {
 		
 		ArrayList<Float> semanticAccuracy = c.computeSemanticAccuracy(authorsGroupedByIsbn, exactAuthorsList);
 		System.out.println(semanticAccuracy.toString());
-		
-		System.out.println(semanticAccuracy.size());
+
+		float overallSemanticAccuracy = c.computeOverallSemanticAccuracy(semanticAccuracy);
+		System.out.println("Overall semantic accuracy: " + overallSemanticAccuracy);
 		
 		/*for (String _isbn: exactAuthorsList.keySet()){
             System.out.print(_isbn + exactAuthorsList.get(_isbn).toString());
@@ -68,18 +70,18 @@ public class App {
             System.out.print("\n");
 		}*/
 		
-		/*while (!title.isEmpty()) {
-			int occurrences = Collections.frequency(title, title.get(0));
-			sortedOccurrences.put(title.get(0), occurrences);
-			title.removeAll(Collections.singleton(title.get(0)));
+		while (!titles.isEmpty()) {
+			int occurrences = Collections.frequency(titles, titles.get(0));
+			sortedOccurrences.put(titles.get(0), occurrences);
+			titles.removeAll(Collections.singleton(titles.get(0)));
 		}
 		
-		dm.writeOccurrences(sortedOccurrences);*/
+		dm.writeOccurrences(sortedOccurrences);
 		
-		/*while (!source.isEmpty()) {
-			int occurrences = Collections.frequency(source, source.get(0));
-			sortedOccurrences.put(source.get(0), occurrences);
-			source.removeAll(Collections.singleton(source.get(0)));
+		/*while (!sources.isEmpty()) {
+			int occurrences = Collections.frequency(sources, sources.get(0));
+			sortedOccurrences.put(sources.get(0), occurrences);
+			sources.removeAll(Collections.singleton(sources.get(0)));
 		}
 		
 		dm.writeOccurrences(sortedOccurrences);*/

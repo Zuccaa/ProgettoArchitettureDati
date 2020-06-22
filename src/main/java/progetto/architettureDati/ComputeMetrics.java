@@ -119,7 +119,6 @@ public class ComputeMetrics {
 		int THRESHOLD = 1;
 		int sumOfSemanticAccuracy = 0;
 		
-		System.out.println("CIAO");
 		System.out.println(tokens.toString());
 		System.out.println(surnames.toString());
 		
@@ -133,6 +132,17 @@ public class ComputeMetrics {
 		}
 		
 		return (float) sumOfSemanticAccuracy / surnames.size();
+		
+	}
+	
+	public float computeOverallSemanticAccuracy(ArrayList<Float> semanticAccuracies) {
+
+		float sumOfSemanticAccuracies = 0;
+		
+		for (Float semanticAccuracy: semanticAccuracies)
+			sumOfSemanticAccuracies += semanticAccuracy;
+		
+		return sumOfSemanticAccuracies / semanticAccuracies.size();
 		
 	}
 	
