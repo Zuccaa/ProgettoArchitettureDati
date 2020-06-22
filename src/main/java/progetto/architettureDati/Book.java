@@ -14,6 +14,10 @@ public class Book {
 		this.title = infoBook[2];
 		this.author = infoBook[3];
 	}
+	
+	public Book(String isbn, String title, String author) {
+		this(new String[]{"-", isbn, title, author}); 
+	}
 
 	public String getSource() {
 		return source;
@@ -47,6 +51,11 @@ public class Book {
 		this.author = author;
 	}
 	
+	@Override
+	public String toString() {
+		return "Book [isbn=" + isbn + ", title=" + title + ", author=" + author + "]";
+	}
+
 	public void convertFromIsbn10ToIsbn13() {
 		
 		if (isbn.length() == 10) {

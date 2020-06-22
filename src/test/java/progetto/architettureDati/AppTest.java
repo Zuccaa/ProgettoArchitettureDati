@@ -29,7 +29,7 @@ public class AppTest extends TestCase {
 			}
 		}
 		
-		HashMap<String, ArrayList<String>> authorsGroupedByIsbn = dm.groupBooksByIsbn(books);
+		HashMap<String, ArrayList<String>> authorsGroupedByIsbn = dm.groupAttributeByIsbn(books, Attributes.AUTHOR);
 		
 		System.out.println(exactAuthorsList.toString());
 		System.out.println(authorsGroupedByIsbn.toString());

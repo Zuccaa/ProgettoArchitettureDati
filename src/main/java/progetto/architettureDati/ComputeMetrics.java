@@ -32,9 +32,7 @@ public class ComputeMetrics {
 				counterNull++;
 			}
 		}
-		
-		System.out.println(counterNull);
-		
+				
 		attributeCompleteness = (float) counterNull / NumberOfTuples;
 		
 		return attributeCompleteness;
@@ -118,9 +116,6 @@ public class ComputeMetrics {
 		int minEditDistance = 0;
 		int THRESHOLD = 1;
 		int sumOfSemanticAccuracy = 0;
-		
-		System.out.println(tokens.toString());
-		System.out.println(surnames.toString());
 		
 		for (String s: surnames) {
 			for (String t: tokens)

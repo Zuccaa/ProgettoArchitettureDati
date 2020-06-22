@@ -91,20 +91,52 @@ public class DatasetMethods {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
+		
 	}
 	
-	public HashMap<String, ArrayList<String>> groupBooksByIsbn(ArrayList<Book> books) {
+	public void writeFile(ArrayList<Book> books) {
+		
+		try {
+			File myObj = new File("finalDataset.txt");
+			if (myObj.createNewFile()) {
+				System.out.println("File created: " + myObj.getName());
+			} else {
+				System.out.println("File already exists.");
+			}
+			FileWriter myWriter = new FileWriter("finalDataset.txt");
+			for (Book b: books) {
+	            myWriter.write(b.getIsbn() + "\n");
+			}
+			myWriter.close();
+		} catch (IOException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public HashMap<String, ArrayList<String>> groupAttributeByIsbn(ArrayList<Book> books, Attributes at) {
 		
 		HashMap<String, ArrayList<String>> booksGroupedByIsbn = new HashMap<String, ArrayList<String>>();
 		
+		String getAttribute = "";
+		
 		for (Book b: books) {
+			switch(at) {
+				case AUTHOR:
+					getAttribute = b.getAuthor();
+					break;
+				case TITLE:
+					getAttribute = b.getTitle();
+					break;
+			}	
 			if (!booksGroupedByIsbn.containsKey(b.getIsbn())) {
-			    ArrayList<String> authors = new ArrayList<String>();
-			    authors.add(b.getAuthor());
+			    ArrayList<String> attributes = new ArrayList<String>();
+			    attributes.add(getAttribute);
 	
-			    booksGroupedByIsbn.put(b.getIsbn(), authors);
+			    booksGroupedByIsbn.put(b.getIsbn(), attributes);
 			} else {
-				booksGroupedByIsbn.get(b.getIsbn()).add(b.getAuthor());
+				booksGroupedByIsbn.get(b.getIsbn()).add(getAttribute);
 			}
 		}
 		
