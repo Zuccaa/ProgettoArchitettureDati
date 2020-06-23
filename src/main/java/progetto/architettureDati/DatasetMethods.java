@@ -105,7 +105,7 @@ public class DatasetMethods {
 			}
 			FileWriter myWriter = new FileWriter("finalDataset.txt");
 			for (Book b: books) {
-	            myWriter.write(b.getIsbn() + "\n");
+	            myWriter.write(b.toString() + "\n");
 			}
 			myWriter.close();
 		} catch (IOException e) {

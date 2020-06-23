@@ -42,7 +42,7 @@ public class Deduplication {
 		while (!attributes.isEmpty()) {
 			attributeConsidered = attributes.get(0);
 			frequency = Collections.frequency(attributes, attributeConsidered);
-			if (frequency > maxFrequency && !Arrays.asList(NULLVALUES).contains(attributeConsidered) ) {
+			if (frequency > maxFrequency && !Arrays.asList(NULLVALUES).contains(attributeConsidered) && attributeConsidered.matches("[a-z.,-;()/'\s]+")) {
 				maxFrequency = frequency;
 				attributeWithMaxFrequency = attributeConsidered;
 			}

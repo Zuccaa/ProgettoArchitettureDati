@@ -3043,7 +3043,7 @@ THESAINTBOOKSTORE	0201596180	Introduction to SQL: Mastering the Relational Datab
 Revaluation Books	0201596180	An Introduction to SQL Mastering the Relational Database Language	Lans, Rick F. Van Der
 Limelight Bookshop	0201596180	Introduction to SQL: Mastering the Relational Database Language	Lans, Rick F. van der
 Books @ El Paso	0201433362	SQL Queries for Mere Mortals: A Hands-On Guide to Data Manipulation in SQL	Hernandez, Michael J.; Viescas, John; Viescas, John L.
-Indoo.com	0201433362	SQL Queries for Mere Mortals(R): A Hands-On Guide to Data Manipulation in SQL	Hernandez, Michael J.Viescas, John L.
+Indoo.com	0201433362	SQL Queries for Mere Mortals(R): A Hands-On Guide to Data Manipulation in SQL	Hernandez, Michael J. Viescas, John L.
 A1Books	0201433362	SQL Queries for Mere Mortals(R): A Hands-On Guide to Data Manipulation in SQL	Hernandez, Michael J., Viescas, John L.
 Movies With A Smile	0201433362	SQL Queries for Mere Mortals(r): A Hands-On Guide to Data Manipulation in SQL	Hernandez, Michael J, and Viescas, John L, and Celko, Joe (Foreword by)
 Caiman	0201433362	SQL QUERIES FOR MERE MORTALS(R	Hernandez, Michael J.

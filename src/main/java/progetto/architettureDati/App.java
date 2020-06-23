@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.TreeMap;
 
-
 public class App {
     
 	public static void main(String[] args) {
@@ -107,8 +106,7 @@ public class App {
             System.out.println(b.toString());
 		}*/
 		dm.writeFile(booksDeduplicated);
-		
-		
+        
 		/*for (String _isbn: exactAuthorsList.keySet()){
             System.out.print(_isbn + exactAuthorsList.get(_isbn).toString());
             for (String s: exactAuthorsList.get(_isbn)) {
