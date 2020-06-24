@@ -28,20 +28,24 @@ public class App {
 		
 		TreeMap<String, Integer> sortedOccurrences = new TreeMap<String, Integer>();
 		
+		ArrayList<Float> tupleCompleteness = new ArrayList<Float>();
 		for (Book b: books) {
 			if (b.getIsbn().length() == 10)
 				b.convertFromIsbn10ToIsbn13();
 			else {
-				checkControlDigit = b.checkControlDigit();
-				if (!checkControlDigit)
+				if (!b.checkControlDigit())
 					System.out.println(b.getIsbn());
 			}
-			float tupleCompleteness = c.computeTupleCompleteness(b);
+			b.normalizeAuthor();
+			tupleCompleteness.add(c.computeTupleCompleteness(b));
 			authors.add(b.getAuthor());
 			isbn.add(b.getIsbn());
 			sources.add(b.getSource());
 			titles.add(b.getTitle());
 		}
+
+		HashMap<Float, Integer> tupleFrequencies = dm.countFrequencies(tupleCompleteness);
+		System.out.println(tupleFrequencies.toString());
 		
 		HashMap<String, ArrayList<String>> authorsGroupedByIsbn = dm.groupAttributeByIsbn(books, Attributes.AUTHOR);
 
@@ -62,8 +66,7 @@ public class App {
 		float overallSemanticAccuracy = c.computeOverallSemanticAccuracy(semanticAccuracy);
 		System.out.println("Overall semantic accuracy: " + overallSemanticAccuracy);
 		
-		HashMap<String, ArrayList<String>> titlesGroupedByIsbn = dm.groupAttributeByIsbn(books, Attributes.TITLE);
-		
+		//HashMap<String, ArrayList<String>> titlesGroupedByIsbn = dm.groupAttributeByIsbn(books, Attributes.TITLE);
 		/*for (String _isbn: titlesGroupedByIsbn.keySet()) {
             System.out.println(_isbn + ": " + titlesGroupedByIsbn.get(_isbn).toString());
 		}*/
@@ -140,13 +143,13 @@ public class App {
 		dm.writeOccurrences(sortedOccurrences);*/
 		
 		
-		/*while (!authors.isEmpty()) {
+		while (!authors.isEmpty()) {
 			int occurrences = Collections.frequency(authors, authors.get(0));
 			sortedOccurrences.put(authors.get(0), occurrences);
 			authors.removeAll(Collections.singleton(authors.get(0)));
 		}
 		
-		dm.writeOccurrences(sortedOccurrences);*/
+		dm.writeOccurrences(sortedOccurrences);
 		
     }
 	

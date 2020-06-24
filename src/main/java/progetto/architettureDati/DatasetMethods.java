@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Scanner; // Import the Scanner class to read text files
 import java.util.TreeMap;
@@ -29,11 +30,11 @@ public class DatasetMethods {
 			while (myReader.hasNextLine()) {
 				tuple = myReader.nextLine();
 				while(tuple.contains("\t")) {
-					infoBook[counter] = tuple.substring(0, tuple.indexOf("\t")).toLowerCase();
+					infoBook[counter] = tuple.substring(0, tuple.indexOf("\t"));
 					tuple = tuple.substring(tuple.indexOf("\t") + 1);
 					counter++;
 				}
-				infoBook[counter] = tuple.toLowerCase();
+				infoBook[counter] = tuple;
 				counter = 0;				
 				books.add(new Book(infoBook));
 			}
@@ -143,4 +144,15 @@ public class DatasetMethods {
 		return booksGroupedByIsbn;
 		
 	}
+	
+	public HashMap<Float, Integer> countFrequencies(ArrayList<Float> attribute){
+		HashMap<Float, Integer> sortedOccurrences = new HashMap<Float, Integer>();
+		while (!attribute.isEmpty()) {
+			int occurrences = Collections.frequency(attribute, attribute.get(0));
+			sortedOccurrences.put(attribute.get(0), occurrences);
+			attribute.removeAll(Collections.singleton(attribute.get(0)));
+		}
+		return sortedOccurrences;
+	}
+
 }

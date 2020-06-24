@@ -9,9 +9,9 @@ public class Book {
 	
 	public Book(String[] infoBook) {
 		super();
-		this.source = infoBook[0];
+		this.source = infoBook[0].toLowerCase();
 		this.isbn = infoBook[1];
-		this.title = infoBook[2];
+		this.title = infoBook[2].toLowerCase();
 		this.author = infoBook[3];
 	}
 	
@@ -105,6 +105,17 @@ public class Book {
 		
 		return 10 - (sumResult % 10);
 
+	}
+
+	public void normalizeAuthor() {
+		this.author = this.author.replaceAll("[;/]", ",");
+		this.author = this.author.replaceAll("[\\W&&[^,']]", " ");
+		this.author = this.author.replaceAll(" \\w ", "  ");
+		this.author = this.author.replaceAll("^\\s", "");
+		this.author = this.author.replaceAll("([a-z])_?([A-Z])", "$1 $2");
+		this.author = this.author.replaceAll(" {2,}", " ");
+		this.author = this.author.replaceAll("\\A\\w\\s", "");
+		this.author = this.author.toLowerCase();
 	}
 	
 }
