@@ -1,4 +1,4 @@
-package progetto.architettureDati;
+package project.dataQuality;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,7 +6,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import org.apache.commons.text.similarity.LevenshteinDistance;
 
-public class ComputeMetrics {
+import project.pojo.Book;
+
+public class Metrics {
 	
 	String[] NULLVALUES = {"", "0", "n/a", "not available (na)", "not available (na).", "not available"};
 	

@@ -1,4 +1,4 @@
-package progetto.architettureDati;
+package project.utilities;
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.io.FileWriter;
@@ -10,6 +10,7 @@ import java.util.Scanner; // Import the Scanner class to read text files
 import java.util.TreeMap;
 
 import edu.emory.mathcs.backport.java.util.Arrays;
+import project.pojo.Book;
 
 import java.util.Map.Entry;
 
@@ -95,16 +96,16 @@ public class DatasetMethods {
 		
 	}
 	
-	public void writeFile(ArrayList<Book> books) {
+	public void writeFile(ArrayList<Book> books, String filename) {
 		
 		try {
-			File myObj = new File("finalDataset.txt");
+			File myObj = new File(filename);
 			if (myObj.createNewFile()) {
 				System.out.println("File created: " + myObj.getName());
 			} else {
 				System.out.println("File already exists.");
 			}
-			FileWriter myWriter = new FileWriter("finalDataset.txt");
+			FileWriter myWriter = new FileWriter(filename);
 			for (Book b: books) {
 	            myWriter.write(b.toString() + "\n");
 			}

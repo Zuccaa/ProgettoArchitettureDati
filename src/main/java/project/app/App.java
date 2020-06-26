@@ -1,19 +1,35 @@
-package progetto.architettureDati;
+package project.app;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.TreeMap;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+
+import project.dataQuality.Metrics;
+import project.dataQuality.Deduplication;
+import project.pojo.Book;
+import project.utilities.Attributes;
+import project.utilities.DatasetMethods;
+
 public class App {
     
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		String DATASETPATH = System.getProperty("user.dir") + "\\book.txt";
 		String AUTHORSLISTPATH = System.getProperty("user.dir") + "\\authors.txt";
 		
         DatasetMethods dm = new DatasetMethods();
-        ComputeMetrics c = new ComputeMetrics();
+        Metrics c = new Metrics();
         Deduplication d = new Deduplication();
         
 		ArrayList<Book> books = dm.readDataset(DATASETPATH);
@@ -108,7 +124,7 @@ public class App {
 		/*for (Book b: booksDeduplicated) {
             System.out.println(b.toString());
 		}*/
-		dm.writeFile(booksDeduplicated);
+		dm.writeFile(booksDeduplicated, "finalDataset.txt");
         
 		/*for (String _isbn: exactAuthorsList.keySet()){
             System.out.print(_isbn + exactAuthorsList.get(_isbn).toString());
@@ -143,13 +159,20 @@ public class App {
 		dm.writeOccurrences(sortedOccurrences);*/
 		
 		
-		while (!authors.isEmpty()) {
+		/*while (!authors.isEmpty()) {
 			int occurrences = Collections.frequency(authors, authors.get(0));
 			sortedOccurrences.put(authors.get(0), occurrences);
 			authors.removeAll(Collections.singleton(authors.get(0)));
 		}
 		
-		dm.writeOccurrences(sortedOccurrences);
+		dm.writeOccurrences(sortedOccurrences);*/
+
+		/*Document doc = Jsoup.connect("https://www.googleapis.com/books/v1/volumes?q=isbn:0321340795").get();
+		//System.out.println(doc.toString());
+		Elements bookInfo = doc.select("div.bookinfo");
+		for (Element i : bookInfo) {
+		  System.out.println(i.toString());
+		}*/
 		
     }
 	

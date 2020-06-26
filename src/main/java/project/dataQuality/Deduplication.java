@@ -1,10 +1,14 @@
-package progetto.architettureDati;
+package project.dataQuality;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+
+import project.pojo.Book;
+import project.utilities.Attributes;
+import project.utilities.DatasetMethods;
 
 public class Deduplication {
 

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import junit.framework.TestCase;
+import project.dataQuality.Metrics;
+import project.pojo.Book;
+import project.utilities.Attributes;
+import project.utilities.DatasetMethods;
 
 public class AppTest extends TestCase {
     
@@ -12,7 +16,7 @@ public class AppTest extends TestCase {
 		String AUTHORSLISTPATH = System.getProperty("user.dir") + "\\authorsTest.txt";
 		
         DatasetMethods dm = new DatasetMethods();
-        ComputeMetrics c = new ComputeMetrics();
+        Metrics c = new Metrics();
         
 		boolean checkControlDigit = true;
         

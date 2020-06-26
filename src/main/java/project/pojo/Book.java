@@ -1,4 +1,4 @@
-package progetto.architettureDati;
+package project.pojo;
 
 public class Book {
 

@@ -1,4 +1,4 @@
-package progetto.architettureDati;
+package project.utilities;
 
 public enum Attributes {
 
