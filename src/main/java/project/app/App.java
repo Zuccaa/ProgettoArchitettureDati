@@ -27,14 +27,17 @@ public class App {
 		
 		String DATASETPATH = System.getProperty("user.dir") + "\\book.txt";
 		String AUTHORSLISTPATH = System.getProperty("user.dir") + "\\authors.txt";
+		String TITLESLISTPATH = System.getProperty("user.dir") + "\\titles.txt";
 		
         DatasetMethods dm = new DatasetMethods();
-        Metrics c = new Metrics();
+        Metrics m = new Metrics();
         Deduplication d = new Deduplication();
         
 		ArrayList<Book> books = dm.readDataset(DATASETPATH);
-		HashMap<String, ArrayList<String>> exactAuthorsList = dm.readAuthorsList(AUTHORSLISTPATH);
-		
+		HashMap<String, ArrayList<String>> exactAuthorsList = 
+				dm.convertValuesIntoArrayListValues(dm.readList(AUTHORSLISTPATH));
+		HashMap<String, String> exactTitlesList = dm.readList(TITLESLISTPATH);
+
 		boolean checkControlDigit = true;
 		
 		ArrayList<String> authors = new ArrayList<String>();
@@ -53,7 +56,7 @@ public class App {
 					System.out.println(b.getIsbn());
 			}
 			b.normalizeAuthor();
-			tupleCompleteness.add(c.computeTupleCompleteness(b));
+			tupleCompleteness.add(m.computeTupleCompleteness(b));
 			authors.add(b.getAuthor());
 			isbn.add(b.getIsbn());
 			sources.add(b.getSource());
@@ -65,21 +68,21 @@ public class App {
 		
 		HashMap<String, ArrayList<String>> authorsGroupedByIsbn = dm.groupAttributeByIsbn(books, Attributes.AUTHOR);
 
-		float authorCompleteness = c.computeAttributeCompleteness(authors);
+		float authorCompleteness = m.computeAttributeCompleteness(authors);
 		System.out.println("Author completeness: " + authorCompleteness);
-		float isbnCompleteness = c.computeAttributeCompleteness(isbn);
+		float isbnCompleteness = m.computeAttributeCompleteness(isbn);
 		System.out.println("ISBN completeness: " + isbnCompleteness);
-		float sourceCompleteness = c.computeAttributeCompleteness(sources);
+		float sourceCompleteness = m.computeAttributeCompleteness(sources);
 		System.out.println("Source completeness: " + sourceCompleteness);
-		float titleCompleteness = c.computeAttributeCompleteness(titles);
+		float titleCompleteness = m.computeAttributeCompleteness(titles);
 		System.out.println("Title completeness: " + titleCompleteness);
-		float tableCompleteness = c.computeTableCompleteness(books);
+		float tableCompleteness = m.computeTableCompleteness(books);
 		System.out.println("Table completeness: " + tableCompleteness);		
 		
-		ArrayList<Float> semanticAccuracy = c.computeSemanticAccuracy(authorsGroupedByIsbn, exactAuthorsList);
+		ArrayList<Float> semanticAccuracy = m.computeSemanticAccuracy(authorsGroupedByIsbn, exactAuthorsList);
 		//System.out.println(semanticAccuracy.toString());
 
-		float overallSemanticAccuracy = c.computeOverallSemanticAccuracy(semanticAccuracy);
+		float overallSemanticAccuracy = m.computeOverallSemanticAccuracy(semanticAccuracy);
 		System.out.println("Overall semantic accuracy: " + overallSemanticAccuracy);
 		
 		//HashMap<String, ArrayList<String>> titlesGroupedByIsbn = dm.groupAttributeByIsbn(books, Attributes.TITLE);
@@ -101,30 +104,32 @@ public class App {
 			titlesDeduplicated.add(b.getTitle());
 		}
 		
-		float authorDeduplicatedCompleteness = c.computeAttributeCompleteness(authorsDeduplicated);
+		float authorDeduplicatedCompleteness = m.computeAttributeCompleteness(authorsDeduplicated);
 		System.out.println("Author deduplicated completeness: " + authorDeduplicatedCompleteness);
-		float isbnDeduplicatedCompleteness = c.computeAttributeCompleteness(isbnDeduplicated);
+		float isbnDeduplicatedCompleteness = m.computeAttributeCompleteness(isbnDeduplicated);
 		System.out.println("ISBN completeness: " + isbnDeduplicatedCompleteness);
-		float sourceDeduplicatedCompleteness = c.computeAttributeCompleteness(sourcesDeduplicated);
+		float sourceDeduplicatedCompleteness = m.computeAttributeCompleteness(sourcesDeduplicated);
 		System.out.println("Source completeness: " + sourceDeduplicatedCompleteness);
-		float titleDeduplicatedCompleteness = c.computeAttributeCompleteness(titlesDeduplicated);
+		float titleDeduplicatedCompleteness = m.computeAttributeCompleteness(titlesDeduplicated);
 		System.out.println("Title deduplicated completeness: " + titleDeduplicatedCompleteness);
-		float tableDeduplicatedCompleteness = c.computeTableCompleteness(booksDeduplicated);
+		float tableDeduplicatedCompleteness = m.computeTableCompleteness(booksDeduplicated);
 		System.out.println("Table deduplicated completeness: " + tableDeduplicatedCompleteness);
 		
 		HashMap<String, ArrayList<String>> authorsDeduplicatedGroupedByIsbn = 
 				dm.groupAttributeByIsbn(booksDeduplicated, Attributes.AUTHOR);
 
-		ArrayList<Float> semanticAccuracyDeduplicated = c.computeSemanticAccuracy(
+		ArrayList<Float> semanticAccuracyDeduplicated = m.computeSemanticAccuracy(
 				authorsDeduplicatedGroupedByIsbn, exactAuthorsList);
 		//System.out.println(semanticAccuracy.toString());
 
-		float overallSemanticAccuracyDeduplicated = c.computeOverallSemanticAccuracy(semanticAccuracyDeduplicated);
+		float overallSemanticAccuracyDeduplicated = m.computeOverallSemanticAccuracy(semanticAccuracyDeduplicated);
 		System.out.println("Overall semantic accuracy deduplicated: " + overallSemanticAccuracyDeduplicated);
 		/*for (Book b: booksDeduplicated) {
             System.out.println(b.toString());
 		}*/
 		dm.writeFile(booksDeduplicated, "finalDataset.txt");
+		
+		System.out.println(m.computeSyntacticAccuracy("Stefano Zucca", "Zcca Stefano"));
         
 		/*for (String _isbn: exactAuthorsList.keySet()){
             System.out.print(_isbn + exactAuthorsList.get(_isbn).toString());
@@ -166,13 +171,21 @@ public class App {
 		}
 		
 		dm.writeOccurrences(sortedOccurrences);*/
-
-		/*Document doc = Jsoup.connect("https://www.googleapis.com/books/v1/volumes?q=isbn:0321340795").get();
-		//System.out.println(doc.toString());
-		Elements bookInfo = doc.select("div.bookinfo");
-		for (Element i : bookInfo) {
-		  System.out.println(i.toString());
-		}*/
+		
+		/*ArrayList<String> exactTitlesOccurrences = new ArrayList<String>();
+		
+		for (String _isbn: exactTitlesList.keySet()) {
+			exactTitlesOccurrences.add(exactTitlesList.get(_isbn));
+		}
+		
+		while (!exactTitlesOccurrences.isEmpty()) {
+			int occurrences = Collections.frequency(exactTitlesOccurrences, exactTitlesOccurrences.get(0));
+			if (occurrences >= 2)
+				sortedOccurrences.put(exactTitlesOccurrences.get(0), occurrences);
+			exactTitlesOccurrences.removeAll(Collections.singleton(exactTitlesOccurrences.get(0)));
+		}
+		
+		dm.writeOccurrences(sortedOccurrences);*/
 		
     }
 	

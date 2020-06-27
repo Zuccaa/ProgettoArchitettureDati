@@ -17,16 +17,18 @@ public class CreateStandard {
 
 	public static void main(String[] args) throws IOException {
 		
-		String url = "https://www.googleapis.com/books/v1/volumes?q=isbn:";
+		String url1 = "https://openlibrary.org/api/books?bibkeys=ISBN:";
+		String url2 = "&jscmd=data&format=json";
 		String AUTHORSLISTPATH = System.getProperty("user.dir") + "\\authors.txt";
 		
         DatasetMethods dm = new DatasetMethods();
         
-		HashMap<String, ArrayList<String>> exactAuthorsList = dm.readAuthorsList(AUTHORSLISTPATH);
+		HashMap<String, ArrayList<String>> exactAuthorsList = 
+				dm.convertValuesIntoArrayListValues(dm.readList(AUTHORSLISTPATH));
 		HashMap<String, String> exactTitlesList = new HashMap<String, String>();
 		
 		for(String isbn: exactAuthorsList.keySet()) {
-			exactTitlesList.put(isbn, getInfoBooks(url + isbn, isbn));
+			exactTitlesList.put(isbn, getInfoBooks(url1 + isbn + url2, isbn));
 		}
 		
 		writeStandardFile(exactTitlesList);
@@ -68,19 +70,18 @@ public class CreateStandard {
 	public static String getTitle(String infoBook, String isbn) {
 		
 		Gson gson = new Gson();
-
-		JsonObject json = gson.fromJson(infoBook, JsonObject.class);
+		
+		JsonObject json = gson.fromJson(infoBook, JsonObject.class).getAsJsonObject("ISBN:" + isbn);
 		
 		String title = "";
-		JsonObject jsonVolumeInfo;
-		try {		
-		if (json.has("items")) {
-			jsonVolumeInfo = json.getAsJsonArray("items").get(0).getAsJsonObject().getAsJsonObject("volumeInfo");
-	    
-		    title = gson.toJson(jsonVolumeInfo.get("title"));
-		    if (jsonVolumeInfo.has("subtitle"))
-		    	title += ": " + gson.toJson(jsonVolumeInfo.get("subtitle"));	    		
-		}
+		
+		try {
+			if (json.has("title")) {
+				title = gson.toJson(json.get("title"));
+				
+			    if (json.has("subtitle"))
+			    	title += ": " + gson.toJson(json.get("subtitle"));	    		
+			}
 		}catch (Exception e) {
 			title = "ERROR";
 		}
@@ -92,13 +93,13 @@ public class CreateStandard {
 	public static void writeStandardFile(HashMap<String, String> titles) {
 		
 		try {
-			File myObj = new File("titles.txt");
+			File myObj = new File("newTitles.txt");
 			if (myObj.createNewFile()) {
 				System.out.println("File created: " + myObj.getName());
 			} else {
 				System.out.println("File already exists.");
 			}
-			FileWriter myWriter = new FileWriter("titles.txt");
+			FileWriter myWriter = new FileWriter("newTitles.txt");
 			for (String isbn: titles.keySet()) {
 	            myWriter.write(isbn + "\t" + titles.get(isbn) + "\n");
 			}

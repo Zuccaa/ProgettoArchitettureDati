@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.TreeSet;
+
 import org.apache.commons.text.similarity.LevenshteinDistance;
 
 import project.pojo.Book;
@@ -141,6 +143,44 @@ public class Metrics {
 		
 		return sumOfSemanticAccuracies / semanticAccuracies.size();
 		
+	}
+	
+	public float computeSyntacticAccuracy(String title, String referenceTitle) {
+		
+		ArrayList<String> bigramsTitle = computeBigrams(title);
+		System.out.println(bigramsTitle);
+		ArrayList<String> bigramsReferenceTitle = computeBigrams(referenceTitle);
+		System.out.println(bigramsReferenceTitle);
+		
+		return computeBigramsDistance(bigramsTitle, bigramsReferenceTitle);
+	}
+	
+	public ArrayList<String> computeBigrams(String word) {
+		
+		ArrayList<String> bigrams = new ArrayList<String>();
+		
+		while (word.length() > 1) {
+			char[] characters = {word.charAt(0), word.charAt(1)};
+			bigrams.add(String.valueOf(characters));
+			word = word.substring(1);
+		}
+		
+		return bigrams;
+		
+	}
+	
+	public float computeBigramsDistance(ArrayList<String> bigrams1, ArrayList<String> bigrams2) {
+		
+		TreeSet<String> intersection = new TreeSet<String>();
+		TreeSet<String> union = new TreeSet<String>();
+		
+		union.addAll(bigrams1);
+		union.addAll(bigrams2);
+		
+		intersection.addAll(bigrams1);
+		intersection.retainAll(bigrams2);
+		
+		return 1 - ((float) intersection.size() / union.size());
 	}
 	
 }

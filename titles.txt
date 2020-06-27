@@ -1,0 +1,1263 @@
+9781558608597	Policy-Based Network Management: Solutions for the Next Generation 
+9781558608351	Complete Maya Programming: An Extensive Guide to MEL and the C++ API
+9780201616217	Inside Active Directory: a system administrator's guide
+9780321122445	Juniper Networks field guide and reference
+9781558605084	Transactional information systems: theory, algorithms, and the practice of concurrency control and recovery
+9780072835564	O'Leary Series: Microsoft Office Access 2003 Brief 
+9780125571890	Routing, flow, and capacity design in communication and computer networks
+9780126565614	The personal Internet security guidebook: keeping hackers and crackers out of your home
+9781558609204	Joe Celko's Trees and Hierarchies in SQL for Smarties,  
+9780201729146	The Boost Graph Library User Guide and Reference Manual 
+9780201179286	C Traps and Pitfalls
+9780321213341	Managing Windows with VBScript and WMI 
+9781555583002	Microsoft® Exchange Server 2003 Scalability with SP1 and SP2 
+9781558608344	Content Networking: Architecture, Protocols, and Practice  
+9781555582395	Scaling Microsoft Exchange 2000: Create and Optimize High-Performance Exchange Messaging Systems 
+9780321268280	Hitchhiker's guide to SQL Server 2000 reporting services
+9780072374162	Microsoft Outlook 2000
+9780201719567	Hack I.T.: Security Through Penetration Testing
+9780201896831	The art of computer programming: Fundamental Algorithms
+9780131856455	The essential Java class reference for programmers
+9781558607019	Higher-Order Perl: Transforming Programs with Programs
+9780321418494	Computer Networking Complete Package with study companion
+9781558608108	IPv6: theory, protocol, and practice
+9780201809381	Testing object-oriented systems: models, patterns, and tools
+9780131410794	Tutorial for JBuilder
+9780131401600	Developing enterprise Web services: an architect's guide
+9780201558029	Concrete mathematics: a foundation for computer science
+9780201489163	The Student's Guide to Doing Research on the Internet
+9780201741285	Data Mining: A Tutorial Based Primer
+9781558606395	Object-oriented reengineering patterns
+9780131739024	Painting the digital river: how an artist learned to love the computer
+9780134999975	Introduction to the X Window System
+9780072226225	Windows server 2003: clustering & load balancing
+9780201433319	Collaborative Web Development: Strategies and Best Practices for Web Teams
+9780120121687	Advances in Computers, Volume 68: Computational Biology and Bioinformatics 
+9780201549799	The Design and Implementation of the 4.4 BSD Operating System 
+9780201616477	Cryptography decrypted
+9780321320735	Cryptography in the database: the last line of defense
+9780131857575	C++: how to program
+9780026648172	Windows 98: the introductory program.
+9780201895506	Object-oriented programming using C++
+9780321181435	User Interface Design: A Software Engineering Perspective
+9780072223194	MCSE Windows Server 2003 Active Directory Infrastructure Study Guide 
+9780321294319	Rootkits: subverting the Windows kernel
+9780028055879	Excel 2000: a professional approach : level 1, core
+9780072253658	RHCE Red Hat certified engineer Linux study guide 
+9780805316704	A retargetable C compiler: design and implementation
+9780133350685	Fundamentals of algorithmics
+9780201719543	Java Development on PDAs: Building Applications for Pocket PC and Palm Devices
+9780122384523	A mathematical introduction to logic
+9781558607231	The School of Niklaus Wirth: The Art of Simplicity
+9781558608320	Computer networks: a systems approach
+9780072978902	Peter Norton's Intro to Computers 6/e
+9780321119049	Learning SQL: a step by step guide using Access
+9780201563825	C++ strategies and tactics
+9780750661232	A student guide to object-oriented development
+9780201616460	Practical Java: programming language guide
+9780321340795	Computer Systems Architecture: a Networking Approach 
+9780321194985	Oracle 9i Programming: A Primer
+9780201741292	Database Administration: The Complete Guide to Practices and Procedures
+9781558605299	Data preparation for data mining
+9780072263206	CWSP Certified Wireless Security Professional: official study guide 
+9780123694041	Globus® Toolkit 4, : Programming Java Services 
+9780123695130	FastSOA
+9780122661709	Automated information retrieval: theory and methods
+9781558608566	Automated Planning: Theory & Practice 
+9780201517972	The Art of human-computer interface design
+9780321180599	A first look at SQL server 2005 for developers
+9780201896848	The art of computer programming: Seminumerical Algorithms
+9780321399427	Databases, types and the relational model: the third manifesto
+9780201895513	Object-oriented analysis and design with applications
+9780131972599	Synchronization Algorithms and Concurrent Programming
+9780321294326	Java Class Libraries Poster, Java 2 Platform Enterprise Edition, version 1.4, The  
+9780321262516	Storage virtualization: technologies for simplifying data storage and management
+9780079136787	C Programming for Engineering and Computer Science 
+9780072254914	Advanced Programming  Using Visual Basic.Net with Student CD
+9781558609242	Understanding digital libraries
+9780805301434	Theory of computation: formal languages, automata, and complexity
+9780131463059	Core JavaServer faces
+9780120121663	Advances in Computers, Volume 66: Quality Software Development 
+9780201436648	Principles of Computer Architecture
+9780201137446	Functional programming: practice and theory
+9780130481900	The art of compiler design: theory and practice
+9780131018570	Database systems using Oracle: a simplified guide to SQL and PL/SQL
+9781558609006	Java Web Services Architecture 
+9780120421718	Network simulation experiments manual
+9780201754544	Software engineering process with the UP/Edu
+9780201407099	OpenGL programming for Windows 95 and Windows NT
+9780120121656	Advances in Computers, Volume 65  
+9780750697002	Inside OrCAD
+9780131453494	Imperfect XML: Rants, Raves, Tips, and Tricks ... from an Insider
+9780028055893	A Professional Approach Series: Access 2000 Levels 1 and 2 Core and Expert Student Edition 
+9780672324086	Java and JMX: Building Manageable Systems
+9781555583286	Deploying Linux on the desktop
+9780072397024	Business Data Communications
+9780201616408	Extreme programming applied: playing to win
+9780130340740	Computer systems: a programmer's perspective
+9780130853752	C++ Programming Today 
+9780750674744	Enterprise information portals and knowledge management
+9780201719369	Quality Web systems: performance, security, and usability
+9781558608382	Level of detail for 3D graphics
+9780321412997	The C++ standard library extensions: a tutorial and reference
+9780201309836	C++ FAQs
+9780071374736	Verilog Computer-Based Training Course
+9780120121670	Advances in Computers, Volume 67: Web Technology 
+9780321210265	Software engineering: 7th Edition
+9780072371925	The Statistical Imagination 
+9780201604429	Programming Windows Security 
+9780750664714	Real-time systems development
+9780750698580	EDN Design Ideas  
+9780131483989	Java How to Program
+9780750672573	Netspionage: the global threat to information
+9780028055886	A Professional Approach Series: Excel 2000 Level 2 Expert Student Edition 
+9781576760826	Implementing Databases in Oracle 9i
+9781555583279	Physical Security for IT
+9780131194595	PROBLEM SOLVING AND PROGRAMMING CONCEPTS
+9780750697019	Fifth generation management: co-creating through virtual enterprising, dynamic teaming, and knowledge networking
+9780131856448	Computer organization and architecture: designing for performance
+9781555582180	Digital Visual FORTRAN Programmer's Guide 
+9780321169518	The Visual Basic .NET Programming Language 
+9780072500172	Microsoft Office 2000
+9780201183993	A book on C: programming in C
+9780750661416	The past and future of information systems
+9780201733860	Software craftsmanship: the new imperative
+9780750695084	Simplified design of IC amplifiers
+9780201433364	SQL queries for mere mortalss sdfdsfsdf: a hands-on guide to data manipulation in SQL
+9780201719345	Linux System Administration: A User's Guide
+9780201776317	TCP/IP Illustrated Volumes 1-3 Boxed Set 
+9780073660967	Programming Logic for Business
+9780072930962	Programming the Web with Student CD
+9780201707120	Advanced Visual Basic 6: Power Techniques for Everyday Programs 
+9780201734959	Building applications and components with Visual Basic .NET
+9780201711615	The art of objects: object-oriented design and architecture
+9781558608368	JSP: Practical Guide for Programmers 
+9780201728286	A programmer's guide to Java certification: a comprehensive primer
+9780750695091	Simplified design of data converters
+9780120121649	Advances in Computers, Volume 64: New Programming Paradigms 
+9781558606180	Advanced RenderMan: creating CGI for motion pictures
+9780201699692	Agile software development: software through people
+9780201184617	Essentials of ATM networks and services
+9780124660519	TCP/IP sockets in C#: practical guide for programmers
+9780072253603	SCJP Sun certified programmer for Java 5: study guide 
+9780201700732	The C++ programming language
+9780124841406	Computer simulation: a practical perspective
+9780120884827	Complete Maya Programming, Vol. II: An In-Depth Guide to 3D Fundamentals, Geometry, and Modeling
+9780121631031	Handbook of Computer Crime Investigation: Forensic Tools & Technology
+9780201768107	The Java developers almanac 1.4
+9780321197849	An Introduction to Database Systems
+9780130319951	Database systems: the complete book
+9780201485189	Essential C++
+9781558608757	Network processor design: issues and practices, Volume 1
+9781576761052	Modern Compiler Design
+9780321194336	How to Break Software Security
+9780072337389	Microsoft Word 2000: brief version
+9781558604155	Principles of transaction processing
+9780321305961	Introduction to SQL: Mastering the Relational Database Language 
+9780201407211	MFC internals: inside the Microsoft Foundation class architecture
+9780201707199	Computer forensics: incident response essentials
+9781555583408	Microsoft Windows Security Fundamentals: For Windows 2003 SP1 and R2
+9780201593884	The AIX survival guide
+9780201633627	Large-scale C[plus plus] software design
+9780321136206	Real 802.11 security: Wi-Fi protected access and 802.11i
+9780201710120	Comparative programming languages
+9781555582555	Tru64 Unix System Administrator's Guide 
+9780201853926	The art of computer programming: MMIX -- A RISC Computer for the New Millennium
+9780124438958	Database and data communication network systems: techniques and applications
+9781558608740	ARM System Developer's Guide: Designing and Optimizing System Software 
+9780201853940	The art of computer programming: Generating All Combinations and Partitions
+9780120510405	Information tasks: toward a user-centered approach to information systems
+9781555582791	Getting started with open VMS system management: a guide for new users
+9780028048918	Windows 98: Complete Course
+9781558604384	Database--principles, programming, and performance
+9780201721485	C++ primer: 4th Edition
+9780201634976	Forensic discovery
+9780321349798	SQL server 2005 distilled
+9780127887746	Compression Algorithms for Real Programmers 
+9780121631048	Digital evidence and computer crime: forensic science, computers, and the Internet
+9780201734102	The essence of object-oriented programming with Java and UML
+9780672321467	Oracle Performance Tuning
+9780201608427	Tog on interface
+9780201609998	Network Management: A Practical Perspective 
+9780130132499	Getting Started with Microsoft Visual C++ 6 with an Introduction to MFC 
+9780321113559	Testing Extreme Programming
+9780201853933	The art of computer programming: Generating all tuples and permutations
+9781558606791	Object-oriented implementation of numerical methods: an introduction with Java and Smalltalk
+9780750696524	Simplified design of microprocessor-supervisory circuits
+9781558603042	Active database systems: triggers and rules for advanced database processing
+9780201547771	A quarter century of UNIX
+9780201749601	XML topic maps: creating and using topic maps for the Web
+9780072845501	Programming The Web Using XML 
+9781576760185	QuickStart to JavaScript
+9780321303325	Programming the World Wide Web
+9780201657821	Web content management: a collaborative approach
+9780131679955	Discrete mathematics with graph theory
+9781558606555	Optical networks: a practical perspective
+9780321197863	Designing the user interface: strategies for effective human-computer interaction
+9780201309805	Digital certificates: applied Internet security
+9780201619102	IP telephony: packet-based multimedia communications systems
+9781558605466	Telecommunications law in the Internet age
+9781558604377	Productive objects: an applied software project management framework
+9780072263848	Java: a beginner's guide
+9780201734119	Essential.NET: the common language runtime
+9780073528328	Annual Editions: Computers in Society 06/07 
+9780124438750	Knowledge-Based Systems Techniques and Applications 
+9780321160775	Graphics programming with GDI+
+9780072230932	Fundamentals of network security
+9781555582777	Call Center handbook
+9780750676564	The information systems security officer's guide: establishing and managing an information protection program
+9780124730519	Computer-Graphic Facial Reconstruction
+9780750673297	Power supply cookbook
+9781555582531	Clustering Windows Server: A Road Map for Enterprise Solutions
+9780201722314	C++ programming with design patterns revealed
+9780321466754	Why Software Sucks...and What You Can Do About It
+9780201612943	The database relational model: a retrospective review and analysis : a historical account and assessment of E.F. Codd's contribution to the field of database technology
+9780126853520	Database modeling & design: logical design
+9781558608726	Stochastic local search: foundations and applications
+9780201634952	TCP/IP illustrated: TCP for Transactions, HTTP, NNTP and the Unix Domain Protocols
+9780131525238	Visual C#: how to program
+9781558605695	Web site usability: a designer's guide
+9781558607873	Non-Photorealistic Computer Graphics: Modeling, Rendering and Animation 
+9780321113580	C++ coding standards: 101 rules, guidelines, and best practices
+9780072390841	Product Costing: Concepts and Applications
+9781558608719	The sourcebook of parallel computing
+9780121403102	Insights into mobile multimedia communications
+9780201700534	PPP design, implementation, and debugging
+9781555582760	UNIX for OpenVMS Users, Third Edition  
+9781555581671	M programming: a comprehensive guide
+9780201702712	The practice of system and network administration
+9780750696548	Simplified design of voltage-frequency converters
+9781558606371	Illustrating Evolutionary Computation with Mathematica 
+9780201634921	Win32 Programming  2 Volume Set 
+9780750664554	Managing stakeholders in software development projects
+9780321136497	Servlets and JavaServer Pages: The J2EE Technology Web Tier 
+9781558608313	Interaction Design for Complex Problem Solving: Developing Useful and Usable Software 
+9780028048970	Windows 2000: Complete Course
+9780201896855	The Art of Computer Programming: Volume 3: Sorting and Searching
+9780805325478	Artificial intelligence: theory and practice
+9780321243621	Hitchhiker's guide to Visual studio and SQL server: best practice architectures and examples
+9781555581268	OpenVMS performance management
+9780321166074	Code Quality: The Open Source Perspective 
+9781555583446	Securing HP NonStop servers in an open systems world: TCP/IP, OSS & SQL
+9780078227813	Filing and Computer Database Projects Workbook with CD-ROM
+9780750696555	Simplified design of filter circuits
+9780750673273	Information assurance: managing organizational IT security risks
+9780321313799	Software engineering: 8th Edition
+9781558601918	Paradigms of artificial intelligence programming: case studies in Common  Lisp
+9781555583200	Open source software: implementation and management
+9781558606364	Skew-tolerant circuit design
+9781558607453	System Architecture with XML 
+9780137689958	Data structures and program design in C++
+9780321336439	Protect Your Windows Network: From Perimeter to Data 
+9780201725889	Java Look and Feel Design Guidelines 
+9780321440303	The old new thing: practical development throughout the evolution of Windows
+9781555582593	TruCluster Server Handbook 
+9781558604186	Developing user interfaces
+9780131976290	Objects First With Java: A Practical Introduction Using BlueJ 
+9780131853546	Linux
+9780201715842	Practical Oracle8i: building efficient databases
+9780072227765	Microsoft SQL Server 2005 new features
+9781558608306	Maintaining & evolving successful commercial Web sites: managing change, content, customer relationships, and site measurement
+9780201714999	The Wiki Way: Quick Collaboration on the Web
+9781558607699	Disappearing cryptography: information hiding : steganography & watermarking
+9780070379909	Schaum's outline of theory and problems of essential computer mathematics
+9780201548877	OSP: An Environment for Operating System Projects
+9780321193674	Professional software development: shorter schedules, higher quality products, more successful projects, enhanced careers
+9780071357814	McGraw-Hill Education; 2 edition
+9780125062305	Knowledge acquisition and machine learning: theory, methods and applications / Katharina Morik ... [et al.]
+9781558601901	Transaction processing: concepts and techniques
+9780028005942	Digital computer electronics
+9780120958115	Cost-justifying usability: an update for an Internet age
+9780131427815	Practical debugging in Java
+9780072232066	Microsoft Office Access 2003: A Professional Approach, Comprehensive Student Edition w/ CD-ROM
+9781558606593	Advanced Graphics Programming Using OpenGL 
+9780121631055	Investigating child exploitation and pornography: the Internet, the law and forensic science
+9780120121489	Distributed Information Resources, Volume 48 
+9780201709155	Modeling XML Applications with UML: Practical e-Business Applications
+9780321349965	Extrusion detection: security monitoring for internal intrusions
+9781558608535	Real-Time Shader Programming 
+9780321349958	Securing storage: a practical guide to SAN and NAS security
+9780131436978	Java application development on Linux
+9780321369574	Fundamentals of database systems
+9780201710144	Writing CGI Applications with Perl
+9780321166098	The rational unified process made easy: a practitioner's guide to the RUP
+9780139194245	C++ for Java programmers
+9780131491793	Essentials of computer architecture
+9780072456103	Windows 2000 Computer Based Tutorial CD-ROM
+9780201770612	Open Source Web Development with LAMP: Using Linux, Apache, MySQL, PERL, & PHP
+9780321304865	The art of software security testing: identifying software security flaws
+9781558608528	Interconnection networks: an engineering approach
+9780201616262	CMM in practice: processes for executing software projects at Infosys
+9781576761069	A+ operating systems for technicians 2004
+9781558606586	Designing Web sites that work: usability for the Web
+9780321112293	Software Systems Architecture: Working With Stakeholders Using Viewpoints and Perspectives
+9781558608764	SQL: clearly explained
+9780201753066	Component development for the Java platform
+9780201709148	Essential XML: beyond markup
+9780132212113	Modern database management: 8th Edition
+9780201710373	Java network programming and distributed computing
+9781555581237	The UNIX philosophy
+9780123725011	Practical model-based testing: a tools approach
+9781555582562	Managing Systems Migrations and Upgrades: Demystifying the Technology Puzzle
+9780201612530	Computer Systems Organization and Architecture
+9780750670630	Inside OrCAD capture for Windows
+9780072224986	MCSA Windows 2000 Boxed Set 
+9780201756081	Algorithms in C, Parts 1-5 : Fundamentals, Data Structures, Sorting, Searching, and Graph Algorithms 
+9781558606975	Managing Reference Data in Enterprise Databases: Binding Corporate Data to the Wider World 
+9781558605886	Spatial databases: with applications to GIS
+9780321321374	Interactive computer graphics: a top-down approach using OpenGL
+9780321349941	Scts Symantec Certified Technical Specialist Small Business Security Study Guide
+9781558604551	Jim Blinn's corner: dirty pixels
+9780750672818	Radio frequency transistors: principles and practical applications
+9780073195995	Design for Electrical and Computer Engineers: Theory Concepts and Practice
+9780071409278	Complete Digital Design: A Comprehensive Guide to Digital Electronics and Computer System Architecture 
+9780201634563	The Java faq
+9780123704528	Java Data Mining: Strategy, Standard, and Practice: A Practical Guide for architecture, design, and implementation 
+9781576760598	Computing with Java: programs, objects, graphics: 2nd Edition
+9780201543308	The design and evolution of C++
+9780073304274	Programming VB.Net 2005 + CD + 180 day trial software
+9780130304186	Manager's Guide to Database Technology, A: Building and Purchasing Better Applications
+9781555582951	Integrating Wireless Technology in the Enterprise: PDAs, Blackberries, and Mobile Devices
+9780122941511	Supply chain design and management: strategic and tactical perspectives
+9780072843996	I-Series: MS  Windows XP: Complete
+9780201750768	Practical Web Technologies
+9781558603691	Digital compression for multimedia: principles and standards
+9780201752946	Oracle SQL and PL/SQL Handbook: A Guide for Data Administrators, Developers,  and Business Analysts
+9780131424159	Java: An Eventful Approach
+9780750670623	The Art and Science of Analog Circuit Design
+9780321267511	Operating systems: a systematic view
+9781558604544	Readings in information retrieval
+9780321322210	Languages and machines: an introduction to the theory of computer science
+9781558606722	Information Modeling and Relational Databases: From Conceptual Analysis to Logical Design 
+9781558608900	Constraint Processing 
+9780072478808	Annual Editions Computers in Education 02/03 
+9780201722291	Performance solutions: a practical guide to creating responsive, scalable software
+9781576760352	Objects to components with the Java platform
+9780321321367	Introduction to Data Mining, 
+9780201563177	Advanced programming in the UNIX environment
+9780340700143	Software Development for Engineers, C/C++, Pascal, Assembly, Visual Basic, HTML, Java Script, Java DOS, Windows NT, UNIX
+9780444520876	Dictionary of distances
+9780072259605	Oracle JDeveloper 10g for forms & PL/SQL developers
+9780201489804	Online Law: The SPA's Legal Guide to Doing Business on the Internet
+9780201760323	Telecommunications essentials: the complete global source for communications fundamentals, data networking and the Internet, and next-generation networks
+9781558604537	Joe Celko's SQL puzzles & answers
+9780201788914	MDA distilled: principles of model-driven architecture
+9780201737332	Object-oriented software development using Java: principles, patterns, and frameworks
+9780130351180	Computer graphics using Java 2D and 3D
+9780130286529	Understanding relational database query languages
+9780201773637	Learning SQL: a step-by-step guide using Oracle
+9780070259409	TSP Handbook to Accompany Econometric Models and Economic Forecasts by Pindyck and Rubenfeld
+9780127347608	Mathematics Mechanization and Applications
+9780321427618	Telecommunications essentials: the complete global source
+9780321263186	Artificial intelligence: structures and strategies for complex problem solving: 5th Edition
+9781558603202	Advanced compiler design and implementation
+9780072466850	An Introduction to the Finite Element Method 
+9780321268631	Developing Scalable Series 40 Applications: A Guide for Java Developers 
+9780122861604	An Introduction to ray tracing
+9780201619188	Distributed systems: concepts and design
+9781558605619	The Usability Engineering Lifecycle: A Practitioner's Handbook for User Interface Design 
+9780072261943	Expert Oracle PL/SQL 
+9780201924800	Internet cryptography
+9780321154934	The common language infrastructure annotated standard
+9780201737349	Light on the Web: essentials to make the 'Net work for you
+9781576761427	Art Theory for Web Design
+9780201703535	Accelerated C++: Practical Programming by Example
+9780201533774	Artificial intelligence
+9780123264282	Object-Oriented Database Design Clearly Explained
+9780321118875	The Java Class Libraries Poster: 7th Edition
+9780340613986	Designing Computer Programs
+9780201379266	The C++ standard library: a tutorial and handbook
+9780201633467	TCP/IP illustrated: The Protocols
+9780321228482	Inside Active Directory: A System Administrator's Guide, Second Edition 
+9780321256638	SWT: The Standard Widget Toolkit, Volume 1 
+9780321197696	Smart client deployment with ClickOnce: deploying Windows Forms applications with ClickOnce
+9780201709063	Inside servlets: server-side programming for the Java platform
+9781558603431	Parallel computer architecture: a hardware/software approach
+9780201400090	An Introduction to the Analysis of Algorithms
+9780131986190	Data structures outside in with Java
+9780122090486	High-speed analog-to-digital conversion
+9780201786958	Exploiting Software: How to Break Code 
+9780321245755	The J2EE Tutorial, Second Edition
+9780201711141	White-Hat Security Arsenal: Tackling the Threats
+9780201440997	Computer security: art and science
+9780321334206	The Java tutorial: a short course on the basics: 4th Edition
+9780321334886	Visual studio tools for office: using C# with Excel, Word, Outlook, and InfoPath
+9780072226966	Incident response and computer forensics
+9780131176867	Discrete mathematics: 6th Edition
+9780072941494	The Universal Computer: Introducing Computer Science with Multimedia
+9780201512847	Designing and coding reusable C++
+9780321219763	Aspect oriented software development
+9780321228475	Eclipse: building commerical-quality plug-ins
+9780321197887	Building solutions with the Microsoft .NET compact framework: architecture and best practices for mobile development
+9780201523744	Writing UNIX device drivers
+9781558606777	Advanced SQL: 1999: understanding object-relational and other advanced features
+9780130369970	Data structures using Cand C[plus plus]
+9780321165817	XQuery: The XML Query Language
+9781558604117	Contextual design: defining customer-centered systems
+9780201657647	Developing e-commerce sites: an integrated approach
+9780120884360	User interface design and evaluation: Debbie Stone ... [et al.]
+9780130186614	Essential Discrete Math for Computer Science
+9780201657883	Programming pearls
+9781558606531	Business Modeling and Data Mining 
+9780321154996	XForms: XML powered Web forms
+9780672323430	Database access with Visual Basic.NET
+9780124343702	Self-checking and fault-tolerant digital design
+9780124287518	Communication networking: an analytical approach
+9781555582999	Leveraging WMI Scripting 
+9781555582517	Data Quality: The Field Guide
+9780201703597	XML Family of Specifications: A Practical Guide 
+9780130914262	C++:An Introduction to Computing
+9780321334879	Effective C++: 55 specific ways to improve your programs and designs
+9780072231243	Mike Meyers' A+ Guide to Operating Systems
+9780072232332	MCSE/MCSA Implementing, Managing, and Maintaining a Windows® Server 2003 Network Infrastructure Study Guide  with Windows® Server 2003 180-Day Trial Software
+9780072226959	Introduction to UNIX and Linux
+9780201771688	XML: Language Mechanics and Applications
+9781558604582	Wide Area Network Design: Concepts & Tools for Optimization 
+9780127427515	Java Cryptography Extensions: Practical Guide for Programmers 
+9780321118899	Enterprise Java security: building secure J2EE applications
+9781558602168	Management of heterogeneous and autonomous database systems
+9781558604346	Principles of database query processing for advanced applications
+9781558608702	Paper prototyping: the fast and easy way to design and refine user interfaces
+9780201379242	Kerberos: A Network Authentication System
+9780750658959	e.biz: The Anatomy of Electronic Business
+9780201775808	J2EE Connector Architecture and Enterprise Application Integration
+9780750677462	Bulletproof wireless security: GSM, UMTS, 802.11 and ad hoc security
+9781555582746	Tru64 UNIX Troubleshooting: Diagnosing and Correcting System Problems 
+9781558607606	Applying Knowledge Management: Techniques for Building Corporate Memories 
+9781558606517	Readings in multimedia computing and networking
+9780071362078	Schaum's outline of computer architecture
+9780750676137	Investigative data mining for security and criminal detection
+9780121604523	Enterprise directory and security implementation guide: designing and implementing directories in your organization
+9780131735798	Java for students
+9780201703108	Win32 System Programming: A Windows 2000 Application Developer's Guide  
+9781555582982	Internet security: a jumpstart for systems administrators and IT managers
+9780201310153	Effective C++ Cd: 85 Specific Ways to Improve Your Programs and Designs 
+9780321356413	The Symantec Guide to Home Internet Security 
+9781558601062	Making them move: mechanics, control, and animation of articulated figures
+9780072467505	Introduction to Computing Systems: From bits & gates to C & beyond
+9780201740950	Essential XML quick reference: a programmer's reference to XML, XPath, XSLT, XML Schema, SOAP, and more
+9780321224095	Privacy: what developers and IT professionals should know
+9780321321350	Web usability: a user-centered design approach
+9780201483260	Btrieve Complete: A Guide for Developers and System Administrators
+9780201432947	The Java virtual machine specification
+9780201634501	Windows telephony programming: a developer's guide to TAPI
+9780201379235	STL tutorial and reference guide: C++ programmng with the standard template library
+9780072958706	SimNet XPert Release 4 Combined Standard Edition
+9781558603486	Distributed algorithms
+9780071345545	Schaum's outline of introduction to computer science
+9780201760316	An introduction to object-oriented programming
+9781555582739	Linux and the Unix philosophy
+9780321197672	Defend I.T.: Security by Example
+9780201563184	UNIX System V network programming
+9780201784725	Java Message Service API Tutorial and Reference: Messaging for the J2EE Platform
+9780072552584	IT Today with Interactive Companion 3.0
+9780201343045	Java gently for engineers and scientists
+9781555582975	Firewalls: jumpstart for network and systems administrators
+9780072499544	O'Leary Series: MS Office 2000 Enhanced Edition
+9780072830613	I-Series: Microsoft Office Access 2003 Introductory 
+9780321356406	Moving to Linux: Kiss the Blue Screen of Death Goodbye! 
+9780321335722	Secure coding in C and C++
+9780072944792	SimNet XPert Combined PageOut Edition Release 3.1
+9780321227355	Computer networking: a top-down approach featuring the Internet
+9780123490407	Teaching and Learning Formal Methods 
+9781558607835	Blondie24: playing at the edge of AI
+9781558608924	Engineering global E-commerce sites: a guide to data capture, content, and transactions
+9780130166388	Java 2 programmer's interactive workbook
+9780123693792	Joe Celko's SQL for Smarties: Advanced SQL Programming Third Edition 
+9781558604568	SQL:1999: understanding relational language components
+9780072958713	SimNet XPert Release 4 Combined PageOut Edition
+9781558602144	Database transaction models for advanced applications
+9780130858504	Data Structures with C++ Using STL 
+9781558604322	Joe Celko's data & databases: concepts in practice
+9780201657609	Implementing ADSL
+9780321397966	Inside SQL Server 2005 Tools 
+9781558607828	TCP/IP clearly explained
+9781558606739	Creative evolutionary systems
+9780201325645	A practical guide to testing object-oriented software
+9781558608917	Data quality: the accuracy dimension
+9780672323423	Micro Java Game Development
+9780201729931	Shaping Web usability: interaction design in context
+9780321486813	Compilers: Principles, Techniques, and Tools 
+9780201612738	Understanding object-oriented programming with Java
+9780321418708	Software Security Library Boxed Set, First Edition
+9780201799408	Code Reading: The Open Source Perspective
+9780131013766	Parallel and distributed programming using C++
+9781558609167	Business intelligence: the savvy manager's guide, getting onboard with emerging IT
+9780201357424	Network Management: Principles and Practice
+9780321268457	Database Systems: An Application Oriented Approach, Compete Version 
+9781558602533	Parallel Computing Works!
+9780321436757	Web development & design foundations with XHTML
+9780201379457	COM and CORBA Side by Side: Architectures, Strategies, and Implementations
+9780124499683	Breakthrough technology project management
+9780120121618	Advances in Computers, Volume 61: Architectural Issues 
+9780750679299	High-technology crime investigator's handbook: establishing and managing a high-technology crime prevention program
+9780321180605	XQuery from the Experts: A Guide to the W3C XML Query Language
+9780321397973	Administrator's Guide to SQL Server 2005 
+9780123695314	Pattern Recognition, Third Edition
+9780201539219	Building neural networks
+9780321330239	Absolute C++
+9780072565089	BlueJ The Interactive Environment CD
+9780201738261	A Requirements Pattern: Succeeding in the Internet Economy 
+9780123706096	Web Dragons: Inside the Myths of Search Engine Technology 
+9780130313980	Multimedia Communication Systems: Techniques, Standards, and Networks
+9780130467096	A balanced introduction to computer science
+9780321335708	Art of Computer Programming, Volume 4, Fascicle 4,The: Generating All Trees--History of Combinatorial Generation 
+9780750690898	Designus Maxumus unleashed!: Banned in Alabama!
+9781558602762	Principles of digital image synthesis
+9780120121632	Advances in computers, Volume 63
+9780201325812	Designing applications with MSMQ: message queuing for developers
+9780123694461	Foundations of multidimensional and metric data structures
+9780321341389	.NET Internationalization: The Developer's Guide to Building Global Windows and Web Applications 
+9780201615630	Mr. Bunny's big cup o' Java
+9780130484406	Computer systems design and architecture
+9780321180612	Essential Check Point FireWall-1 NG: An Installation, Configuration, and Troubleshooting Guide
+9780028049212	Word 2000 Level 1 Core: A Tutorial to Accompany Peter Norton Introduction to Computers Student Edition 
+9780072255881	Photoshop and Dreamweaver integration: creating high-impact Web pages
+9780201704471	Human-computer interaction in the new millennium
+9781576760741	Computing with Java: programs, objects, graphics
+9780120121625	Advances in Computers, Volume 62: Advances in Software Engineering 
+9780201648560	Software Engineering: A Programming Approach 
+9780321423436	Moving to free software
+9781558609150	The craft of information visualization: readings and reflections
+9780201699470	Crystal clear: a human-powered methodology for small teams
+9780201433173	The Process of Network Security: Designing and Managing a Safe Network
+9780321490292	The Java EE 5 tutorial
+9780131238039	The X Window system: programming and applications with Xt
+9780201752793	A guide to forensic testimony: the art and practice of presenting testimony as an expert technical witness
+9780132141710	Discrete mathematical models, with applications to social, biological, and environmental problems
+9780321312839	Principles of concurrent and distributed programming
+9781558609143	Wireless sensor networks: an information processing approach
+9780131872899	Learning to program with Alice
+9780321321312	The Software Development Edge: Essays on Managing Successful Projects
+9780201379433	Object design: roles, responsibilities, and collaborations
+9780072231465	Mike Meyers' A+ Guide to Managing and Troubleshooting PCs
+9780028055916	A Professional Approach Series: Word 2000 Level 2 Expert Student Edition 
+9780321321305	Agility and Discipline Made Easy: Practices from OpenUP and RUP 
+9780132237383	Introduction to Java Programming: Fundamentals First  
+9780321334619	Eclipse Rich Client Platform: Designing, Coding, and Packaging Java Applications 
+9780080439976	Management of technology: the key to prosperity in the third millennium : selected papers from the ninth International Conference on Management of Technology
+9780201738278	Broadband Internet Connections: A User's Guide to DSL and Cable
+9781558608290	Bioinformatics: Managing Scientific Data 
+9780131869004	Visual Basic 2005: how to program
+9780321227317	Unix: the textbook
+9781555583187	IPv6 Network Programming
+9781558609136	The Internet and its protocols: a comparative approach
+9780321330253	Concepts of programming languages
+9780131492028	Java: an introduction to problem solving & programming
+9780120885602	Smart Phone and Next Generation Mobile Computing 
+9780201100884	Compilers: principles, techniques, and tools
+9780444506733	Parallel computational fluid dynamics: trends and applications : proceedings of the Parallel CFD 2000 Conference, Trondheim, Norway 
+9781558608283	Modern cable television technology: video, voice, and data communications
+9780201615890	Effective TCP/IP programming: 44 tips to improve your network programming
+9780321116291	Designing Interactive Systems: People, Activities, Contexts, Technologies
+9780201398557	3D computer graphics
+9780028055909	A Professional Approach Series: Word 2000 Short Course Student Edition 
+9780120959709	Modern information systems for managers
+9781576760963	Advanced Internet Applications with Java 
+9780072232325	MCSE/MCSA Windows® Server 2003 Environment Study Guide  with Microsoft Windows Server 2003 180-Day Trial
+9780072231236	Mike Meyers' A+ Guide to Operating Systems Lab Manual
+9781558602977	The MIPS programmer's handbook
+9780120121601	Advances in Computers, Volume 60: Information Security 
+9780072256758	Hacking exposed computer forensics: secrets & solutions
+9780201622171	Windows internals: the implementation of the Windows operating environment
+9780321330246	Absolute Java
+9780072976755	Fundamentals of Thermal-Fluid Sciences
+9780120884766	Network Processor Design, Volume 3: Issues and Practices, Volume 3 
+9780072255607	Mike Meyers' Network+ Guide To Managing and Troubleshooting Networks 
+9780123695123	Joe Celko's Analytics and OLAP in SQL 
+9780126567557	JSTL: Practical Guide for JSP Programmers 
+9780201823769	Unix for the impatient
+9780201632187	Dos and Windows Protected Mode: Programming with DOS Extenders in C
+9780131486607	Small Java How to Program
+9780131410800	Tutorial for Sun ONE Studio 4.0 Update, Community Edition
+9780121339609	The Art and Science of Digital Compositing 
+9780750658553	Mathematics for electrical engineering and computing
+9780201734096	Architecture-centric software project management: a practical guide
+9780201795257	C++ network programming: Systematic Reuse with ACE and Frameworks
+9780201721843	Patterns for effective use cases
+9780321305497	PS P: a self-improvement process for software engineers
+9780130174802	Spatial databases: a tour
+9781558609198	Database Modeling with Microsoft® Visio for Enterprise Architects 
+9780127150512	Network recovery: protection and restoration of optical, SONET-SDH, IP, and MPLS
+9780120884773	Network algorithmics: an interdisciplinary approach to designing fast networked devices
+9780201309799	Multicast networking and applications
+9780321305015	Windows Server 2003 security: a technical reference
+9780201889543	The C+ + Programming Language
+9780201702095	Virtual Private Networks: Technologies and Solutions 
+9781555582906	Socially responsible IT management
+9780130649348	Complete Java 2 Training Course, Student Edition
+9780028055923	Word 2000
+9781558605824	GUI bloopers: don'ts and do's for software developers and Web designers
+9780321204660	Artificial intelligence: a guide to intelligent systems
+9780072971293	SimNet for Office 2003 Standard Edition
+9780201530674	Computers under attack: intruders, worms, and viruses
+9780131821064	Building your own compiler with C++
+9780201309560	Generic programming and the STL: using and extending the C++ Standard Template Library
+9780201615623	Exceptional C++: 47 engineering puzzles, programming problems, and solutions
+9780070087149	Schaum's outline of theory and problems of finite element analysis
+9780072976779	Applied numerical methods with MATLAB for engineers and scientists: Hb 2005
+9780201615869	The Practice of Programming 
+9780201752779	IP SANS: A Guide to iSCSI, iFCP, and FCIP Protocols for Storage Area Networks
+9780201423396	Ruminations on C[plus plus]: a decade of programming insight and experience
+9780321426727	Eclipse: building commercial-quality plug-ins
+9780321428905	Compilers 1/e plus Selected Online Chapters from Compilers 2/e Update Package
+9780201719758	Linux kernel internal: algorithms and structures of version 2.4
+9780124558403	Enterprise Knowledge Management: The Data Quality Approach 
+9780201563337	Gigabit networking
+9780672322167	Understanding Data Communications 
+9780073273273	Computer Accounting Essentials w/Great Plains 8.0 CD
+9780321410139	Introduction to software engineering design: processes, principles, and patterns with UML2
+9781558609181	How to build a business rules engine: extending application functionality through metadata engineering
+9780131498624	Spring Into PHP 5 
+9780123735850	UML 2 Certification Guide: Fundamental & Intermediate Exams 
+9780073288512	Computer Accounting with Peachtree Complete 2006, Release 13.0 with Student CD-ROM
+9780201773446	Operating Systems
+9781558608085	HCI models, theories, and frameworks: toward a multidisciplinary science
+9781558609174	Semantics in business systems: the savvy manager's guide : the discipline underlying web services, business rules, and the Semantic Web
+9780750665070	Competitive engineering: a handbook for systems engineering, requirements engineering, and software engineering using Planguage
+9780201716238	The Java Class Libraries Poster: Enterprise Edition 
+9781558601697	Building an object-oriented database system: the story of O₂
+9781558604964	Linkers and Loaders 
+9781558603875	Jim Blinn's corner: a trip down the graphics pipeline
+9780130153906	Computer graphics with OpenGL
+9780201726275	Object-Oriented Programming featuring Graphical Applications in Java
+9780321213358	Refactoring to patterns
+9780201433197	Network analysis and troubleshooting
+9780201379617	Dynamic HTML: the HTML developer's guide
+9780201773453	LINUX and UNIX programming tools: a primer for software developers
+9780072861983	Computer Architecture and Organization
+9780073273266	Computer Accounting with Microsoft Great Plains 8.0 w/ Software CD
+9780201770186	Programming in the . NET environment
+9780321268174	File system forensic analysis
+9781555583132	Managing software deliverables: a software development management methodology
+9780201548563	An introduction to parallel algorithms
+9780201758818	Nitty Gritty Windows Programming with C++
+9780120121588	Advances in Computers, Volume 58: Highly Dependable Software 
+9780126542615	Organizing Information: Principles of Data Base and Retrieval Systems 
+9781558607149	Digital watermarking
+9781558609327	Knowledge representation and reasoning
+9780321256195	Windows system programming
+9780124499836	Project management for the 21st century
+9780201710885	Web protocols and practice: HTTP/1.1, networking protocols, caching, and traffic measurement
+9780201734850	Peer reviews in software: a practical guide
+9780321398666	Advanced VB.NET Alternate with VB.Net CD's 
+9780321133458	Troubleshooting Microsoft Technologies: The Ultimate Administrator's Repair Manual 
+9780072985559	Computer Education for Teachers: Integrating Technology into Classroom Teaching with Computer Lab CD-ROM and PowerWeb
+9780121942755	Fuzzy modeling and genetic algorithms for data mining and exploration
+9780321444424	The art of software security assessment: identifying and preventing software vulnerabilities
+9781555583125	Implementing Homeland Security for Enterprise IT
+9780750677950	Risk management for computer security: Protecting your network and information assets
+9781555582036	Th e OpenVMS user's guide
+9780072551877	Simnet XPert Combined PageOut Edition Release 3.0
+9780201721522	Building secure software: how to avoid security problems the right way
+9781555582272	Tru64 Unix file system administration handbook
+9781558606043	Computer organization and design: the hardware/software interface
+9781558607132	Data Warehousing And Business Intelligence For e-Commerce 
+9781558608221	From COBOL to OOP
+9780201548556	Advanced C₊₊ programming styles and idioms
+9780672323911	Understanding PKI: concepts, standards, and deployment considerations
+9780120121595	Advances in computers, Volume 59
+9781558607378	Curves and surfaces for CAGD: a practical guide
+9781558608467	Multicast Sockets: Practical Guide for Programmers 
+9781555583118	Resilient storage networking: designing flexible scalable data infrastructures
+9780126290400	KADS: A Principled Approach to Knowledge-Based System Development 
+9781555582029	Alpha architecture reference manual
+9780750696005	Computer security
+9780201745764	Pair programming illuminated
+9781558607361	JDBC: Practical Guide for Java Programmers 
+9780201824674	Multi-paradigm design for C++
+9780321159830	Distributed Virtual Machines: Inside the Rotor CLI
+9780120121564	Advances in Computers, Volume 56 
+9780201703092	The Practical SQL Handbook: Using SQL Variants 
+9780135012062	Logic and Discrete Mathematics: A Computer Science Perspective
+9781558607125	Usability engineering: scenario-based development of human-computer interaction
+9781558608214	Coordinating user interfaces for consistency
+9780201742251	Project-based software engineering: an object-oriented approach
+9780750663519	Strategies for growth in SMEs: the role of information and information systems
+9780070004849	Structure & Interpretation of Computer Programs.
+9780131411555	UNIX network programming
+9780750661577	Systems and Project Management May 2003 Exam Questions and Answers 
+9780335216369	Children's Literature and Computer Based Teaching
+9780201398151	Software engineering: 6th Edition
+9780120121557	Advances in Computers, Volume 55 
+9781555583347	Implementing database security and auditing
+9780750670067	Rechargeable batteries applications handbook
+9780028055992	A Professional Approach Series: PowerPoint 2000 Levels 1 and 2 Core & Expert Student Edition 
+9780444888143	Extrapolation methods: theory and practice
+9781558607354	Foundations of analog & digital electronic circuits
+9780072354676	Introduction to engineering and the environment
+9781555582494	Compaq Visual Fortran: a guide to creating Windows applications
+9780201741179	Software Configuration Management Patterns: Effective Teamwork, Practical Integration
+9780201309775	Generative Programming: Methods, Tools, and Applications
+9780201308204	Internet besieged: countering cyberspace scofflaws
+9781558607118	Querying XML: XQuery, XPath, and SQL/XML in context
+9781558608207	Relational database design clearly explained
+9780072226331	Security+ Certification All-in-One Exam Guide
+9780023606922	Algorithms
+9780028043760	Introduction to Computers Using Window 98
+9780120121571	Advances in Computers, Volume 57: Information Repositories 
+9780124499805	Dynamic E-Business Implementation Management: How to Effectively Manage E-Business Implementation 
+9780201705027	JNDI API Tutorial and Reference: Building Directory-Enabled Java Applications
+9780072834345	Advantage Series: Microsoft Office Access 2003, Complete Edition 
+9780130457912	Discrete mathematics with combinatorics.
+9780126208627	Introduction to data compression
+9780072230666	Oracle Database 10g PL/SQL Programming
+9780750670296	I-way robbery: crime on the Internet
+9780130257864	Programming Language Processors in Java: Compilers and Interpreters
+9780750673549	Pocket PC Clear Simple Clear Simple Digital
+9780201725933	On to Java
+9781558609365	The Mobile Connection: The Cell Phone's Impact on Society 
+9780131420441	MIPS assembly language programming
+9781555583170	Wireless operational security
+9780201309942	Object technology: a manager's guide
+9780072231915	CorelDRAW 12: the official guide
+9780132438629	Simply Visual Basic 2005 
+9780120121540	Advances in Computers, Volume 54 
+9780132320498	Introduction to C++ Programming, Brief
+9780750661317	Student's essential guide to .NET
+9780072939200	O'Leary Series: Microsoft Access 2003 Brief with Student Data File CD 
+9780124438651	Image Processing and Pattern Recognition 
+9780201514599	The annotated C++ reference manual
+9780123540515	Rapid Contextual Design: A How-to Guide to Key Techniques for User-Centered Design 
+9780321294012	DataBase Systems: A Practical Approach to Design, Implementation and Management  
+9780750698214	Simplified Design of Switching Power Supplies
+9781878707963	Information security best practices: 205 basic rules
+9780122937859	Visual effects in a digital world
+9781558608023	Tcl/Tk: A Developer's Guide 
+9780321112552	Real Web project management: case studies and best practices from the trenches
+9780072834321	Advantage Series: Microsoft Office Access 2003 Intro 
+9780072560312	Programming the Web using XHTML and JavaScript
+9780072472509	The O'Leary Series: Windows XP- Brief
+9781558609358	Understanding your users: a practical guide to user requirements : methods, tools, and techniques
+9781558608269	TCP/IP sockets in C: practical guide for programmers
+9780201730463	Developing distributed and e-commerce applications
+9781558602717	Query processing for advanced database systems
+9780130486233	Java Programming Today
+9780321126986	Inside Windows storage: server storage technologies for Windows Server 2003, Windows 2000, and beyond
+9781558606081	Internet QoS: architecture and mechanizms for quality of service
+9780201398182	Multimedia communications: applications, networks, protocols, and standards
+9780124438644	Industrial & Manufacturing Systems 
+9781555583156	Network programming in .NET: C# & Visual Basic .NET
+9781555583392	Business continuity and disaster recovery for infosec managers
+9780132222204	Java: how to program
+9781558609341	Bluetooth application programming with the Java APIs
+9780201309720	Programming for the Java virtual machine
+9780201848403	Computer Graphics: Principles and Practice in C 
+9780321411754	Visual Studio Tools for Office: Using Visual Basic 2005 with Excel, Word, Outlook, and InfoPath 
+9781558609105	Virtual machines: versatile platforms for systems and processes
+9780120121519	Cumulative Subject and Author Indexes for Volumes 1-49, Part II, Volume 51 
+9780321159625	ATL internals: working with ATL 8
+9780321262202	The Art of ClearCase Deployment: The Secrets to Successful Implementation 
+9780321136503	Designing Storage Area Networks: A Practical Reference for Implementing Fibre Channel and IP SANs 
+9780124438675	Control and dynamic systems
+9781555583149	HP Nonstop server security: a practical handbook
+9780072230611	Hacking exposed: Windows server 2003
+9780321168795	OSPF and IS-IS: Choosing an IGP for Large-Scale Networks
+9781555583385	IM   Instant Messaging Security
+9781558609334	The grid: blueprint for a new computing infrastructure
+9780131496705	Computer graphics: using OpenGL
+9781558608481	Texturing and modeling: a procedural approach
+9780201787337	C++ By Dissection
+9780072300413	Computer Concepts in Econonomics
+9780750649445	Information Warfare: corporate attack and defence in a digital world 
+9780130142511	Java: an introduction to computing
+9780132221580	Introduction to JAVA programming: comprehensive version
+9780072834307	Advantage Series: Microsoft Office Access 2003, Brief Edition 
+9780201734843	C++ templates: the complete guide
+9780120121526	Advances in computers, Volume 52
+9780131429017	The art of UNIX programming
+9780124438668	Fuzzy Logic and Expert Systems Applications 
+9780131400856	Data and Text Mining: A Business Applications Approach
+9780132681520	Introduction to computing using C++ and object technology
+9780073131122	Computer Accounting Essentials Using QuickBooks
+9780073516677	Computing essentials 2007
+9780321194459	.NET Framework Standard Library Annotated Reference, Volume 2: Networking Library, Reflection Library, and XML Library 
+9781558606692	An Introduction to Nurbs.: With Historical Perspective.
+9781558604032	Predictive data mining: a practical guide
+9781558608870	Network analysis, architecture and design
+9780072227857	Windows security portable reference
+9780201419795	Unix for the Impatient, CD-ROM Version 
+9780321304513	The Executive Guide to Information Security: Threats, Challenges, and Solutions 
+9780201634600	Design by contract, by example
+9781558606456	Multicast communication: protocols and applications
+9781558607545	Mining the Web: Discovering Knowledge from Hypertext Data
+9780321193124	Cascading Style Sheets: Designing for the Web 
+9780321290939	Designing Effective Database Systems 
+9780201713749	C by dissection: the essentials of C programming
+9780072223255	MCSE planning a Windows server 2003 network infrastructure study guide: Exam 70-293
+9780072255096	Principles of Computer Security: Security and Beyond
+9780201498387	Distributed operating systems & algorithms
+9780201845198	C Programming FAQs: Frequently Asked Questions
+9781555582678	Linux & OpenVMS interoperability: tricks for old dogs, new dogs, and hot dogs with open systems
+9781555582432	OpenVMS System Management Guide 
+9780072922363	Fundamentals of Finite Element Analysis
+9780078204616	A Professional Approach Series: Office 2000 Integrated Applications Student Edition with CD-ROM
+9780201544350	Object-oriented software engineering: a use case driven approach
+9780131414631	Quality of Service for Intenet Multimedia
+9780321462251	Introduction to Automata Theory,  Languages, and Computation 
+9780072833430	Microsoft Windows XP, brief
+9780321194442	Microsoft Content management server 2002: a complete guide
+9780073212227	Vector Mechanics for Engineers: Statics and Dynamics
+9781558607538	Database tuning: principles, experiments, and troubleshooting techniques
+9781558608627	The Struts framework: practical guide for Java programmers
+9780201616163	Python programming with the Java class libraries: a tutorial for building Web and Enterprise applications with Jython
+9780321304520	Mapping security: the corporate security sourcebook for today's global economy
+9780072225662	MCSE/MCSA Implementing a Windows Server 2003 Network Infrastructure Study Guide 
+9780072227840	Hacknotes web security portable reference
+9780072255089	Computer Security Lab Manual 
+9780321263544	Distributed systems: concepts and design: 4th Edition
+9780201758658	Software Project Management: A Real-World Guide to Success
+9780130457974	Discrete mathematical structures.
+9780750696401	Analog Circuit Design: Art, Science, and Personalities
+9781555581572	Open VMS operating system concepts
+9781555582661	Understanding WMI Scripting 
+9780072903621	Experimental Context for Introduction to Electrical and Computer Engineering
+9780750674034	Electromagnetics explained: a handbook for wireless/RF, EMC, and high-speed electronics
+9780201725957	LINUX: the textbook
+9780073131146	Computer Accounting with QuickBooks 2006
+9780201580433	On to C++
+9780321219145	Linux application development
+9780072565850	Microsoft XP Handbook: Your Guide to Transitioning to Office XP and Windows XP
+9780321263582	Computer Networking and the Internet 
+9780321197986	Programming wireless devices with the Java 2 Platform: micro edition
+9781558605107	Genetic programming: an introduction on the automatic evolution of computer programs and its applications
+9781576761151	Web Developer Foundations: Using XHTML 
+9781558606432	Persuasive technology: using computers to change what we think and do
+9781558607521	Web application design handbook: best practices for web-based software
+9781558608610	Digital geometry: geometric methods for digital picture analysis
+9780321287502	The Guru's Guide to SQL Server Boxed Set
+9780321240699	Real digital forensics: computer security and incident response
+9780137903955	Artificial intelligence: a modern approach
+9780201758207	Improving Software Organizations: From Principles to Practice
+9780750656832	Applying UML: advanced application
+9780672321313	Visual Basic .NET developer's guide to ASP.NET, XML, and ADO.NET
+9780321427229	Moving to Ubuntu Linux
+9780201703931	The Java tutorial: a short course on the basics: 3rd Edition
+9780321304780	The Java Class Libraries Poster: Java 2 Platform Standard Edition 5.0  
+9780201771862	Processing XML with Java: a guide to SAX, DOM, JDOM, JAXP, and TrAX
+9781558605572	Logical effort: designing fast CMOS circuits
+9781555582890	RAPID Value Management for the Business Cost of Ownership: Readiness, Architecture, Process, Integration, Deployment 
+9780072225648	Hacking Linux Exposed, Second Edition
+9780201361216	Algorithms in Java, Part 5: Graph Algorithms  
+9780072226973	Network security: the complete reference
+9781558605336	Readings in information visualization: using vision to think
+9781558606425	Component database systems
+9781558607514	MPLS Network Management: MIBs, Tools, and Techniques 
+9781558608603	Jim Blinn's corner: notation, notation, notation
+9781558604001	An Introduction to Splines for Use in Computer Graphics and Geometric Modeling 
+9780072223224	MCSE/MCSA managing and maintaining a Windows Server 2003 environment study guide 
+9780201309935	C++ primer answer book
+9780321213822	Java Class Libraries Poster, Java 2 Platform Enterprise Edition, Version 1.4, The  
+9780201580426	On to C
+9780321304544	The art of computer virus research and defense
+9780120884070	Data Mining: Practical Machine Learning Tools and Techniques, Second Edition 
+9780201498370	Doing Hard Time: Developing Real-Time Systems with UML, Objects, Frameworks and Patterns
+9780072257045	CAPM: certified associate in project management
+9781555581558	UNIX for OpenVMS users
+9781555582647	OpenVMS with Apache, OSU and WASD
+9780124438620	Optimization Techniques 
+9781555582401	Mission-critical active directory: architecting a secure and scalable infrastructure for Windows 2000
+9780201758672	3D user interfaces: theory and practice
+9781555582883	Oracle Real Application Clusters
+9780321200983	Windows Forensics And Incident Recovery Covers Windows Server 2003 Windows 2000 Windows Nt And Windows Xp
+9781558607583	Business Process Change: A Manager's Guide to Improving, Redesigning, and Automating Processes 
+9780201742039	Essential SQL Server 2000: an administration handbook
+9780072226324	Introduction to PC hardware and troubleshooting
+9780321267962	Windows Forms 2.0 Programming  
+9780072227413	Security+
+9780201361209	Algorithms in Java
+9781558607347	Foundations of genetic algorithms 6
+9780201699715	The ACE programmer's guide: practical design patterns for network and   systems programming
+9781558608436	Designing Data-Intensive Web Applications 
+9780201734409	ASP.NET and VB.NET Web Programming 
+9780321146182	J2EE Web services
+9780201731149	Squeak--a quick trip to ObjectLand
+9780131003125	ITV Handbook: Technologies and Standards
+9780072232172	MCSE Windows Server 2003 Active Directory Infrastructure Study Guide  with Windows® Server 2003 180-day trial software
+9781555583323	VoIP security
+9780123951717	Optical fiber telecommunications
+9780750695107	Simplified design of micropower and battery circuits
+9780134373775	Visual C++.NET: How to Program
+9781558605152	Database Design for Smarties: Using UML for Data Modeling 
+9781558606241	Visual information retrieval
+9780138569235	Multimedia communications: protocols and applications
+9780321321282	Preventing web attacks with Apache
+9780201498349	Surviving object-oriented projects: a manager's guide
+9780072844528	Programming the Web Using Visual Studio .NET w/Student CD
+9781558606005	Information appliances and beyond: interaction design for consumer products
+9781558605398	Readings in Computer Architecture 
+9781558606487	Distributed systems architecture: a middleware approach
+9780201633719	More Effective C++: 35 New Ways to Improve Your Programs and Designs 
+9780072320862	Computer organization
+9780201700473	The Guru's Guide to SQL Server Architecture and Internals
+9780201633955	Ipng Internet Protocol Next Generation
+9780805327304	High performance compilers for parallel computing
+9780125250955	Fundamentals of optical waveguides
+9780201726848	Bundle of Algorithms in C++,  Parts 1-5: Fundamentals, Data Structures, Sorting, Searching, and Graph Algorithms 
+9781558608894	Innovation happens elsewhere: open source as business strategy
+9781558606470	The Object Data Standard: ODMG 3.0 
+9780131426603	Simply C++: An Application-Driven Tutorial Approach 
+9780123951700	Optical Fiber Telecommunications IIIA 
+9780123229809	The cache memory book
+9780122007514	Principles and Practices of Interconnection Networks 
+9780321197702	The Rational Unified Process: An Introduction
+9780121028206	The System engineer's handbook: a guide to building VMEbus and VXIbus systems
+9780125184083	Multimedia and Hypertext: the Internet and beyond
+9780028056005	A Professional Approach Series: Office 2000 Beginning Course Student Edition 
+9780340600344	Fortran 90 for scientists and engineers
+9780072232196	MCSE Planning a Windows Server Network Infrastructure Study Guide  with Windows Server 2003 180-day Trial Software
+9780201700466	The Guru's guide to SQL server stored procedures, XML, and HTML
+9781558607552	Design Methods for Reactive Systems: Yourdon, Statemate, and the UML 
+9780321437297	Innovation Games: Creating Breakthrough Products Through Collaborative Play
+9781558605374	Understanding Networked Applications: A First Course 
+9780131018600	Information systems programming with Java
+9780201442342	Multithreading applications in Win32: the complete guide to threads
+9780125184069	Usability Engineering 
+9780072227864	HackNotes Linux and Unix Security Portable Reference
+9781558606227	Data on the Web: From Relations to Semistructured Data and XML 
+9781558607798	Developing IP-Based Services: Solutions for Service Providers and Vendors 
+9780321150400	Effective XML: 50 specific ways to improve your XML
+9780072830583	I-Series: Microsoft Office Access 2003 Brief 
+9780321336781	Java puzzlers: traps, pitfalls, and corner cases
+9780321369444	How to break Web software: functional and security testing of Web applications and Web services
+9780201441246	Introduction to automata theory, languages, and computation: 2nd Edition
+9780201550603	Computers as theatre
+9780201791662	Building J2EE applications with the rational unified process
+9781555581596	OpenVMS Alpha Internals and Data Structures: Memory Management 
+9780201310054	Effective Java: programming language guide
+9780201615920	Advanced use case modeling: software systems
+9780201485585	The Java tutorial continued: the rest of the JDK
+9780072254280	Oracle database 10g high availability with RAC, Flashback & Data Guard
+9781558606852	TCP/IP sockets in Java: practical guide for programmers
+9780321136176	The XML schema companion
+9780125852630	High dynamic range imaging: acquisition, display, and image-based lighting
+9781558604674	Artificial Intelligence: a new synthesis
+9780672322266	Embedded Linux: Hardware, Software, and Interfacing
+9781555582838	Windows Server 2003 security infrastructures
+9780321108944	Applied C++: Practical Techniques for Building Better Software 
+9780750678483	Trojans, worms, and spyware: a computer security professional's guide to malicious code
+9780201590654	Programming languages: concepts and constructs
+9780072966237	SimNet XPert Release 4 Enterprise Edition Office Suite
+9780750681889	Presentations Using Powerpoint
+9781555580414	COMMON LISP: the language
+9781555580896	Motif programming: the essentials-- and more
+9780131176553	Introduction to computing and programming in Python: a multimedia approach
+9780122205316	SQL: Practical Guide for Developers 
+9780750696913	The ultimate telecommunications security survey
+9780321194046	Understanding .NET
+9781558606845	Data Warehousing: Using the Wal-Mart Model 
+9780127323503	Multi-Tier Application Programming with PHP: Practical Guide for Architects and Programmers 
+9780131485211	Structured computer organization
+9781558605756	Virtual Private Networks: Making the Right Connection 
+9780201634457	The Oracle Designer/2000 Handbook
+9780321228383	Database Systems: An Application-Oriented Approach, Introductory Version 
+9780072967791	The I-Series Computing Concepts 2/e Introductory w/ SimNet Concepts
+9780123694737	Programming with Quartz: 2D and PDF graphics in Mac Os X
+9780321426420	Own Your Space: Keep Yourself and Your Stuff Safe Online 
+9780750681872	Word processing with Word
+9780073101569	Numerical Methods for Engineers
+9781558607927	Digital Video and HDTV Algorithms and Interfaces
+9781558605749	High-performance communication networks
+9780201612431	Kernel Projects for Linux
+9780078216770	Introduction to Help Desk Concepts and Skills
+9780120884223	GMPLS: Architecture and Applications 
+9780750670739	Power electronics design handbook: low-power components and applications
+9780201634426	An engineering approach to computer networking: ATM networks, the internet, and the telephone network
+9780201596182	Introduction to SQL: mastering the relational database language
+9780121981570	Network processor design: issues and practices, Volume 2
+9780201634662	Firewalls and Internet security: repelling the wily hacker
+9781578702763	Windows Server 2003/2000 Terminal Server solutions: implementing Windows Terminal Services and Citrix MetaFrame Presentation Server 3.0
+9780131426481	Simply Java programming
+9780201787917	Inside Java 2 platform security: architecture, API design, and implementation
+9781558605978	Robots for kids: exploring new technologies for learning
+9780672323577	ASP.NET Developer's JumpStart
+9780750681865	Databases with Access: Learning Made Simple
+9780028044071	Windows 2000: A Tutorial to Accompany Peter Nortons Introduction to Computers, Student Edition with CD-ROM 
+9781555582814	Getting Started with OpenVMS System Management 
+9780750667319	Introduction To Ebusiness Management And Strategy
+9780072231182	Mike Meyers' A+ Guide to Managing and Troubleshooting PCs Lab Manual 
+9780126443752	Relational database systems
+9780072978476	Peter Norton's Computing Fundamentals 6e
+9780201615937	Managing software requirements: a unified approach
+9780120887989	Data Model Patterns: A Metadata Map 
+9780201741957	Addison-Wesley's interactive Linux tutorial and reference
+9780201876741	Casting the net: from ARPANET to Internet and beyond
+9780750694995	Troubleshooting analog circuits
+9780072999389	Computer Accounting Essentials Using ePeachtree
+9780201310085	The Java language specification: 2nd Edition
+9780201752847	Database design for mere mortals: a hands-on guide to relational database design
+9780201633580	MFC programming
+9781558609099	Java: practical guide for programmers
+9780072872156	SimNet Concepts: An Interactive Student CD-Rom
+9780201695847	Designing Wide Area Networks and Internetworks: A Practical Guide.
+9780130460998	Multimedia wireless networks: technologies, standards, and QoS
+9780201029888	Introduction to automata theory, languages, and computation
+9780321349804	Java Programming Language, The  
+9780201711028	Programming Open Service Gateways with Java Embedded Server Technology
+9781555582807	Corporate portals empowered with XML and Web services
+9781558601369	Cache and memory hierarchy design: a performance-directed approach
+9781558602458	Understanding the new SQL: a complete guide
+9780321108951	Honeypots: tracking hackers
+9781558603547	Pyramid algorithms: a dynamic programming approach to curves and surfaces for geometric modeling
+9780120887972	Joe Celko's SQL Programming Style 
+9780201787924	LDAP Directories Explained: An Introduction and Analysis 
+9781558607903	How to build a digital library
+9780131474345	Java, Java, Java: object-oriented problem solving
+9780201737233	The CERT guide to system and network security practices
+9780750681858	Spreadsheets With Excel
+9780201702798	C for Java programmers
+9780130494986	Tools for structured and object-oriented design: an introduction to programmed logic
+9780072231199	MIke Meyers' A+ Guide to PC Hardware
+9780201895490	A practical guide to Linux
+9781558606890	Information Visualization in Data Mining and Knowledge Discovery 
+9780201379372	The Human Interface: New Directions for Designing Interactive Systems
+9780201749625	Effective STL: 50 Specific Ways to Improve Your Use of the Standard Template Library 
+9781576760284	HTML for Web Developers
+9781558607989	Digital Arithmetic 
+9780201695878	C++ Distilled: A Concise ANSI/ISO Reference and Style Guide
+9780072225754	Mike Meyers' MCSE/MCSA Windows Server 2003 Active Directory Certification Passport 
+9780321228352	The .NET Developer's Guide to Windows Security 
+9780131409095	ADTs, data structures, and problem solving with C++
+9780750681841	Basic Computing with Windows XP: Learning Made Simple
+9780201483598	OpenGL programming for the X Window System
+9780123705938	Making shoes for the cobbler's children: using architecture and patterns to enable IT governance
+9780321155726	From Java to C#
+9780201702385	Debugging Windows Programs: Strategies, Tools, and Techniques for Visual C++ Programmers 
+9780201608359	DOS internals
+9781555582630	CRM: Redefining Customer Relationship Management 
+9780321228109	Open Source .Net development
+9780201634891	Web security: a step-by-step reference guide
+9780201775921	Juniper Networks  Reference Guide: JUNOS Routing, Configuration, and Architecture
+9780321245663	Effective C#: 50 specific ways to improve your C#
+9780321227256	C++ template metaprogramming: concepts, tools, and techniques from boost and beyond
+9780126445510	Data Modeling Essentials, Third Edition
+9780201746129	Interdomain Multicast Routing: Practical Juniper Networks and Cisco Systems Solutions
+9780131426412	Simply C#: [an application-driven tutorial approach]
+9780201379365	Essential WinInet: developing applications using the Windows Internet API with RAS, ISAPI, ASP, and COM
+9780201895025	History of Programming Languages, Volume 2 
+9781558604469	Subdivision methods for geometric design: a constructive approach
+9781558605794	Computer animation: algorithms and techniques
+9781576761366	Web Developer Foundations: Intro Frontpage 2002
+9781558607972	Evolutionary computation in bioinformatics
+9781558606883	Your wish is my command: programming by example
+9780130652478	Discrete mathematics: 5th Edition
+9781576761359	Web Developer Foundations: Intro Dreamweaver MX
+9780340645888	Pascal for students: including Turbo Pascal
+9780201787900	Designing Enterprise applications with the J2EE platform
+9780123705921	Real-life MDA: solving business problems with model driven architecture
+9780201325744	Scaling Oracle8i: Building Highly Scalable OLTP System Architectures
+9780201485523	The Java class libraries, second edition, volume 1.
+9780201704310	Modern C [plus plus] design: generic programming and design patterns applied
+9780120887996	Moving objects databases
+9780072830767	I-Series: Microsoft Office Access 2003 Complete 
+9780130284464	A Practical Introduction to Data Structures and Algorithm Analysis
+9780201608373	Writing MS-DOS device drivers
+9780127748603	Introduction to Common Lisp
+9780201310030	The Java class libraries
+9780321136190	Practical Software Engineering: Analysis and Design for the .NET Platform 
+9780130411617	User-centered Web site development: a human computer interaction approach
+9780201634624	How to set up and maintain a Web site
+9781558606876	Object-oriented construction handbook: developing application-oriented software with the tools & materials approach
+9780130353009	A First Course in Database Systems 
+9780201674712	The modelling and analysis of security protocols: the CSP approach
+9780072337488	Microsoft PowerPoint 2000
+9780201781342	Mastering Networks: An Internet Lab Manual
+9780201760439	Agile software development ecosystems
+9780201485554	Practical Issues in Database Management: A Reference for the Thinking Practitioner
+9780201761764	Web hacking: attacks and defense
+9780321127006	Practical BGP
+9780072966213	SimNet for Office 2003 Enterprise/Blackboard/WebCT Edition Office Suite
+9780131541573	Small Java How to Program and CD Version One Package  
+9780201325775	The Java Native interface: programmer's guide and specification
+9780201701036	The Engineering of Software: A Technical Guide for the Individual
+9781555582852	Microsoft .NET: Jumpstart for Systems Administrators and Developers
+9780201407877	The Lotus Notes idea book
+9780750679992	Electronic security systems: a manager's guide to evaluating and selecting system solutions
+9780321245441	VPNs illustrated: tunnels, VPNs, and IPsec
+9780070089853	Advanced strength and applied stress analysis
+9780444505569	Cafe: an industrial-strength algebraic formal method
+9780321246776	The Tao of network security monitoring: beyond intrusion detection
+9780201674729	LINUX & UNIX Shell Programming
+9780321227232	Troubleshooting Linux firewalls
+9781558604445	Readings in intelligent user interfaces
+9780201752809	The Java developers almanac 1.4: examples and quick reference
+9780201722192	Software design
+9780201633542	TCP/IP illustrated: The Implementation
+9780130654878	Logic and language models for computer science
+9780201695892	ATL internals
+9780750677561	Excel by example: a Microsoft Excel cookbook for electronics engineers
+9781576760246	Short course in HTML
+9781555582609	Computer systems performance evaluation and prediction
+9780201760422	Exceptional C++ style: 40 new engineering puzzles, programming problems, and solutions
+9780672323546	JSP and XML: Integrating XML and Web Services in Your JSP Application
+9780201657968	XML and SQL: developing Web applications
+9780321268778	Collaboration explained: facilitation skills for software project leaders
+9780201609219	Introduction to computer graphics
+9780130888921	Data mining introductory and advanced topics
+9780321205216	Designing Web services with the J2EE 1.4 platform: JAX-RPC, SOAP, and XML technologies
+9780321185563	Principles of Database Systems with Internet and Java Applications
+9781555581992	Digital UNIX system administrator's guide
+9780124383807	Fundamentals of Spatial Information Systems 
+9780321246783	The Java language specification: 3rd Edition
+9780750698009	Windows 95 clear & simple
+9780240807942	Expanding a Digital Content Management System: for the Growing Digital Media Enterprise 
+9780321154200	A Handbook of Software and Systems Engineering: Empirical Observations, Laws, and Theories
+9780321174048	.NET Compact Framework Programming with Visual Basic .NET 
+9780123694591	Computers as Components: Principles of Embedded Computing System Design  
+9780805375664	UNIX System V: a practical guide
+9780201325706	NFS Illustrated  
+9780201615760	The Guru's Guide to Transact-SQL
+9781558604827	A complete guide to DB2 universal database
+9780122513411	Mac OS X Developer's Guide
+9780072229233	The healthy PC: preventive care and home remedies for your computer
+9780201844542	Performance Analysis for Java Websites
+9780072255539	The PC doctor's fix-it-yourself guide
+9781558608191	Information visualization: perception for design
+9780120828104	Practical parallel programming
+9780321356987	Practical business intelligence with SQL Server 2005
+9780072944846	SimNet XPert Assessment Standard Edition Release 3.1
+9780201713060	Data Resource Quality: Turning Bad Habits into Good Practices 
+9780201615753	Developing applications using Outlook 2000, CDO, Exchange, and Visual Basic
+9780201675160	Inside Internet security: what hackers don't want you to know -
+9780201776416	XML, Web Services, and the Data Revolution 
+9780321202178	Wi-Foo
+9780201615999	Authentication: from passwords to public keys
+9780201379563	Connecting to the Internet: a practical guide about LAN-Internet connectivity
+9780805375657	A practical guide to the UNIX system
+9780673999863	Pointers on C
+9780201483543	Adapting PCs for disabilities
+9780131453203	Modern database management: 7th Edition
+9780201563450	GNU Emacs: UNIX text editing and programming
+9780120121502	Cumulative Subject and Author Indexes for Volumes1-49, Part I, Volume 50 
+9780321245458	Hands-on Microsoft Access: a practical guide to improving your Access skills
+9780321293534	Refactoring databases: Evolutionary database design
+9780201622072	Sad Macs, bombs, and other disasters: and what to do about them
+9780072847154	Annual Editions: Computers in Education 04/05
+9780750661409	Value creation from e-business models
+9780321482754	Agile software development: the cooperative game
+9780201767919	Software engineering and computer games
+9780201751581	Java by Dissection: The Essentials of Java Programming, Updated Edition, JavaPlace Edition
+9780321206749	Fundamentals of Database Systems/Oracle 9i Programming 
+9781558608177	Mobile agents: basic concepts, mobility models, and the Tracy toolkit
+9781555583071	Debugging by thinking: a multidisciplinary approach
+9780201563658	C++ programming style
+9780201357523	Foundations of multithreaded, parallel, and distributed programming
+9780321218735	High-tech crimes revealed: cyberwar stories from the digital front
+9780131482111	Just Java 2
+9780201632088	Practical algorithms for programmers
+9780321154897	.NET framework standard library annotated reference / Brad Abrams ; [with contributions by Anders Hejlsberg ... [et al.]
+9780201704341	More exceptional C++: 40 new engineering puzzles, programming problems, and solutions
+9780201729207	Flash and XML: a developer's guide
+9780201775785	Bundle of Algorithms in Java, Third Edition : Fundamentals, Data Structures, Sorting, Searching, and Graph Algorithms, Third Edition
+9780073132907	Applied numerical methods with MATLAB for engineers and scientists
+9780201183955	Standard C++ IOStreams and locales: advanced programmer's guide and reference
+9780131496989	Introduction to computing and programming in Java: a multimedia approach
+9781555583064	Cybersecurity Operations Handbook
+9781558609013	Data mining: concepts and techniques
+9780321399830	Essential Windows Workflow Foundation 
+9780321269676	Using UML: software engineering with objects and components
+9780201325713	Applied Software Architecture
+9780124499775	Start right in e-business: a step-by-step guide to successful e-business implementation
+9780201824704	C++ primer: 3rd Edition
+9780201844528	XML data management: native XML and XML-enabled database systems
+9780123735775	Data Preparation for Data Mining Using SAS 
+9780201433036	Information warfare and security
+9780130669483	Discrete Math with Proof
+9780201398441	Programming the Internet with Java
+9780201704334	The Java programming language
+9780321237620	OpenGL: A Primer 
+9780124477513	IPv6 Core Protocols Implementation 
+9780070137783	Introduction to Electrical and Computer Engineering
+9781558608160	Modeling business objects with XML schema
+9780201604641	C++ network programming: Mastering Complexity with ACE and Patterns
+9780201648669	Artificial intelligence: structures and strategies for complex problem solving: 4th Edition
+9780321129475	Web 101: Making the Net Work for You 
+9780321166463	Know your enemy: learning about security threats
+9780201774221	Maximum accessibility: making your Web site more usable for everyone
+9780071362856	Schaum's outline of theory and problems of computer networking
+9780321350176	The .NET Developer's Guide to Directory Services Programming 
+9780735711921	Inside Citrix MetaFrame XP: a system administrator's guide to Citrix MetaFrame XP/1.8 and Windows terminal serives
+9780124650305	Information services for innovative organizations
+9780131227064	Patterns of problem solving
+9780072263350	Voice & data communications handbook
+9780321133540	Beyond the C++ standard library: an introduction to Boost
+9780121674519	C# 2.0: Practical Guide for Programmers 
+9780201309669	OSPF Complete Implementation
+9781558605961	Computer architecture: a quantitative approach
+9780201634488	Interconnections: Bridges, Routers, Switches, and Internetworking Protocols 
+9780201379532	Building switched networks: multilayer switching, QoS, IP multicast, network policy, and service level agreements
+9781558605718	Integrated Management of Networked Systems: Concepts, Architectures, and Their Operational Application 
+9780201477085	Operating system projects using Windows NT
+9781558604629	Applying case-based reasoning: techniques for enterprise systems
+9780201563245	KornShell programming tutorial
+9780750658676	Risk management in software development projects
+9780750660983	Object-oriented design with UML and Java
+9780201708523	Developing Applications with Visual Studio .NET
+9780201834543	Inside the C⁺⁺ object model
+9780072254648	Computing Today w/ Student CD & SimNet Concepts
+9780750699389	Managing legal and security risks in computing and communications
+9780321356703	Software security: building security in
+9780123116338	Network Security: A Practical Approach 
+9780201489293	Online market research: cost-effective searching of the Internet and online databases
+9780201615715	Network programming with Perl
+9780321247445	Introduction to Computer Security
+9781558609075	XML for Data Architects: Designing for Reuse and Integration 
+9781558605954	Swarm Intelligence 
+9780124499751	On Time Technology Implementation: How to Achieve Implementation Success with Limited Time and Resources
+9781558603530	Understanding Virtual Reality: Interface, Application, and Design 
+9780072944815	SimNet XPert Assessment PageOut Release 3.1
+9780122374715	The Internet Security Guidebook: From Planning to Deployment 
+9780201395198	C++ for C programmers
+9780131857582	Small C[plus plus]: how to program
+9780750678032	Security education, awareness, and training: from theory to practice
+9781558605947	Geometric tools for computer graphics
+9780750660754	Software design methodology: [from principles to architectural styles]
+9780201379518	BGP4: inter-domain routing in the Internet
+9780321382184	A Developer's Guide to SQL Server 2005 
+9780201794274	Extreme programming for Web projects
+9780321447746	SQL server 2005 practical troubleshooting: the database engine
+9780072254631	SimNet Concepts Release 1.5
+9780321205636	Windows XP Networking 
+9780201770049	XML and Java: developing Web applications
+9781558609068	Web services and service-oriented architecture: the savvy manager's guide
+9780321304292	Internet effectively: a beginner's guide to the World Wide Web
+9780131482395	Agile Java: crafting code with test-driven development
+9780201309447	DirectX, RDX, RSX, and MMX technology: a jumpstart guide to high performance APIs
+9781558605701	Managing Gigabytes: Compressing and Indexing Documents and Images 
+9780123735966	Joe Celko's SQL puzzles & answers: 2nd Edition
+9780201703290	Java Card technology for Smart Cards: architecture and programmer's guide
+9780201657586	LDAP programming with Java
+9780201615982	SSL and TLS: Designing and Building Secure Systems
+9780201634464	Essential COM
+9780201633375	Tcl and the Tk toolkit
+9780201157673	Genetic algorithms in search, optimization, and machine learning
+9780321174031	.NET Compact Framework Programming with C# 
+9780131452541	Computer graphics: programming in OpenGL for visual communication
+9780672325311	Sams Teach Yourself Microsoft Visual Basic .NET 2003 in 21 Days, Second Edition
+9780201604610	The C puzzle book
+9780127425030	Grid computing: the savvy manager's guide
+9780125662512	The persona lifecycle: keeping people in mind throughout product design
+9780072944822	SimNet XPert Combined Standard Edition Release 3.1
+9780201796445	Distributed computing: principles and applications
+9780201633382	UNIX systems for modern architectures: symmetric multiprocesssing and caching for kernel programmers
+9781558609297	Location-Based Services 
+9780201719628	Building Parsers With Java
+9781558603752	Wavelets for computer graphics: theory and applications
+9781558605930	3D Game Engine Design : A Practical Approach to Real-Time Computer Graphics 
+9780072835595	Microsoft Office Access 2003
+9780321268389	Official Eclipse 3.0 FAQs 
+9780130920652	Business programming logic
+9780201422191	CGI programming in C & Perl
+9780201847604	Civilizing cyberspace: policy, power, and the information superhighway
+9780201612462	C++ For Java Programmers
+9780201379501	Efficient C++: performance programming techniques
+9780750681896	Communicating with e-mail and the Internet
+9780122290633	3D game engine design: a practical approach to real-time computer graphics
+9780130602398	Fundamentals of Structured Program Design 
+9780072229240	Introduction to Relational Databases
+9780201258288	The theory of computation
+9780201775754	Request for proposal: a guide to effective RFP development
+9780805321661	Crafting a compiler with C
+9780120887934	MEL Scripting for Maya Animators, Second Edition 
+9780321205612	Seeing data: designing user interfaces for database systems using .NET
+9780120455997	XML for data management

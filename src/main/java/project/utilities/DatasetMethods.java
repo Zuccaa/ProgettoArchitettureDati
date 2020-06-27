@@ -49,9 +49,9 @@ public class DatasetMethods {
 		
 	}
 	
-	public HashMap<String, ArrayList<String>> readAuthorsList(String filePath) {
+	public HashMap<String, String> readList(String filePath) {
 		
-		HashMap<String, ArrayList<String>> authorsListWithISBN = new HashMap<String, ArrayList<String>>();
+		HashMap<String, String> mapWithISBN = new HashMap<String, String>();
 		
 		String tuple = "";
 
@@ -63,7 +63,7 @@ public class DatasetMethods {
 			while (myReader.hasNextLine()) {
 				tuple = myReader.nextLine();
 				info = tuple.split("\t");
-				authorsListWithISBN.put(info[0], new ArrayList<String>(Arrays.asList(info[1].split(";"))));
+				mapWithISBN.put(info[0], info[1]);
 			}
 			myReader.close();
 		} catch (FileNotFoundException e) {
@@ -71,7 +71,21 @@ public class DatasetMethods {
 			e.printStackTrace();
 		}
 				
-		return authorsListWithISBN;
+		return mapWithISBN;
+		
+	}
+	
+	public HashMap<String, ArrayList<String>> convertValuesIntoArrayListValues(HashMap<String, String> map) {
+		
+		HashMap<String, ArrayList<String>> newMap = new HashMap<String, ArrayList<String>>();
+		String value = "";
+		
+		for (String isbn: map.keySet()) {
+			value = map.get(isbn);
+			newMap.put(isbn, new ArrayList<String>(Arrays.asList(value.split(";"))));
+		}
+		
+		return newMap;
 		
 	}
 	

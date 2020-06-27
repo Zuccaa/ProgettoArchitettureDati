@@ -21,7 +21,8 @@ public class AppTest extends TestCase {
 		boolean checkControlDigit = true;
         
 		ArrayList<Book> books = dm.readDataset(DATASETPATH);
-		HashMap<String, ArrayList<String>> exactAuthorsList = dm.readAuthorsList(AUTHORSLISTPATH);
+		HashMap<String, ArrayList<String>> exactAuthorsList = 
+				dm.convertValuesIntoArrayListValues(dm.readList(AUTHORSLISTPATH));
 		
 		for (Book b: books) {
 			if (b.getIsbn().length() == 10)
