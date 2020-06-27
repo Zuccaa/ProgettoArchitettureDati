@@ -148,9 +148,7 @@ public class Metrics {
 	public float computeSyntacticAccuracy(String title, String referenceTitle) {
 		
 		ArrayList<String> bigramsTitle = computeBigrams(title);
-		System.out.println(bigramsTitle);
 		ArrayList<String> bigramsReferenceTitle = computeBigrams(referenceTitle);
-		System.out.println(bigramsReferenceTitle);
 		
 		return computeBigramsDistance(bigramsTitle, bigramsReferenceTitle);
 	}

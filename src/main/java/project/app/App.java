@@ -77,7 +77,19 @@ public class App {
 		float titleCompleteness = m.computeAttributeCompleteness(titles);
 		System.out.println("Title completeness: " + titleCompleteness);
 		float tableCompleteness = m.computeTableCompleteness(books);
-		System.out.println("Table completeness: " + tableCompleteness);		
+		System.out.println("Table completeness: " + tableCompleteness);	
+		
+		HashMap<String, ArrayList<String>> titlesGroupedByIsbn = dm.groupAttributeByIsbn(books, Attributes.TITLE);
+		ArrayList<Float> titleAccuracies = new ArrayList<Float>();
+		
+		for(String _isbn: exactTitlesList.keySet()) {
+			for(String title: titlesGroupedByIsbn.get(_isbn)) {
+				titleAccuracies.add(m.computeSyntacticAccuracy(title, exactTitlesList.get(_isbn)));
+			}
+		}
+		
+		float meanTitleAccuracy = m.computeOverallSemanticAccuracy(titleAccuracies);
+		System.out.println("Overall title accuracy: " + meanTitleAccuracy);
 		
 		ArrayList<Float> semanticAccuracy = m.computeSemanticAccuracy(authorsGroupedByIsbn, exactAuthorsList);
 		//System.out.println(semanticAccuracy.toString());
@@ -127,9 +139,20 @@ public class App {
 		/*for (Book b: booksDeduplicated) {
             System.out.println(b.toString());
 		}*/
+		
+		HashMap<String, ArrayList<String>> titlesDeduplicatedGroupedByIsbn = dm.groupAttributeByIsbn(booksDeduplicated, Attributes.TITLE);
+		titleAccuracies.clear();
+		for(String _isbn: exactTitlesList.keySet()) {
+			for(String title: titlesDeduplicatedGroupedByIsbn.get(_isbn)) {
+				titleAccuracies.add(m.computeSyntacticAccuracy(title, exactTitlesList.get(_isbn)));
+			}
+		}
+		
+		meanTitleAccuracy = m.computeOverallSemanticAccuracy(titleAccuracies);
+		System.out.println("Overall title accuracy Deduplicated: " + meanTitleAccuracy);
+		
 		dm.writeFile(booksDeduplicated, "finalDataset.txt");
 		
-		System.out.println(m.computeSyntacticAccuracy("Stefano Zucca", "Zcca Stefano"));
         
 		/*for (String _isbn: exactAuthorsList.keySet()){
             System.out.print(_isbn + exactAuthorsList.get(_isbn).toString());
