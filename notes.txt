@@ -1,0 +1,21 @@
+(edition) --> "edition" \((.*?)(edition)+(.*?)\) \((.*?)(\sed\s)(.*?)\)
+(other) --> ""
+
+(Anche con le parentesi in mezzo):
+First...Sixth --> 1st...6th (first e)...(sixth e)
+number edition --> number-suffix Edition (\d+[\s]?(edition))
+number/e --> number-suffix Edition (\d+[\s]?[/]?e[^a-ce-z])
+numbere --> number-suffix Edition *
+number/ed --> number-suffix Edition *
+numbered --> number-suffix Edition *
+number ed --> number-suffix Edition *
+volumenumber --> volume number (volume\d+)
+vol. number --> volume number (v(ol)?\.[\s]?\d+)
+v. number --> volume number (v(ol)?\.[\s]?\d+)
+pt. --> part
+ed. --> Edition
+
+\s:\s --> :\s
+
+&#153
+&acirc;&#132;&cent
