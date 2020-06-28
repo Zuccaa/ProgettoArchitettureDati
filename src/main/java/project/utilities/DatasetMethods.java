@@ -63,7 +63,7 @@ public class DatasetMethods {
 			while (myReader.hasNextLine()) {
 				tuple = myReader.nextLine();
 				info = tuple.split("\t");
-				mapWithISBN.put(info[0], info[1]);
+				mapWithISBN.put(info[0], info[1].toLowerCase());
 			}
 			myReader.close();
 		} catch (FileNotFoundException e) {
@@ -161,13 +161,31 @@ public class DatasetMethods {
 	}
 	
 	public HashMap<Float, Integer> countFrequencies(ArrayList<Float> attribute){
+		
 		HashMap<Float, Integer> sortedOccurrences = new HashMap<Float, Integer>();
+		
 		while (!attribute.isEmpty()) {
 			int occurrences = Collections.frequency(attribute, attribute.get(0));
 			sortedOccurrences.put(attribute.get(0), occurrences);
 			attribute.removeAll(Collections.singleton(attribute.get(0)));
 		}
 		return sortedOccurrences;
+		
 	}
+	
+	public String convertHTMLSymbols(String string) {
+	
+		string = string.replaceAll("&quot;", "\"");
+		string = string.replaceAll("andquot;", "\"");
+		string = string.replaceAll("&amp;", "&");
+		string = string.replaceAll("andamp;", "&");
+		string = string.replaceAll("&apos;", "\'");
+		string = string.replaceAll("andapos;", "\'");
+		string = string.replaceAll("&quot;", "\"");
+		string = string.replaceAll("&quot;", "\"");
 
+		return string;
+		
+	}
+	
 }

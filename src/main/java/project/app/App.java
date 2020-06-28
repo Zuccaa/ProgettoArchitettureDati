@@ -7,14 +7,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.TreeMap;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-
 import project.dataQuality.Metrics;
 import project.dataQuality.Deduplication;
 import project.pojo.Book;
@@ -56,6 +48,7 @@ public class App {
 					System.out.println(b.getIsbn());
 			}
 			b.normalizeAuthor();
+			b.normalizeTitle();
 			tupleCompleteness.add(m.computeTupleCompleteness(b));
 			authors.add(b.getAuthor());
 			isbn.add(b.getIsbn());
@@ -162,13 +155,13 @@ public class App {
             System.out.print("\n");
 		}*/
 		
-		/*while (!titles.isEmpty()) {
+		while (!titles.isEmpty()) {
 			int occurrences = Collections.frequency(titles, titles.get(0));
 			sortedOccurrences.put(titles.get(0), occurrences);
 			titles.removeAll(Collections.singleton(titles.get(0)));
 		}
 		
-		dm.writeOccurrences(sortedOccurrences);*/
+		dm.writeOccurrences(sortedOccurrences);
 		
 		/*while (!sources.isEmpty()) {
 			int occurrences = Collections.frequency(sources, sources.get(0));

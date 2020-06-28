@@ -1,5 +1,9 @@
 package project.pojo;
 
+import java.util.HashMap;
+
+import project.utilities.DatasetMethods;
+
 public class Book {
 
 	String source;
@@ -106,16 +110,34 @@ public class Book {
 		return 10 - (sumResult % 10);
 
 	}
-
+	
 	public void normalizeAuthor() {
+		
+		this.author = new DatasetMethods().convertHTMLSymbols(this.author);
+		
+		// Sostituisce i ; e / con ,
 		this.author = this.author.replaceAll("[;/]", ",");
+		// Sostituisce tutti i caratteri speciali esclusi , e ' con lo spazio
 		this.author = this.author.replaceAll("[\\W&&[^,']]", " ");
+		// Sostituisce tutte le lettere isolate da spazi con spazi
 		this.author = this.author.replaceAll(" \\w ", "  ");
-		this.author = this.author.replaceAll("^\\s", "");
+		// Separa le lettere minuscole seguite da maiuscole
 		this.author = this.author.replaceAll("([a-z])_?([A-Z])", "$1 $2");
+		// Sostituisce due o più spazi consecutivi con uno unico
 		this.author = this.author.replaceAll(" {2,}", " ");
+		// Rimuove lo spazio all'inizio della stringa
+		this.author = this.author.replaceAll("^\\s", "");
+		// Rimuove la lettera isolata all'inizio della stringa
 		this.author = this.author.replaceAll("\\A\\w\\s", "");
+		
 		this.author = this.author.toLowerCase();
+		
+	}
+	
+	public void normalizeTitle() {
+		
+		this.title = new DatasetMethods().convertHTMLSymbols(this.title);
+		
 	}
 	
 }

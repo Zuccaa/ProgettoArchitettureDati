@@ -150,7 +150,7 @@ public class Metrics {
 		ArrayList<String> bigramsTitle = computeBigrams(title);
 		ArrayList<String> bigramsReferenceTitle = computeBigrams(referenceTitle);
 		
-		return computeBigramsDistance(bigramsTitle, bigramsReferenceTitle);
+		return 1 - (computeBigramsDistance(bigramsTitle, bigramsReferenceTitle));
 	}
 	
 	public ArrayList<String> computeBigrams(String word) {
