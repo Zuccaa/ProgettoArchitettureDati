@@ -2,20 +2,23 @@
 (other) --> ""
 
 (Anche con le parentesi in mezzo):
-First...Sixth --> 1st...6th (first e)...(sixth e)
-number edition --> number-suffix Edition (\d+[\s]?(edition))
-number/e --> number-suffix Edition (\d+[\s]?[/]?e[^a-ce-z])
-numbere --> number-suffix Edition *
-number/ed --> number-suffix Edition *
-numbered --> number-suffix Edition *
-number ed --> number-suffix Edition *
-volumenumber --> volume number (volume\d+)
-vol. number --> volume number (v(ol)?\.[\s]?\d+)
-v. number --> volume number (v(ol)?\.[\s]?\d+)
-pt. --> part
-ed. --> Edition
+First...Sixth --> 1st...6th (first e)...(sixth e) v
+volumenumber --> volume number (volume\d+) v
+vol. number --> volume number (v(ol)?(s)?\.[\s]?\d+) v
+v. number --> volume number (v(ol)?(s)?\.[\s]?\d+) v
+pt. --> part (pt(s)?\.) v
+ed. --> Edition (\sed(s)?\.) v
+number edition --> number-suffix Edition (\d+[\s]?(edition)) v
+number/e --> number-suffix Edition (\d+[\s]?[/]?e[^a-ce-z]) v
+numbere --> number-suffix Edition * v
+number/ed --> number-suffix Edition * v
+numbered --> number-suffix Edition * v
+number ed --> number-suffix Edition * v
 
-\s:\s --> :\s
+\s:\s --> :\s (\s:\s) v
+\s,\s --> :\s (\s,\s) v
+\s;\s --> :\s (\s;\s) v
 
+rimuovere i più spazi consecutivi alla fine, quelli all'inizio e alla fine v
 &#153
 &acirc;&#132;&cent

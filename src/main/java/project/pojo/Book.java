@@ -110,7 +110,7 @@ public class Book {
 		return 10 - (sumResult % 10);
 
 	}
-	
+
 	public void normalizeAuthor() {
 		
 		this.author = new DatasetMethods().convertHTMLSymbols(this.author);
@@ -125,8 +125,8 @@ public class Book {
 		this.author = this.author.replaceAll("([a-z])_?([A-Z])", "$1 $2");
 		// Sostituisce due o più spazi consecutivi con uno unico
 		this.author = this.author.replaceAll(" {2,}", " ");
-		// Rimuove lo spazio all'inizio della stringa
-		this.author = this.author.replaceAll("^\\s", "");
+		// Rimuove lo spazio all'inizio ed alla fine della stringa
+		this.author = this.author.replaceAll("(^\\s)|(\\s$)", "");
 		// Rimuove la lettera isolata all'inizio della stringa
 		this.author = this.author.replaceAll("\\A\\w\\s", "");
 		
@@ -137,6 +137,46 @@ public class Book {
 	public void normalizeTitle() {
 		
 		this.title = new DatasetMethods().convertHTMLSymbols(this.title);
+		
+		this.title += " ";
+		
+		// Sostituisce i number-th in number
+		this.title = this.title.replaceAll("first edit", "1 edit");
+		this.title = this.title.replaceAll("second edit", "2 edit");
+		this.title = this.title.replaceAll("third edit", "3 edit");
+		this.title = this.title.replaceAll("fourth edit", "4 edit");
+		this.title = this.title.replaceAll("fifth edit", "5 edit");
+		this.title = this.title.replaceAll("sixth edit", "6 edit");
+		// Sostituisce i volumenumber in volume number e li inserisce alla fine della linea
+		this.title = this.title.replaceAll("(volume)(\\d+)(.*)", "$3, $1 $2");
+		// Sostituisce le seguenti possibilità in volume number:
+		// v. number - v.number - vol.number - vol. number - vols.number - vols. number
+		this.title = this.title.replaceAll("v(ol)?(s)?(\\.)?[\\s]?(\\d+)(.*)", ", volume$2 $4");
+		// Sostituisce i pt. e pts. in part e parts
+		this.title = this.title.replaceAll("(pt(s)?)\\.", "part$2");
+		// Sostituisce gli ed. e eds. in edition
+		this.title = this.title.replaceAll("(\\sed(s)?\\.)(\\s\\d)?", "$3 edition");
+		// Sostituisce le occorrenze number edition in number-th Edition
+		this.title = this.title.replaceAll("(1)[\\s]?(edition)(.*)", "$3, $1st edition");
+		this.title = this.title.replaceAll("(2)[\\s]?(edition)(.*)", "$3, $1nd edition");
+		this.title = this.title.replaceAll("(3)[\\s]?(edition)(.*)", "$3, $1rd edition");
+		this.title = this.title.replaceAll("(\\d+)[\\s]?(edition)(.*)", "$3, $1th edition");
+		// Sostituisce le seguenti possibilità in number-th Edition e le inserisce alla fine della linea:
+		// number/e - numbere - number/ed - numbered / number ed
+		this.title = this.title.replaceAll("(1)([\\s]?[/]?e[^a-ce-z])(.*)", "$3, $1st edition");
+		this.title = this.title.replaceAll("(2)([\\s]?[/]?e[^a-ce-z])(.*)", "$3, $1nd edition");
+		this.title = this.title.replaceAll("(3)([\\s]?[/]?e[^a-ce-z])(.*)", "$3, $1rd edition");
+		this.title = this.title.replaceAll("(\\d+)([\\s]?[/]?e[^a-ce-z])(.*)", "$3, $1th edition");		
+		// Sostituisce i spazio[:;,]spazio in [:;,]spazio
+		this.title = this.title.replaceAll("\\s([:,;])\\s", "$1 ");
+		// Sostituisce due o più spazi consecutivi con uno unico
+		this.title = this.title.replaceAll(" {2,}", " ");
+		// Rimuove lo spazio all'inizio ed alla fine della stringa
+		this.title = this.title.replaceAll("(^\\s)|(\\s$)", "");
+		// Rimuove tutte le parentesi e il loro contenuto
+		this.title = this.title.replaceAll("\\([^\\(\\)]*\\)|[\\(\\)]", "");
+		this.title = this.title.replaceAll("\\[[^\\[\\]]*\\]|[\\[\\]]", "");
+		this.title = this.title.replaceAll("\\{[^\\{\\}]*\\}|[\\{\\}]", "");
 		
 	}
 	
