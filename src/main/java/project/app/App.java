@@ -5,13 +5,19 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.SortedSet;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 import project.dataQuality.Metrics;
 import project.dataQuality.Deduplication;
 import project.pojo.Book;
 import project.utilities.Attributes;
 import project.utilities.DatasetMethods;
+import project.utilities.MapUtil;
 
 public class App {
     
@@ -24,6 +30,7 @@ public class App {
         DatasetMethods dm = new DatasetMethods();
         Metrics m = new Metrics();
         Deduplication d = new Deduplication();
+        MapUtil mu = new MapUtil();
         
 		ArrayList<Book> books = dm.readDataset(DATASETPATH);
 		HashMap<String, ArrayList<String>> exactAuthorsList = 
@@ -38,6 +45,7 @@ public class App {
 		ArrayList<String> titles = new ArrayList<String>();
 		
 		TreeMap<String, Integer> sortedOccurrences = new TreeMap<String, Integer>();
+		TreeMap<String, Integer> sortedOccurrencesFloat = new TreeMap<String, Integer>();
 		
 		ArrayList<Float> tupleCompleteness = new ArrayList<Float>();
 		for (Book b: books) {
@@ -59,7 +67,7 @@ public class App {
 		HashMap<Float, Integer> tupleFrequencies = dm.countFrequencies(tupleCompleteness);
 		System.out.println(tupleFrequencies.toString());
 		
-		HashMap<String, ArrayList<String>> authorsGroupedByIsbn = dm.groupAttributeByIsbn(books, Attributes.AUTHOR);
+		HashMap<String, ArrayList<Book>> booksGroupedByIsbn = dm.groupBookByIsbn(books);
 
 		float authorCompleteness = m.computeAttributeCompleteness(authors);
 		System.out.println("Author completeness: " + authorCompleteness);
@@ -72,22 +80,90 @@ public class App {
 		float tableCompleteness = m.computeTableCompleteness(books);
 		System.out.println("Table completeness: " + tableCompleteness);	
 		
-		HashMap<String, ArrayList<String>> titlesGroupedByIsbn = dm.groupAttributeByIsbn(books, Attributes.TITLE);
+		//HashMap<String, ArrayList<String>> titlesGroupedByIsbn = dm.groupAttributeByIsbn(books, Attributes.TITLE);
 		ArrayList<Float> titleAccuracies = new ArrayList<Float>();
+		HashMap<String, ArrayList<Float>> sourceAffidability = new HashMap<String, ArrayList<Float>>();
+		Map<String, Float> sourceAffidabilities = new HashMap<String, Float>();
+		
+		float syntacticAccuracy;
+		String sourceToConsider;
 		
 		for(String _isbn: exactTitlesList.keySet()) {
-			for(String title: titlesGroupedByIsbn.get(_isbn)) {
-				titleAccuracies.add(m.computeSyntacticAccuracy(title, exactTitlesList.get(_isbn)));
+			for(Book book: booksGroupedByIsbn.get(_isbn)) {
+				syntacticAccuracy = m.computeSyntacticAccuracy(book.getTitle(), exactTitlesList.get(_isbn));
+				titleAccuracies.add(syntacticAccuracy);
+				sourceToConsider = book.getSource();
+				if (sourceAffidability.containsKey(sourceToConsider))
+					sourceAffidability.get(sourceToConsider).add(syntacticAccuracy);
+				else {
+					ArrayList<Float> accuracy = new ArrayList<Float>();
+					accuracy.add(syntacticAccuracy);
+					sourceAffidability.put(sourceToConsider, accuracy);
+				}
+					
 			}
 		}
 		
-		float meanTitleAccuracy = m.computeOverallSemanticAccuracy(titleAccuracies);
+		ArrayList<Float> affidabilities;
+		for (String s: sourceAffidability.keySet()) {
+			affidabilities = sourceAffidability.get(s);
+			if (affidabilities.size() >= 5) {
+				sourceAffidabilities.put(s, m.computeMean(affidabilities));
+			}
+		}
+		
+		Map<String, Float> sortedSourceAffidability = mu.sortByValue(sourceAffidabilities);
+		
+		for (String s: sortedSourceAffidability.keySet()) {
+			System.out.println(s + "|||" + sortedSourceAffidability.get(s));
+		}
+		
+		String floatValue = "";
+		
+		for(float accuracy: titleAccuracies) {
+			if (accuracy <= 0.1)
+				floatValue = "<= 0.1";
+			else
+				if (accuracy <= 0.2)
+					floatValue = "0.1 - 0.2";
+				else
+					if (accuracy <= 0.3)
+						floatValue = "0.2 - 0.3";
+					else
+						if (accuracy <= 0.4)
+							floatValue = "0.3 - 0.4";
+						else
+							if (accuracy <= 0.5)
+								floatValue = "0.4 - 0.5";
+							else
+								if (accuracy <= 0.6)
+									floatValue = "0.5 - 0.6";
+								else
+									if (accuracy <= 0.7)
+										floatValue = "0.6 - 0.7";
+									else
+										if (accuracy <= 0.8)
+											floatValue = "0.7 - 0.8";
+										else
+											if (accuracy <= 0.9)
+												floatValue = "0.8 - 0.9";
+											else
+												floatValue = "> 0.9";
+			if (sortedOccurrencesFloat.containsKey(floatValue))
+				sortedOccurrencesFloat.put(floatValue, sortedOccurrencesFloat.get(floatValue) + 1);
+			else
+				sortedOccurrencesFloat.put(floatValue, 1);
+		}
+		
+		dm.writeOccurrences(sortedOccurrencesFloat);
+		
+		float meanTitleAccuracy = m.computeMean(titleAccuracies);
 		System.out.println("Overall title accuracy: " + meanTitleAccuracy);
 		
-		ArrayList<Float> semanticAccuracy = m.computeSemanticAccuracy(authorsGroupedByIsbn, exactAuthorsList);
+		ArrayList<Float> semanticAccuracy = m.computeSemanticAccuracy(booksGroupedByIsbn, exactAuthorsList);
 		//System.out.println(semanticAccuracy.toString());
 
-		float overallSemanticAccuracy = m.computeOverallSemanticAccuracy(semanticAccuracy);
+		float overallSemanticAccuracy = m.computeMean(semanticAccuracy);
 		System.out.println("Overall semantic accuracy: " + overallSemanticAccuracy);
 		
 		//HashMap<String, ArrayList<String>> titlesGroupedByIsbn = dm.groupAttributeByIsbn(books, Attributes.TITLE);
@@ -95,7 +171,7 @@ public class App {
             System.out.println(_isbn + ": " + titlesGroupedByIsbn.get(_isbn).toString());
 		}*/
 		
-		ArrayList<Book> booksDeduplicated = d.computeDeduplication(books);
+		ArrayList<Book> booksDeduplicated = d.computeDeduplication(booksGroupedByIsbn);
 		
 		ArrayList<String> authorsDeduplicated = new ArrayList<String>();
 		ArrayList<String> titlesDeduplicated = new ArrayList<String>();
@@ -120,20 +196,21 @@ public class App {
 		float tableDeduplicatedCompleteness = m.computeTableCompleteness(booksDeduplicated);
 		System.out.println("Table deduplicated completeness: " + tableDeduplicatedCompleteness);
 		
-		HashMap<String, ArrayList<String>> authorsDeduplicatedGroupedByIsbn = 
-				dm.groupAttributeByIsbn(booksDeduplicated, Attributes.AUTHOR);
-
+		/*HashMap<String, ArrayList<String>> authorsDeduplicatedGroupedByIsbn = 
+				dm.groupAttributeByIsbn(booksDeduplicated, Attributes.AUTHOR);*/
+		
+		HashMap<String, ArrayList<Book>> booksDeduplicatedGroupedByIsbn = dm.groupBookByIsbn(booksDeduplicated);
 		ArrayList<Float> semanticAccuracyDeduplicated = m.computeSemanticAccuracy(
-				authorsDeduplicatedGroupedByIsbn, exactAuthorsList);
+				booksDeduplicatedGroupedByIsbn, exactAuthorsList);
 		//System.out.println(semanticAccuracy.toString());
 
-		float overallSemanticAccuracyDeduplicated = m.computeOverallSemanticAccuracy(semanticAccuracyDeduplicated);
+		float overallSemanticAccuracyDeduplicated = m.computeMean(semanticAccuracyDeduplicated);
 		System.out.println("Overall semantic accuracy deduplicated: " + overallSemanticAccuracyDeduplicated);
 		/*for (Book b: booksDeduplicated) {
             System.out.println(b.toString());
 		}*/
 		
-		HashMap<String, ArrayList<String>> titlesDeduplicatedGroupedByIsbn = dm.groupAttributeByIsbn(booksDeduplicated, Attributes.TITLE);
+		/*HashMap<String, ArrayList<String>> titlesDeduplicatedGroupedByIsbn = dm.groupAttributeByIsbn(booksDeduplicated, Attributes.TITLE);
 		titleAccuracies.clear();
 		for(String _isbn: exactTitlesList.keySet()) {
 			for(String title: titlesDeduplicatedGroupedByIsbn.get(_isbn)) {
@@ -144,7 +221,7 @@ public class App {
 		meanTitleAccuracy = m.computeOverallSemanticAccuracy(titleAccuracies);
 		System.out.println("Overall title accuracy Deduplicated: " + meanTitleAccuracy);
 		
-		dm.writeFile(booksDeduplicated, "finalDataset.txt");
+		dm.writeFile(booksDeduplicated, "finalDataset.txt");*/
 		
         
 		/*for (String _isbn: exactAuthorsList.keySet()){
@@ -155,21 +232,21 @@ public class App {
             System.out.print("\n");
 		}*/
 		
-		while (!titles.isEmpty()) {
+		/*while (!titles.isEmpty()) {
 			int occurrences = Collections.frequency(titles, titles.get(0));
 			sortedOccurrences.put(titles.get(0), occurrences);
 			titles.removeAll(Collections.singleton(titles.get(0)));
 		}
 		
-		dm.writeOccurrences(sortedOccurrences);
+		dm.writeOccurrences(sortedOccurrences);*/
 		
-		/*while (!sources.isEmpty()) {
+		while (!sources.isEmpty()) {
 			int occurrences = Collections.frequency(sources, sources.get(0));
 			sortedOccurrences.put(sources.get(0), occurrences);
 			sources.removeAll(Collections.singleton(sources.get(0)));
 		}
 		
-		dm.writeOccurrences(sortedOccurrences);*/
+		dm.writeOccurrences(sortedOccurrences);
 		
 		/*while (!isbn.isEmpty()) {
 			int occurrences = Collections.frequency(isbn, isbn.get(0));

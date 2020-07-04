@@ -1,7 +1,5 @@
 package project.pojo;
 
-import java.util.HashMap;
-
 import project.utilities.DatasetMethods;
 
 public class Book {

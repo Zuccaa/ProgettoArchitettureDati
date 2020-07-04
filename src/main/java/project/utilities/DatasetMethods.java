@@ -131,28 +131,20 @@ public class DatasetMethods {
 		
 	}
 	
-	public HashMap<String, ArrayList<String>> groupAttributeByIsbn(ArrayList<Book> books, Attributes at) {
+	public HashMap<String, ArrayList<Book>> groupBookByIsbn(ArrayList<Book> books) {
 		
-		HashMap<String, ArrayList<String>> booksGroupedByIsbn = new HashMap<String, ArrayList<String>>();
+		HashMap<String, ArrayList<Book>> booksGroupedByIsbn = new HashMap<String, ArrayList<Book>>();
 		
 		String getAttribute = "";
 		
-		for (Book b: books) {
-			switch(at) {
-				case AUTHOR:
-					getAttribute = b.getAuthor();
-					break;
-				case TITLE:
-					getAttribute = b.getTitle();
-					break;
-			}	
+		for (Book b: books) {	
 			if (!booksGroupedByIsbn.containsKey(b.getIsbn())) {
-			    ArrayList<String> attributes = new ArrayList<String>();
-			    attributes.add(getAttribute);
+			    ArrayList<Book> booksGrouped = new ArrayList<Book>();
+			    booksGrouped.add(b);
 	
-			    booksGroupedByIsbn.put(b.getIsbn(), attributes);
+			    booksGroupedByIsbn.put(b.getIsbn(), booksGrouped);
 			} else {
-				booksGroupedByIsbn.get(b.getIsbn()).add(getAttribute);
+				booksGroupedByIsbn.get(b.getIsbn()).add(b);
 			}
 		}
 		

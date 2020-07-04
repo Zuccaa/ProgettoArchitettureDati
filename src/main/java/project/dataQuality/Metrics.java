@@ -38,6 +38,7 @@ public class Metrics {
 		}
 				
 		attributeCompleteness = (float) counterNull / NumberOfTuples;
+		System.out.println(counterNull);
 		
 		return attributeCompleteness;
 	}
@@ -73,21 +74,19 @@ public class Metrics {
 		return counterNull;
 	}
 	
-	public ArrayList<Float> computeSemanticAccuracy(HashMap<String, ArrayList<String>> authorsGroupedByIsbn, 
+	public ArrayList<Float> computeSemanticAccuracy(HashMap<String, ArrayList<Book>> booksGroupedByIsbn, 
 			HashMap<String, ArrayList<String>> exactAuthorsList) {
 		
 		ArrayList<Float> semanticAccuracy = new ArrayList<Float>();
 		ArrayList<String> tokens = new ArrayList<String>();
 		ArrayList<String> surnames = new ArrayList<String>();
 		
-		for(String isbn: authorsGroupedByIsbn.keySet()) {
+		for(String isbn: booksGroupedByIsbn.keySet()) {
 			if (exactAuthorsList.get(isbn) != null) {
 				surnames = getSurnamesFromAuthors(exactAuthorsList.get(isbn));
 				
-				while(!authorsGroupedByIsbn.get(isbn).isEmpty()) {
-					tokens = getTokensFromAuthors(authorsGroupedByIsbn.get(isbn).get(0));
-					authorsGroupedByIsbn.get(isbn).remove(0);
-					 
+				for (Book b: booksGroupedByIsbn.get(isbn)) {
+					tokens = getTokensFromAuthors(b.getAuthor());
 					semanticAccuracy.add(computeNormalizedEditDistance(tokens, surnames));
 				}
 			}
@@ -134,14 +133,14 @@ public class Metrics {
 		
 	}
 	
-	public float computeOverallSemanticAccuracy(ArrayList<Float> semanticAccuracies) {
+	public float computeMean(ArrayList<Float> numbers) {
 
-		float sumOfSemanticAccuracies = 0;
+		float sum = 0;
 		
-		for (Float semanticAccuracy: semanticAccuracies)
-			sumOfSemanticAccuracies += semanticAccuracy;
+		for (Float n: numbers)
+			sum += n;
 		
-		return sumOfSemanticAccuracies / semanticAccuracies.size();
+		return sum / numbers.size();
 		
 	}
 	
