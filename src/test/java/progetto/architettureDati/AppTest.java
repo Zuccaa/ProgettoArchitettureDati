@@ -11,7 +11,7 @@ import project.utilities.DatasetMethods;
 
 public class AppTest extends TestCase {
     
-    public void testComputeSemanticAccuracy() {
+    /*public void testComputeSemanticAccuracy() {
     	String DATASETPATH = System.getProperty("user.dir") + "\\bookTest.txt";
 		String AUTHORSLISTPATH = System.getProperty("user.dir") + "\\authorsTest.txt";
 		
@@ -47,6 +47,6 @@ public class AppTest extends TestCase {
 		System.out.println("Overall semantic accuracy: " + overallSemanticAccuracy);
 		
 		assert true;
-    }
+    }*/
     
 }

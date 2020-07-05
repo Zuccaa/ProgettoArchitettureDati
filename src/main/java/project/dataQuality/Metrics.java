@@ -82,13 +82,11 @@ public class Metrics {
 		ArrayList<String> surnames = new ArrayList<String>();
 		
 		for(String isbn: booksGroupedByIsbn.keySet()) {
-			if (exactAuthorsList.get(isbn) != null) {
-				surnames = getSurnamesFromAuthors(exactAuthorsList.get(isbn));
+			surnames = getSurnamesFromAuthors(exactAuthorsList.get(isbn));
 				
-				for (Book b: booksGroupedByIsbn.get(isbn)) {
-					tokens = getTokensFromAuthors(b.getAuthor());
-					semanticAccuracy.add(computeNormalizedEditDistance(tokens, surnames));
-				}
+			for (Book b: booksGroupedByIsbn.get(isbn)) {
+				tokens = getTokensFromAuthors(b.getAuthor());
+				semanticAccuracy.add(computeNormalizedEditDistance(tokens, surnames));
 			}
 		}
 		

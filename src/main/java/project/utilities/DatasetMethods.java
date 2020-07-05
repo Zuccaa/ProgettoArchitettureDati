@@ -6,10 +6,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Map;
 import java.util.Scanner; // Import the Scanner class to read text files
 import java.util.TreeMap;
 
 import edu.emory.mathcs.backport.java.util.Arrays;
+import project.dataQuality.Metrics;
 import project.pojo.Book;
 
 import java.util.Map.Entry;
@@ -165,6 +169,62 @@ public class DatasetMethods {
 		
 	}
 	
+	public Map<String, Float> computeSortedSourceAffidability(HashMap<String, ArrayList<Book>> booksGroupedByIsbn, 
+			ArrayList<Float> accuracies) {
+		int counter = 0;
+		String sourceToConsider = "";
+		HashMap<String, ArrayList<Float>> sourceAffidability = new HashMap<String, ArrayList<Float>>();
+		
+		for(String isbn: booksGroupedByIsbn.keySet()) {
+			for (Book book: booksGroupedByIsbn.get(isbn)) {
+				sourceToConsider = book.getSource();
+				if (sourceAffidability.containsKey(sourceToConsider))
+					sourceAffidability.get(sourceToConsider).add(accuracies.get(counter));
+				else {
+					ArrayList<Float> accuracy = new ArrayList<Float>();
+					accuracy.add(accuracies.get(counter));
+					sourceAffidability.put(sourceToConsider, accuracy);
+				}
+				counter++;	
+			}
+		}
+		
+		return sortMapByValue(sourceAffidability);
+	
+	}
+	
+	public Map<String, Float> sortMapByValue(HashMap<String, ArrayList<Float>> hMap) {
+		
+		ArrayList<Float> values;
+		Map<String, Float> sourceAffidabilities = new HashMap<String, Float>();
+		
+		for (String s: hMap.keySet()) {
+			values = hMap.get(s);
+			if (values.size() >= 5) {
+				sourceAffidabilities.put(s, new Metrics().computeMean(values));
+			}
+		}
+		
+		return new MapUtil().sortByValue(sourceAffidabilities);
+	}
+	
+	public LinkedList<String> getKeysOrderByValueWithinThreshold(Map<String, Float> sortedMapByValue, float threshold) {
+		LinkedList<String> keysOrderByValue = new LinkedList<String>();
+		
+		Iterator<Map.Entry<String, Float>> iterator = sortedMapByValue.entrySet().iterator();
+		
+	    while (iterator.hasNext()) {
+	        Map.Entry<String, Float> entry = iterator.next();
+	        
+	        if (threshold >= entry.getValue())
+	        	break;
+	        
+	        keysOrderByValue.addLast(entry.getKey());;
+	    }
+		
+		return keysOrderByValue;
+	}
+	
 	public String convertHTMLSymbols(String string) {
 	
 		string = string.replaceAll("&quot;", "\"");
@@ -173,8 +233,34 @@ public class DatasetMethods {
 		string = string.replaceAll("andamp;", "&");
 		string = string.replaceAll("&apos;", "\'");
 		string = string.replaceAll("andapos;", "\'");
-		string = string.replaceAll("&quot;", "\"");
-		string = string.replaceAll("&quot;", "\"");
+		string = string.replaceAll("&#146;", "’");
+		string = string.replaceAll("and#146;", "’");
+		string = string.replaceAll("&#128;", "€");
+		string = string.replaceAll("and#128;", "€");
+		string = string.replaceAll("&#153;", "™");
+		string = string.replaceAll("and#153;", "™");
+		string = string.replaceAll("&acirc;", "â");
+		string = string.replaceAll("andacirc;", "â");
+		string = string.replaceAll("&cent;", "¢");
+		string = string.replaceAll("andcent;", "¢");
+		string = string.replaceAll("&#132;", "„");
+		string = string.replaceAll("and#132;", "„");
+		string = string.replaceAll("&oacute;", "ó");
+		string = string.replaceAll("andoacute;", "ó");
+		string = string.replaceAll("&reg", "®");
+		string = string.replaceAll("andreg;", "®");
+		string = string.replaceAll("&eacute;", "é");
+		string = string.replaceAll("andeacute;", "é");
+		string = string.replaceAll("&Acirc;", "Â");
+		string = string.replaceAll("andAcirc;", "Â");
+		string = string.replaceAll("&Atilde;", "Ã");
+		string = string.replaceAll("andAtilde;", "Ã");
+		string = string.replaceAll("&copy;", "©");
+		string = string.replaceAll("and&copy;", "©");
+		string = string.replaceAll("&ouml;", "ö");
+		string = string.replaceAll("andouml;", "ö");
+		string = string.replaceAll("&szlig;", "ß");
+		string = string.replaceAll("andszlig;", "ß");		
 
 		return string;
 		

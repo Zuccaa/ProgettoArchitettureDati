@@ -1261,3 +1261,5 @@
 9780120887934	MEL Scripting for Maya Animators, 2nd Edition 
 9780321205612	Seeing data: designing user interfaces for database systems using .NET
 9780120455997	XML for data management
+9780321396891	Java Language Specification and Hello World Package
+9780201498417	C Interfaces and Implementations: Techniques for Creating Reusable Software

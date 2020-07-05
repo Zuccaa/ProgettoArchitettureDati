@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.Map;
 
 import project.pojo.Book;
 import project.utilities.Attributes;
@@ -13,7 +16,9 @@ public class Deduplication {
 	
 	String[] NULLVALUES = {"", "0", "n/a", "not available (na)", "not available (na).", "not available"};
 
-	public ArrayList<Book> computeDeduplication(HashMap<String, ArrayList<Book>> booksGroupedByIsbn) {
+	public ArrayList<Book> computeDeduplication(HashMap<String, ArrayList<Book>> booksGroupedByIsbn,
+			LinkedList<String> sourcesOrderedByAffidabilityForAuthorList, 
+			LinkedList<String> sourcesOrderedByAffidabilityForTitle) {
 		
 		DatasetMethods dm = new DatasetMethods();
 		
@@ -27,8 +32,10 @@ public class Deduplication {
 			for (Book b: booksGroupedByIsbn.get(isbn)) {
 				authors.add(b.getAuthor());
 			}
-				author = computeDeduplicationOnAuthorList(authors);
-				title = computeDeduplicationOnTitle(booksGroupedByIsbn.get(isbn));
+				author = computeTrustYourFriends(booksGroupedByIsbn.get(isbn), sourcesOrderedByAffidabilityForAuthorList,
+						Attributes.AUTHOR);
+				title = computeTrustYourFriends(booksGroupedByIsbn.get(isbn), sourcesOrderedByAffidabilityForTitle,
+						Attributes.TITLE);
 				booksDeduplicated.add(new Book(isbn, title, author));
 		}
 		
@@ -36,30 +43,49 @@ public class Deduplication {
 		
 	}
 	
-	public String computeDeduplicationOnAuthorList(ArrayList<String> authors) {
+	public String computeCryWithTheWolves(ArrayList<String> attribute) {
 
 		String attributeWithMaxFrequency = "";
 		String attributeConsidered = "";
 		int frequency = 0;
 		int maxFrequency = 0;
 		
-		while (!authors.isEmpty()) {
-			attributeConsidered = authors.get(0);
-			frequency = Collections.frequency(authors, attributeConsidered);
+		while (!attribute.isEmpty()) {
+			attributeConsidered = attribute.get(0);
+			frequency = Collections.frequency(attribute, attributeConsidered);
 			if (frequency > maxFrequency && !Arrays.asList(NULLVALUES).contains(attributeConsidered) 
 					&& attributeConsidered.matches("[a-z.,-;()/'\\s]+")) {
 				maxFrequency = frequency;
 				attributeWithMaxFrequency = attributeConsidered;
 			}
-			authors.removeAll(Collections.singleton(attributeConsidered));
+			attribute.removeAll(Collections.singleton(attributeConsidered));
 		}
 		
 		return attributeWithMaxFrequency;
 		
 	}
 	
-	public String computeDeduplicationOnTitle(ArrayList<Book> books) {
+	public String computeTrustYourFriends(ArrayList<Book> books, LinkedList<String> sources, Attributes at) {
+
+		String sourceBook = "";
+		String attributeBook = "";
+		ArrayList<String> attributes = new ArrayList<String>();
 		
-		return "";
+		for (Book b: books) {
+			switch(at) {
+				case AUTHOR:
+					attributeBook = b.getAuthor();
+					break;
+				case TITLE:
+					attributeBook = b.getTitle();
+			}
+			sourceBook = b.getSource();
+			for (String s: sources)
+				if (sourceBook.equals(s))
+					return attributeBook;
+			attributes.add(attributeBook);
+		}
+
+		return computeCryWithTheWolves(attributes);
 	}
 }

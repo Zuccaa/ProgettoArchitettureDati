@@ -1237,7 +1237,7 @@
 9780201695847	j scott marcus
 9780201137446	bruce j maclennan
 9780750696005	john m carroll
-9780132438629	harvey; paul) deitel; associates
+9780132438629	harvey; paul deitel; associates
 9780123229809	jim handy
 9781576761366	felke
 9780072835564	timothy j o'leary; linda i o'leary
@@ -1261,3 +1261,5 @@
 9781576761359	felke
 9780072847154	john hirschbuhl
 9781558603547	ron goldman
+9780321396891	james gosling
+9780201498417	david r hanson
