@@ -47,6 +47,7 @@ public class App {
 		
 		TreeMap<String, Integer> sortedOccurrences = new TreeMap<String, Integer>();
 		TreeMap<String, Integer> sortedOccurrencesFloat = new TreeMap<String, Integer>();
+		TreeMap<String, Integer> sortedOccurrencesFloatAuthor = new TreeMap<String, Integer>();
 		
 		ArrayList<Float> tupleCompleteness = new ArrayList<Float>();
 		
@@ -92,50 +93,15 @@ public class App {
 		Map<String, Float> sortedSourceAffidabilityForTitles = dm.computeSortedSourceAffidability(
 				booksGroupedByIsbn, titleAccuracies);
 
-		String floatValue = "";
-		
-		for(float accuracy: titleAccuracies) {
-			if (accuracy <= 0.1)
-				floatValue = "<= 0.1";
-			else
-				if (accuracy <= 0.2)
-					floatValue = "0.1 - 0.2";
-				else
-					if (accuracy <= 0.3)
-						floatValue = "0.2 - 0.3";
-					else
-						if (accuracy <= 0.4)
-							floatValue = "0.3 - 0.4";
-						else
-							if (accuracy <= 0.5)
-								floatValue = "0.4 - 0.5";
-							else
-								if (accuracy <= 0.6)
-									floatValue = "0.5 - 0.6";
-								else
-									if (accuracy <= 0.7)
-										floatValue = "0.6 - 0.7";
-									else
-										if (accuracy <= 0.8)
-											floatValue = "0.7 - 0.8";
-										else
-											if (accuracy <= 0.9)
-												floatValue = "0.8 - 0.9";
-											else
-												floatValue = "> 0.9";
-			if (sortedOccurrencesFloat.containsKey(floatValue))
-				sortedOccurrencesFloat.put(floatValue, sortedOccurrencesFloat.get(floatValue) + 1);
-			else
-				sortedOccurrencesFloat.put(floatValue, 1);
-		}
-		
-		//dm.writeOccurrences(sortedOccurrencesFloat);
+		dm.printFrequenciesOccurrences(titleAccuracies, "Title");
 		
 		float meanTitleAccuracy = m.computeMean(titleAccuracies);
 		System.out.println("Overall title accuracy: " + meanTitleAccuracy);
 		
 		ArrayList<Float> authorListAccuracy = m.computeSemanticAccuracy(booksGroupedByIsbn, exactAuthorsList);
 		System.out.println(titleAccuracies.size() + "|||" + authorListAccuracy.size());
+		
+		dm.printFrequenciesOccurrences(authorListAccuracy, "Author List");
 		
 		Map<String, Float> sortedSourceAffidabilityForAuthorList = dm.computeSortedSourceAffidability(
 				booksGroupedByIsbn, authorListAccuracy);
@@ -177,6 +143,9 @@ public class App {
 		HashMap<String, ArrayList<Book>> booksDeduplicatedGroupedByIsbn = dm.groupBookByIsbn(booksDeduplicated);
 		ArrayList<Float> authorListAccuracyDeduplicated = m.computeSemanticAccuracy(
 				booksDeduplicatedGroupedByIsbn, exactAuthorsList);
+		
+		dm.printFrequenciesOccurrences(authorListAccuracyDeduplicated, "Author List Deduplicated");
+
 
 		float overallAuthorListAccuracyDeduplicated = m.computeMean(authorListAccuracyDeduplicated);
 		System.out.println("Overall author list accuracy deduplicated: " + overallAuthorListAccuracyDeduplicated);
@@ -188,6 +157,8 @@ public class App {
 				titleDeduplicatedAccuracies.add(m.computeSyntacticAccuracy(book.getTitle(), exactTitlesList.get(_isbn)));					
 			}
 		}
+		
+		dm.printFrequenciesOccurrences(titleDeduplicatedAccuracies, "Title deduplicated");
 		
 		float meanTitleAccuracyDeduplicated = m.computeMean(titleDeduplicatedAccuracies);
 		System.out.println("Overall title accuracy Deduplicated: " + meanTitleAccuracyDeduplicated);

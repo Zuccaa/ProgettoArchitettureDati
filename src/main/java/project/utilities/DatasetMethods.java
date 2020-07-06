@@ -266,4 +266,51 @@ public class DatasetMethods {
 		
 	}
 	
+	public void printFrequenciesOccurrences(ArrayList<Float> accuracies, String attribute) {
+		
+		String floatRange = "";
+		HashMap<String, Integer> sortedOccurrences = new HashMap<String, Integer>();
+		
+		for(float accuracy: accuracies) {
+			if (accuracy <= 0.1)
+				floatRange = "<= 0.1";
+			else
+				if (accuracy <= 0.2)
+					floatRange = "0.1 - 0.2";
+				else
+					if (accuracy <= 0.3)
+						floatRange = "0.2 - 0.3";
+					else
+						if (accuracy <= 0.4)
+							floatRange = "0.3 - 0.4";
+						else
+							if (accuracy <= 0.5)
+								floatRange = "0.4 - 0.5";
+							else
+								if (accuracy <= 0.6)
+									floatRange = "0.5 - 0.6";
+								else
+									if (accuracy <= 0.7)
+										floatRange = "0.6 - 0.7";
+									else
+										if (accuracy <= 0.8)
+											floatRange = "0.7 - 0.8";
+										else
+											if (accuracy <= 0.9)
+												floatRange = "0.8 - 0.9";
+											else
+												floatRange = "> 0.9";
+			if (sortedOccurrences.containsKey(floatRange))
+				sortedOccurrences.put(floatRange, sortedOccurrences.get(floatRange) + 1);
+			else
+				sortedOccurrences.put(floatRange, 1);
+		}
+		
+		System.out.println("Attribute " + attribute);
+		for (String s: sortedOccurrences.keySet()) {
+			System.out.println(s + "|||" + sortedOccurrences.get(s));
+		}
+		
+	}
+	
 }
