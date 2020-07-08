@@ -58,6 +58,7 @@ public class Book {
 		return "Book [isbn=" + isbn + ", title=" + title + ", author=" + author + "]";
 	}
 
+	// Metodo per convertire un ISBN10 in un ISBN13, sfruttando l'apposito algoritmo
 	public void convertFromIsbn10ToIsbn13() {
 		
 		if (isbn.length() == 10) {
@@ -75,6 +76,7 @@ public class Book {
 		
 	}
 	
+	// Metodo per controllare che la cifra di controllo sia coerente con il resto dell'ISBN13
 	public boolean checkControlDigit() {
 		
 		if (this.isbn.length() == 13) {
@@ -89,6 +91,7 @@ public class Book {
 		return false;
 	}
 	
+	// Metodo per calcolare la cifra di controllo di un ISBN13	
 	public int computeControlDigit(String isbn12) {
 		
 		int sumResult = 0;
@@ -109,8 +112,10 @@ public class Book {
 
 	}
 
+	// Metodo per normalizzare l'attributo author list
 	public void normalizeAuthor() {
 		
+		// Conversione dei caratteri ISO - HTML non codificati correttamente
 		this.author = new DatasetMethods().convertHTMLSymbols(this.author);
 		
 		// Sostituisce i ; e / con ,
@@ -132,8 +137,10 @@ public class Book {
 		
 	}
 	
+	// Metodo per normalizzare l'attributo title
 	public void normalizeTitle() {
 		
+		// Conversione dei caratteri ISO - HTML non codificati correttamente
 		this.title = new DatasetMethods().convertHTMLSymbols(this.title);
 		
 		this.title += " ";

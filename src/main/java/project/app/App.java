@@ -1,24 +1,15 @@
 package project.app;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.SortedSet;
-import java.util.TreeMap;
-import java.util.stream.Collectors;
 
 import project.dataQuality.Metrics;
 import project.dataQuality.Deduplication;
 import project.pojo.Book;
-import project.utilities.Attributes;
 import project.utilities.DatasetMethods;
-import project.utilities.MapUtil;
 
 public class App {
     
@@ -31,196 +22,188 @@ public class App {
         DatasetMethods dm = new DatasetMethods();
         Metrics m = new Metrics();
         Deduplication d = new Deduplication();
-        MapUtil mu = new MapUtil();
         
+        // Viene importato il dataset e assegnato ad una arrayList
 		ArrayList<Book> books = dm.readDataset(DATASETPATH);
+		
+		/* Viene importata la lista degli autori di riferimento dal txt, inserendo i
+		 * singoli autori dello stesso libro in una lista */
 		HashMap<String, ArrayList<String>> exactAuthorsList = 
 				dm.convertValuesIntoArrayListValues(dm.readList(AUTHORSLISTPATH));
+		
+		// Viene importata la lista dei titoli di riferimento dal txt
 		HashMap<String, String> exactTitlesList = dm.readList(TITLESLISTPATH);
-
-		boolean checkControlDigit = true;
+		
+		/* ------------------------------
+		 * FASE DI NORMALIZZAZIONE
+		 * ------------------------------
+		 */
+		for (Book b: books) {
+			// Viene normalizzato l'ISBN, convertendo tutti gli ISBN10 in ISBN13
+			if (b.getIsbn().length() == 10)
+				b.convertFromIsbn10ToIsbn13();
+			// Viene normalizzato l'attributo author
+			b.normalizeAuthor();
+			// Viene normalizzato l'attributo title
+			b.normalizeTitle();
+		}
 		
 		ArrayList<String> authors = new ArrayList<String>();
 		ArrayList<String> isbn = new ArrayList<String>();
 		ArrayList<String> sources = new ArrayList<String>();
 		ArrayList<String> titles = new ArrayList<String>();
 		
-		TreeMap<String, Integer> sortedOccurrences = new TreeMap<String, Integer>();
-		TreeMap<String, Integer> sortedOccurrencesFloat = new TreeMap<String, Integer>();
-		TreeMap<String, Integer> sortedOccurrencesFloatAuthor = new TreeMap<String, Integer>();
-		
 		ArrayList<Float> tupleCompleteness = new ArrayList<Float>();
 		
+		/* ------------------------------
+		 * FASE DI CALCOLO DELLE METRICHE
+		 * ------------------------------
+		 */
 		for (Book b: books) {
-			if (b.getIsbn().length() == 10)
-				b.convertFromIsbn10ToIsbn13();
-			else {
-				if (!b.checkControlDigit())
-					System.out.println(b.getIsbn());
-			}
-			b.normalizeAuthor();
-			b.normalizeTitle();
-			tupleCompleteness.add(m.computeTupleCompleteness(b));
+			// Rilevamento di ISBN incoerenti per la CONSISTENZA
+			if (!b.checkControlDigit())
+				System.out.println("ERRORE - La cifra di controllo per l'ISBN " + b.getIsbn() + " non è corretta! -");
+			// Vengono inseriti in una lista i valori di COMPLETEZZA DI TUPLA
+			tupleCompleteness.add(m.computeTupleCompleteness(b, false));
+			// Vengono inseriti i vari attributi in liste apposite per i successivi calcoli
 			authors.add(b.getAuthor());
 			isbn.add(b.getIsbn());
 			sources.add(b.getSource());
 			titles.add(b.getTitle());
 		}
 
+		// Vengono contate le frequenze delle COMPLETEZZE DI TUPLA per una migliore rappresentazione
 		HashMap<Float, Integer> tupleFrequencies = dm.countFrequencies(tupleCompleteness);
-		System.out.println(tupleFrequencies.toString());
 		
-		HashMap<String, ArrayList<Book>> booksGroupedByIsbn = dm.groupBookByIsbn(books);
-
+		// Per ogni attributo vengono calcolati i valori di COMPLETEZZA DI ATTRIBUTO
 		float authorCompleteness = m.computeAttributeCompleteness(authors);
-		System.out.println("Author completeness: " + authorCompleteness);
 		float isbnCompleteness = m.computeAttributeCompleteness(isbn);
-		System.out.println("ISBN completeness: " + isbnCompleteness);
 		float sourceCompleteness = m.computeAttributeCompleteness(sources);
-		System.out.println("Source completeness: " + sourceCompleteness);
 		float titleCompleteness = m.computeAttributeCompleteness(titles);
-		System.out.println("Title completeness: " + titleCompleteness);
-		float tableCompleteness = m.computeTableCompleteness(books);
-		System.out.println("Table completeness: " + tableCompleteness);	
 		
-		//HashMap<String, ArrayList<String>> titlesGroupedByIsbn = dm.groupAttributeByIsbn(books, Attributes.TITLE);
+		// Viene calcolata la COMPLETEZZA DI TABELLA
+		float tableCompleteness = m.computeTableCompleteness(books);
+		
+		// Vengono raggruppati i libri in base all'ISBN per migliorare la computazione
+		HashMap<String, ArrayList<Book>> booksGroupedByIsbn = dm.groupBookByIsbn(books);
+		
 		ArrayList<Float> titleAccuracies = new ArrayList<Float>();
 		
+		// Viene calcolata l'ACCURATEZZA SINTATTICA DEI TITOLI
 		for(String _isbn: booksGroupedByIsbn.keySet())
 			for(Book book: booksGroupedByIsbn.get(_isbn))
 				titleAccuracies.add(m.computeSyntacticAccuracy(book.getTitle(), exactTitlesList.get(_isbn)));
 		
+		// Viene calcolato il valore medio dell'ACCURATEZZA SINTATTICA DEI TITOLI
+		float overallTitleAccuracy = m.computeMean(titleAccuracies);
+		
+		// Viene calcolata l'ACCURATEZZA SEMANTICA DI AUTHOR LIST
+		ArrayList<Float> authorListAccuracies = m.computeSemanticAccuracies(booksGroupedByIsbn, exactAuthorsList);
+		
+		// Viene calcolato il valore medio dell'ACCURATEZZA SEMANTICA DI AUTHOR LIST
+		float overallAuthorListAccuracy = m.computeMean(authorListAccuracies);
+		
+		// Vengono restituiti su console i risultati delle metriche
+		printMetrics(tupleFrequencies, authorCompleteness, isbnCompleteness, sourceCompleteness, titleCompleteness,
+				tableCompleteness, titleAccuracies, overallTitleAccuracy, authorListAccuracies, 
+				overallAuthorListAccuracy, "");
+		
+		/* ------------------------------
+		 * FASE DI DEDUPLICAZIONE
+		 * ------------------------------
+		 */
+		
+		// Vengono calcolate le sources più affidabili per title e author list
 		Map<String, Float> sortedSourceAffidabilityForTitles = dm.computeSortedSourceAffidability(
 				booksGroupedByIsbn, titleAccuracies);
-
-		dm.printFrequenciesOccurrences(titleAccuracies, "Title");
-		
-		float meanTitleAccuracy = m.computeMean(titleAccuracies);
-		System.out.println("Overall title accuracy: " + meanTitleAccuracy);
-		
-		ArrayList<Float> authorListAccuracy = m.computeSemanticAccuracy(booksGroupedByIsbn, exactAuthorsList);
-		System.out.println(titleAccuracies.size() + "|||" + authorListAccuracy.size());
-		
-		dm.printFrequenciesOccurrences(authorListAccuracy, "Author List");
-		
 		Map<String, Float> sortedSourceAffidabilityForAuthorList = dm.computeSortedSourceAffidability(
-				booksGroupedByIsbn, authorListAccuracy);
+				booksGroupedByIsbn, authorListAccuracies);
 		
-		float overallAuthorListAccuracy = m.computeMean(authorListAccuracy);
-		System.out.println("Overall author list accuracy: " + overallAuthorListAccuracy);
-		
+		// Vengono estrapolate solamente le sources affidabili, con indice maggiore di una certa soglia
 		LinkedList<String> sourcesOrderedByAffidabilityForAuthorList = 
-				dm.getKeysOrderByValueWithinThreshold(sortedSourceAffidabilityForAuthorList, (float) 0.9);
+				dm.getKeysOrderedByValueWithinThreshold(sortedSourceAffidabilityForAuthorList, (float) 0.9);
 		LinkedList<String> sourcesOrderedByAffidabilityForTitles = 
-				dm.getKeysOrderByValueWithinThreshold(sortedSourceAffidabilityForTitles, (float) 0.9);
-				
+				dm.getKeysOrderedByValueWithinThreshold(sortedSourceAffidabilityForTitles, (float) 0.9);
+		
+		// Viene effettuata la deduplicazione
 		ArrayList<Book> booksDeduplicated = d.computeDeduplication(booksGroupedByIsbn, 
 				sourcesOrderedByAffidabilityForAuthorList ,sourcesOrderedByAffidabilityForTitles);
 		
+		// Viene stampato su file il nuovo dataset, ottenuto da questa fase
+		dm.writeFile(booksDeduplicated, "finalDataset.txt");
+		
+		/* ---------------------------------
+		 * FASE DI CONFRONTO DELLE METRICHE
+		 * ---------------------------------
+		 */
+		
+		/* In maniera analoga alla fase di calcolo delle metriche, esse vengono 
+		 * calcolate con la nuova lista di libri deduplicati
+		*/
 		ArrayList<String> authorsDeduplicated = new ArrayList<String>();
 		ArrayList<String> titlesDeduplicated = new ArrayList<String>();
 		ArrayList<String> isbnDeduplicated = new ArrayList<String>();
 		ArrayList<String> sourcesDeduplicated = new ArrayList<String>();
 		
+		ArrayList<Float> tupleCompletenessDeduplicated = new ArrayList<Float>();
+		
 		for (Book b: booksDeduplicated) {
+			tupleCompletenessDeduplicated.add(m.computeTupleCompleteness(b, true));
 			authorsDeduplicated.add(b.getAuthor());
 			isbnDeduplicated.add(b.getIsbn());
 			sourcesDeduplicated.add(b.getSource());
 			titlesDeduplicated.add(b.getTitle());
 		}
 		
+		HashMap<Float, Integer> tupleFrequenciesDeduplicated = dm.countFrequencies(tupleCompletenessDeduplicated);
+		
 		float authorDeduplicatedCompleteness = m.computeAttributeCompleteness(authorsDeduplicated);
-		System.out.println("Author deduplicated completeness: " + authorDeduplicatedCompleteness);
 		float isbnDeduplicatedCompleteness = m.computeAttributeCompleteness(isbnDeduplicated);
-		System.out.println("ISBN completeness: " + isbnDeduplicatedCompleteness);
 		float sourceDeduplicatedCompleteness = m.computeAttributeCompleteness(sourcesDeduplicated);
-		System.out.println("Source completeness: " + sourceDeduplicatedCompleteness);
 		float titleDeduplicatedCompleteness = m.computeAttributeCompleteness(titlesDeduplicated);
-		System.out.println("Title deduplicated completeness: " + titleDeduplicatedCompleteness);
 		float tableDeduplicatedCompleteness = m.computeTableCompleteness(booksDeduplicated);
-		System.out.println("Table deduplicated completeness: " + tableDeduplicatedCompleteness);
 		
 		HashMap<String, ArrayList<Book>> booksDeduplicatedGroupedByIsbn = dm.groupBookByIsbn(booksDeduplicated);
-		ArrayList<Float> authorListAccuracyDeduplicated = m.computeSemanticAccuracy(
+		ArrayList<Float> authorListDeduplicatedAccuracy = m.computeSemanticAccuracies(
 				booksDeduplicatedGroupedByIsbn, exactAuthorsList);
 		
-		dm.printFrequenciesOccurrences(authorListAccuracyDeduplicated, "Author List Deduplicated");
-
-
-		float overallAuthorListAccuracyDeduplicated = m.computeMean(authorListAccuracyDeduplicated);
-		System.out.println("Overall author list accuracy deduplicated: " + overallAuthorListAccuracyDeduplicated);
+		float overallAuthorListDeduplicatedAccuracy = m.computeMean(authorListDeduplicatedAccuracy);
 		
 		ArrayList<Float> titleDeduplicatedAccuracies = new ArrayList<Float>();
 		
-		for(String _isbn: exactTitlesList.keySet()) {
-			for(Book book: booksDeduplicatedGroupedByIsbn.get(_isbn)) {
+		for(String _isbn: exactTitlesList.keySet())
+			for(Book book: booksDeduplicatedGroupedByIsbn.get(_isbn))
 				titleDeduplicatedAccuracies.add(m.computeSyntacticAccuracy(book.getTitle(), exactTitlesList.get(_isbn)));					
-			}
-		}
+				
+		float overallTitleDeduplicatedAccuracy = m.computeMean(titleDeduplicatedAccuracies);
 		
-		dm.printFrequenciesOccurrences(titleDeduplicatedAccuracies, "Title deduplicated");
-		
-		float meanTitleAccuracyDeduplicated = m.computeMean(titleDeduplicatedAccuracies);
-		System.out.println("Overall title accuracy Deduplicated: " + meanTitleAccuracyDeduplicated);
-		
-		dm.writeFile(booksDeduplicated, "finalDataset.txt");		
-        
-		/*for (String _isbn: exactAuthorsList.keySet()){
-            System.out.print(_isbn + exactAuthorsList.get(_isbn).toString());
-            for (String s: exactAuthorsList.get(_isbn)) {
-            	System.out.print(" " + s);
-            }
-            System.out.print("\n");
-		}*/
-		
-		/*while (!titles.isEmpty()) {
-			int occurrences = Collections.frequency(titles, titles.get(0));
-			sortedOccurrences.put(titles.get(0), occurrences);
-			titles.removeAll(Collections.singleton(titles.get(0)));
-		}
-		
-		dm.writeOccurrences(sortedOccurrences);*/
-		
-		/*while (!sources.isEmpty()) {
-			int occurrences = Collections.frequency(sources, sources.get(0));
-			sortedOccurrences.put(sources.get(0), occurrences);
-			sources.removeAll(Collections.singleton(sources.get(0)));
-		}
-		
-		dm.writeOccurrences(sortedOccurrences);*/
-		
-		/*while (!isbn.isEmpty()) {
-			int occurrences = Collections.frequency(isbn, isbn.get(0));
-			sortedOccurrences.put(isbn.get(0), occurrences);
-			isbn.removeAll(Collections.singleton(isbn.get(0)));
-		}
-		
-		dm.writeOccurrences(sortedOccurrences);*/
-		
-		
-		/*while (!authors.isEmpty()) {
-			int occurrences = Collections.frequency(authors, authors.get(0));
-			sortedOccurrences.put(authors.get(0), occurrences);
-			authors.removeAll(Collections.singleton(authors.get(0)));
-		}
-		
-		dm.writeOccurrences(sortedOccurrences);*/
-		
-		/*ArrayList<String> exactTitlesOccurrences = new ArrayList<String>();
-		
-		for (String _isbn: exactTitlesList.keySet()) {
-			exactTitlesOccurrences.add(exactTitlesList.get(_isbn));
-		}
-		
-		while (!exactTitlesOccurrences.isEmpty()) {
-			int occurrences = Collections.frequency(exactTitlesOccurrences, exactTitlesOccurrences.get(0));
-			if (occurrences >= 2)
-				sortedOccurrences.put(exactTitlesOccurrences.get(0), occurrences);
-			exactTitlesOccurrences.removeAll(Collections.singleton(exactTitlesOccurrences.get(0)));
-		}
-		
-		dm.writeOccurrences(sortedOccurrences);*/
+		printMetrics(tupleFrequenciesDeduplicated, authorDeduplicatedCompleteness, isbnDeduplicatedCompleteness, 
+				sourceDeduplicatedCompleteness, titleDeduplicatedCompleteness, tableDeduplicatedCompleteness, 
+				titleDeduplicatedAccuracies, overallTitleDeduplicatedAccuracy, authorListDeduplicatedAccuracy, 
+				overallAuthorListDeduplicatedAccuracy, "");
 		
     }
+	
+	// Metodo per restituire su console i risultati delle metriche
+	public static void printMetrics(HashMap<Float, Integer> tupleFrequencies, float authorCompleteness,
+			float isbnCompleteness, float sourceCompleteness, float titleCompleteness,
+			float tableCompleteness, ArrayList<Float> titleAccuracies, float overallTitleAccuracy, 
+			ArrayList<Float> authorListAccuracies, float overallAuthorListAccuracy, String deduplicated) {
+		
+		System.out.println("COMPLETEZZA " + deduplicated);
+		System.out.println("Completezze di tupla: " + tupleFrequencies.toString());
+		System.out.println("Completezza su author list: " + authorCompleteness);
+		System.out.println("Completezza su ISBN: " + isbnCompleteness);
+		System.out.println("Completezza su source: " + sourceCompleteness);
+		System.out.println("Completezza su title: " + titleCompleteness);
+		System.out.println("Completezza di tabella: " + tableCompleteness);
+		System.out.println("--------------------------------------");
+		System.out.println("ACCURATEZZA " + deduplicated);
+		new DatasetMethods().printFrequenciesOccurrences(titleAccuracies, "title");
+		System.out.println("Valore medio dell'accuratezza di title: " + overallTitleAccuracy);
+		new DatasetMethods().printFrequenciesOccurrences(authorListAccuracies, "author List");
+		System.out.println("Valore medio dell'accuratezza di author list: " + overallAuthorListAccuracy);
+
+	}
 	
 }

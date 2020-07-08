@@ -13,6 +13,11 @@ import java.util.HashMap;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
+/* Classe utilizzata per creare la tabella di riferimento relativa ai titoli dei libri.
+ * Il txt generato è stata successivamente modificata a mano su alcuni piccoli dettagli.
+ * Pertanto, il rerun di questa parte di codice produrrà una tabella leggermente
+ * differente da quella presente in titles.txt
+ */
 public class CreateStandard {
 
 	public static void main(String[] args) throws IOException {
@@ -23,18 +28,22 @@ public class CreateStandard {
 		
         DatasetMethods dm = new DatasetMethods();
         
+        // Viene importata la lista di riferimento degli autori
 		HashMap<String, ArrayList<String>> exactAuthorsList = 
 				dm.convertValuesIntoArrayListValues(dm.readList(AUTHORSLISTPATH));
 		HashMap<String, String> exactTitlesList = new HashMap<String, String>();
 		
 		for(String isbn: exactAuthorsList.keySet()) {
+			// Viene inserita nella lista l'ISBN con il titolo corretto associato
 			exactTitlesList.put(isbn, getInfoBooks(url1 + isbn + url2, isbn));
 		}
 		
+		// Viene scritta su file la tabella di riferimento per title
 		writeStandardFile(exactTitlesList);
 		
 	}
 	
+	// Metodo per ricavare il titolo di un libro dall'API di OpenLibrary
 	public static String getInfoBooks(String getUrl, String isbn) throws IOException {
 		
 		String infoBook = "";
@@ -61,12 +70,15 @@ public class CreateStandard {
 			System.out.println("GET request not worked");
 		}
 		
+		// Viene ricavato il titolo dal JSON restituito dall'interrogazione
 		String title = getTitle(infoBook, isbn);
 		
 		return title;
 		
 	}
 	
+	
+	// Metodo per ricavare il titolo dalla risposta alla query effettuata con l'API
 	public static String getTitle(String infoBook, String isbn) {
 		
 		Gson gson = new Gson();
@@ -90,19 +102,13 @@ public class CreateStandard {
 		
 	}
 	
+	// Metodo per scrivere su file la tabella di riferimento di title
 	public static void writeStandardFile(HashMap<String, String> titles) {
 		
 		try {
-			File myObj = new File("newTitles.txt");
-			if (myObj.createNewFile()) {
-				System.out.println("File created: " + myObj.getName());
-			} else {
-				System.out.println("File already exists.");
-			}
 			FileWriter myWriter = new FileWriter("newTitles.txt");
-			for (String isbn: titles.keySet()) {
+			for (String isbn: titles.keySet())
 	            myWriter.write(isbn + "\t" + titles.get(isbn) + "\n");
-			}
 			myWriter.close();
 		} catch (IOException e) {
 			System.out.println("An error occurred.");
